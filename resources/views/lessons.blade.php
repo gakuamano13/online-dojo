@@ -3,7 +3,7 @@
     <!-- Bootstrapの定形コード… -->
     <div class="card-body">
         <div class="card-title">
-            タイトル
+            レッスン一覧
         </div>
         
         <!-- バリデーションエラーの表示に使用-->
@@ -17,7 +17,12 @@
             <!-- タイトル -->
             <div class="form-group">
                 <div class="col-sm-6">
+                タイトル
                     <input type="text" name="title" class="form-control">
+                </div>
+                <div class="col-sm-6">
+                説明
+                    <input type="text" name="text" class="form-control">
                 </div>
             </div>
 
@@ -52,6 +57,15 @@
                                     <div>{{ $lesson->title }}</div>
                                 </td>
 
+                                <!-- 更新ボタン -->
+                                <td>
+                                    <form action="{{ url('lessonsedit/'.$lesson->id) }}" method="POST">
+                                    {{ csrf_field() }}
+                                        <button type="submit" class="btn btn-primary">
+                                        更新
+                                        </button>
+                                    </form>
+                                </td>
                                 <!-- 削除ボタン -->
                                 <td>
                                     <form action="{{ url('lesson/'.$lesson->id) }}" method="POST">

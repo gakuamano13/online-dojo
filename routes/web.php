@@ -5,44 +5,19 @@ use App\Lesson;
 use Illuminate\Http\Request;
 
 //表示
-Route::get('/', function () {
-    $lessons = Lesson::orderBy('created_at', 'asc')->get();
-    return view('lessons', [
-        'lessons' => $lessons
-    ]);
-});
+Route::get('/', 'LessonsController@index');
 
-    //add
-    Route::post('/lessons', function (Request $request) {
+//更新画面
+Route::post('/lessonsedit/{lessons}','LessonsController@edit' );
 
-        //バリデーション
-        $validator = Validator::make($request->all(), [
-            'title' => 'required|min:3|max:255',
-        ]);
-    
-        //バリデーション:エラー 
-        if ($validator->fails()) {
-            return redirect('/')
-                ->withInput()
-                ->withErrors($validator);
-        }
-        //以下に登録処理を記述（Eloquentモデル）
-        $lessons = new Lesson;
-        $lessons->title = $request->title;
-        $lessons->text = 'test';
-        $lessons->save(); 
-        return redirect('/');
+//更新処理
+Route::post('/lessons/update', 'LessonsController@update');
 
-    
-    
-    
-    });
+//登録
+Route::post('/lessons', 'LessonsController@store');
 
-    //del
-    Route::delete('/lesson/{lesson}', function (Lesson $lesson) {
-        $lesson->delete();       //追加
-        return redirect('/');  //追加
-    });
+//削除
+Route::delete('/lesson/{lesson}','LessonsController@destroy');
 
 
 Route::get('/list', function () {
