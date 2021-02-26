@@ -11,7 +11,7 @@
         <!-- バリデーションエラーの表示に使用-->
 
         <!-- 登録フォーム -->
-        <form action="{{ url('lessons') }}" method="POST" class="form-horizontal">
+        <form enctype="multipart/form-data" action="{{ url('lessons') }}" method="POST" class="form-horizontal">
             {{ csrf_field() }}
 
             <!-- タイトル -->
@@ -23,6 +23,13 @@
                 <div class="col-sm-6">
                 説明
                     <input type="text" name="text" class="form-control">
+                </div>
+                <!-- file 追加 -->
+                <div class="col-sm-6">
+                <div>
+                    <label>写真</label>
+                </div>
+                    <input type="file" name="photo">
                 </div>
             </div>
 
@@ -45,8 +52,10 @@
                 <table class="table table-striped task-table">
                     <!-- テーブルヘッダ -->
                     <thead>
-                        <th>一覧</th>
-                        <th>&nbsp;</th>
+                        <th>タイトル</th>
+                        <th>説明</th>
+                        <th>更新</th>
+                        <th>削除</th>
                     </thead>
                     <!-- テーブル本体 -->
                     <tbody>
@@ -55,6 +64,10 @@
                                 <!-- タイトル -->
                                 <td class="table-text">
                                     <div>{{ $lesson->title }}</div>
+                                    <div> <img src="upload/{{$lesson->photo}}" width="100"></div>
+                                </td>
+                                <td class="table-text">
+                                    <div>{{ $lesson->text }}</div>
                                 </td>
 
                                 <!-- 更新ボタン -->
@@ -62,7 +75,7 @@
                                     <form action="{{ url('lessonsedit/'.$lesson->id) }}" method="POST">
                                     {{ csrf_field() }}
                                         <button type="submit" class="btn btn-primary">
-                                        更新
+                                        update
                                         </button>
                                     </form>
                                 </td>
@@ -72,7 +85,7 @@
                                         {{ csrf_field() }}
                                         {{ method_field('delete') }}
                                         <button type="submit" class="btn btn-danger">
-                                            削除
+                                            del
                                         </button>
                                     </form>
                                 </td>
@@ -82,6 +95,12 @@
                 </table>
             </div>
         </div>
+        <div class="row">
+            <div class="col-md-4 offset-md-4">
+            {{ $lessons->links()}}
+            </div>
+        </div>
+
     @endif
 
 @endsection

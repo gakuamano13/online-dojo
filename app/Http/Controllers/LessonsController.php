@@ -13,7 +13,7 @@ class LessonsController extends Controller
     //表示
     public function index()
     {
-        $lessons = Lesson::orderBy('created_at', 'desc')->get();
+        $lessons = Lesson::orderBy('created_at', 'desc')->paginate(3);
         return view('lessons', [
             'lessons' => $lessons
         ]);
@@ -33,12 +33,28 @@ class LessonsController extends Controller
                 ->withInput()
                 ->withErrors($validator);
         }
+
+        //file 取得
+        $file = $request->file('photo');
+        //file が空かチェック
+        if( !empty($file) ){
+        //ファイル名を取得
+        $filename = $file->getClientOriginalName();
+        //AWSの場合どちらかになる事がある”../upload/” or “./upload/”
+        $move = $file->move('./upload/',$filename); //public/upload/...
+        }else{
+        $filename = "";
+        }
+
         //以下に登録処理を記述（Eloquentモデル）
         $lessons = new Lesson;
         $lessons->title = $request->title;
         $lessons->text = $request->text;
+        $lessons->photo = $filename;
         $lessons->save(); 
         return redirect('/');
+
+
     } 
 
 
@@ -63,10 +79,24 @@ class LessonsController extends Controller
                 ->withInput()
                 ->withErrors($validator);
         }
+
+        //file 取得
+        $file = $request->file('photo');
+        //file が空かチェック
+        if( !empty($file) ){
+        //ファイル名を取得
+        $filename = $file->getClientOriginalName();
+        //AWSの場合どちらかになる事がある”../upload/” or “./upload/”
+        $move = $file->move('./upload/',$filename); //public/upload/...
+        }else{
+        $filename = "";
+        }
+
         //以下に登録処理を記述（Eloquentモデル）
         $lessons = Lesson::find($request->id);
         $lessons->title = $request->title;
         $lessons->text = $request->text;
+        $lessons->photo = $filename;
         $lessons->save(); 
         return redirect('/');
     } 

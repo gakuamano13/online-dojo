@@ -4,7 +4,7 @@
 <div class="row">
     <div class="col-md-12">
     @include('common.errors')
-    <form action="{{ url('lessons/update') }}" method="POST">
+    <form enctype="multipart/form-data" action="{{ url('lessons/update') }}" method="POST">
 
         <div class="form-group">
            <label for="item_name">タイトル</label>
@@ -14,6 +14,12 @@
         <div class="form-group">
            <label for="item_number">説明</label>
         <input type="text" id="item_number" name="text" class="form-control" value="{{$lesson->text}}">
+        </div>
+
+        <!-- file 追加 -->
+        <div class="col-sm-6">
+            <label>画像</label>
+            <input type="file" name="photo">
         </div>
 
         <!-- Saveボタン/Backボタン -->

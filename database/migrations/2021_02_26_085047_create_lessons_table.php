@@ -19,13 +19,13 @@ class CreateLessonsTable extends Migration
             $table->text('text')->nullable();
             $table->integer('price')->nullable();
             $table->datetime('date')->nullable();
-            $table->text('photo')->nullable();
+            $table->string('photo')->nullable();
             $table->integer('teachers_id')->nullable();
             $table->string('teachers_name',255)->nullable();
-            $table->text('teachers_photo')->nullable();
+            $table->string('teachers_photo')->nullable();
             $table->integer('navigators_id')->nullable();
             $table->string('navigators_name',255)->nullable();
-            $table->text('navigators_photo')->nullable();
+            $table->string('navigators_photo')->nullable();
             $table->timestamps();
         });
 }
