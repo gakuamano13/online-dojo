@@ -29,7 +29,7 @@ class LessonsController extends Controller
         ]);
         //バリデーション:エラー 
         if ($validator->fails()) {
-            return redirect('/')
+            return redirect('/lessontop')
                 ->withInput()
                 ->withErrors($validator);
         }
@@ -52,7 +52,7 @@ class LessonsController extends Controller
         $lessons->text = $request->text;
         $lessons->photo = $filename;
         $lessons->save(); 
-        return redirect('/');
+        return redirect('/lessontop');
 
 
     } 
@@ -75,7 +75,7 @@ class LessonsController extends Controller
         ]);
         //バリデーション:エラー 
         if ($validator->fails()) {
-            return redirect('/')
+            return redirect('/lessontop')
                 ->withInput()
                 ->withErrors($validator);
         }
@@ -98,7 +98,7 @@ class LessonsController extends Controller
         $lessons->text = $request->text;
         $lessons->photo = $filename;
         $lessons->save(); 
-        return redirect('/');
+        return redirect('/lessontop');
     } 
 
 
@@ -106,7 +106,7 @@ class LessonsController extends Controller
     public function destroy(Lesson $lesson)
     {
         $lesson->delete();       //追加
-        return redirect('/');  //追加
+        return redirect('/lessontop');  //追加
     }
 
 
