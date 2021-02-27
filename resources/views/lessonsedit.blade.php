@@ -7,12 +7,12 @@
     <form enctype="multipart/form-data" action="{{ url('lessons/update') }}" method="POST">
 
         <div class="form-group">
-           <label for="item_name">タイトル</label>
-           <input type="text" id="item_name" name="title" class="form-control" value="{{$lesson->title}}">
+            <label for="item_name">タイトル</label>
+            <input type="text" id="item_name" name="title" class="form-control" value="{{$lesson->title}}">
         </div>
 
         <div class="form-group">
-           <label for="item_number">説明</label>
+            <label for="item_number">説明</label>
         <input type="text" id="item_number" name="text" class="form-control" value="{{$lesson->text}}">
         </div>
 
@@ -30,15 +30,15 @@
             </a>
         </div>
         <!--/ Saveボタン/Backボタン -->
-         
-         <!-- id値を送信 -->
-         <input type="hidden" name="id" value="{{$lesson->id}}">
-         <!--/ id値を送信 -->
-         
-         <!-- CSRF -->
-         {{ csrf_field() }}
-         <!--/ CSRF -->
-         
+            
+            <!-- id値を送信 -->
+            <input type="hidden" name="id" value="{{$lesson->id}}">
+            <!--/ id値を送信 -->
+            
+            <!-- CSRF -->
+            {{ csrf_field() }}
+            <!--/ CSRF -->
+            
     </form>
     </div>
 </div>

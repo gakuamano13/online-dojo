@@ -34,15 +34,15 @@ Route::delete('/teacher/{teacher}','TeachersController@destroy');
 
 
 //表示
-Route::get('/navitop', 'TeachersController@index');
+Route::get('/navitop', 'NavisController@index');
 //更新画面
-Route::post('/navisedit/{navis}','TeachersController@edit' );
+Route::post('/navisedit/{navis}','NavisController@edit' );
 //更新処理
-Route::post('/navis/update', 'TeachersController@update');
+Route::post('/navis/update', 'NavisController@update');
 //登録
-Route::post('/navis', 'TeachersController@store');
+Route::post('/navis', 'NavisController@store');
 //削除
-Route::delete('/navi/{navi}','TeachersController@destroy');
+Route::delete('/navi/{navi}','NavisController@destroy');
 
 
 Auth::routes();
