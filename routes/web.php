@@ -20,6 +20,7 @@ Route::post('/lessons', 'LessonsController@store');
 //削除
 Route::delete('/lesson/{lesson}','LessonsController@destroy');
 
+
 //表示
 Route::get('/teachertop', 'TeachersController@index');
 //更新画面

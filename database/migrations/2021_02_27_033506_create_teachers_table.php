@@ -18,8 +18,8 @@ class CreateTeachersTable extends Migration
             $table->string('name',255)->nullable();
             $table->string('email',255)->unique();
             $table->integer('flag')->nullable();
-            $table->string('login_id',255);
-            $table->string('pass',255);
+            $table->string('login_id',255)->nullable();
+            $table->string('pass',255)->nullable();
             $table->integer('tel')->nullable();
             $table->string('photo')->nullable();
             $table->datetime('register_date')->nullable();

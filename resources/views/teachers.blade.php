@@ -3,7 +3,7 @@
     <!-- Bootstrapの定形コード… -->
     <div class="card-body">
         <div class="card-title">
-            レッスン一覧
+            Teacher Top
         </div>
         
         <!-- バリデーションエラーの表示に使用-->
@@ -17,12 +17,12 @@
             <!-- タイトル -->
             <div class="form-group">
                 <div class="col-sm-6">
-                タイトル
-                    <input type="text" name="title" class="form-control">
+                名前
+                    <input type="text" name="name" class="form-control">
                 </div>
                 <div class="col-sm-6">
-                説明
-                    <input type="text" name="text" class="form-control">
+                e-mail
+                    <input type="text" name="email" class="form-control">
                 </div>
                 <!-- file 追加 -->
                 <div class="col-sm-6">
@@ -52,8 +52,8 @@
                 <table class="table table-striped task-table">
                     <!-- テーブルヘッダ -->
                     <thead>
-                        <th>タイトル</th>
-                        <th>説明</th>
+                        <th>名前</th>
+                        <th>e-mail</th>
                         <th>更新</th>
                         <th>削除</th>
                     </thead>
@@ -63,11 +63,11 @@
                             <tr>
                                 <!-- タイトル -->
                                 <td class="table-text">
-                                    <div>{{ $teacher->title }}</div>
+                                    <div>{{ $teacher->name }}</div>
                                     <div> <img src="upload/{{$teacher->photo}}" width="100"></div>
                                 </td>
                                 <td class="table-text">
-                                    <div>{{ $teacher->text }}</div>
+                                    <div>{{ $teacher->email }}</div>
                                 </td>
 
                                 <!-- 更新ボタン -->
