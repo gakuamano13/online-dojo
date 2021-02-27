@@ -4,16 +4,16 @@
 <div class="row">
     <div class="col-md-12">
     @include('common.errors')
-    <form enctype="multipart/form-data" action="{{ url('lessons/update') }}" method="POST">
+    <form enctype="multipart/form-data" action="{{ url('navis/update') }}" method="POST">
 
         <div class="form-group">
-            <label for="item_name">タイトル</label>
-            <input type="text" id="item_name" name="title" class="form-control" value="{{$lesson->title}}">
+            <label for="item_name">名前</label>
+            <input type="text" id="item_name" name="name" class="form-control" value="{{$navi->name}}">
         </div>
 
         <div class="form-group">
-            <label for="item_number">説明</label>
-        <input type="text" id="item_number" name="text" class="form-control" value="{{$lesson->text}}">
+            <label for="item_number">e-mail</label>
+        <input type="text" id="item_number" name="email" class="form-control" value="{{$navi->email}}">
         </div>
 
         <!-- file 追加 -->
@@ -25,14 +25,14 @@
         <!-- Saveボタン/Backボタン -->
         <div class="well well-sm">
             <button type="submit" class="btn btn-primary">Save</button>
-            <a class="btn btn-link pull-right" href="{{ url('/lessontop') }}">
+            <a class="btn btn-link pull-right" href="{{ url('/navitop') }}">
                 Back
             </a>
         </div>
         <!--/ Saveボタン/Backボタン -->
             
             <!-- id値を送信 -->
-            <input type="hidden" name="id" value="{{$lesson->id}}">
+            <input type="hidden" name="id" value="{{$navi->id}}">
             <!--/ id値を送信 -->
             
             <!-- CSRF -->

@@ -3,18 +3,18 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Teacher;
+use App\Navi;
 use Validator;
 use Auth;
 
-class TeachersController extends Controller
+class NavisController extends Controller
 {
     //表示
     public function index()
     {
-        $teachers = Teacher::orderBy('created_at', 'desc')->paginate(3);
-        return view('teachers', [
-            'teachers' => $teachers
+        $navis = Navi::orderBy('created_at', 'desc')->paginate(3);
+        return view('navis', [
+            'navis' => $navis
         ]);
     }
 
@@ -28,7 +28,7 @@ class TeachersController extends Controller
         ]);
         //バリデーション:エラー 
         if ($validator->fails()) {
-            return redirect('/teachertop')
+            return redirect('/navitop')
                 ->withInput()
                 ->withErrors($validator);
         }
@@ -46,21 +46,21 @@ class TeachersController extends Controller
         }
 
         //以下に登録処理を記述（Eloquentモデル）
-        $teachers = new Teacher;
-        $teachers->name = $request->name;
-        $teachers->email = $request->email;
-        $teachers->photo = $filename;
-        $teachers->save(); 
-        return redirect('/teachertop');
+        $navis = new Navi;
+        $navis->name = $request->name;
+        $navis->email = $request->email;
+        $navis->photo = $filename;
+        $navis->save(); 
+        return redirect('/navitop');
 
 
     } 
 
 
     //更新画面
-    public function edit(Teacher $teachers)
+    public function edit(Navi $navis)
     {
-        return view('teachersedit', ['teacher' => $teachers]);
+        return view('navisedit', ['navi' => $navis]);
     }
 
 
@@ -74,7 +74,7 @@ class TeachersController extends Controller
         ]);
         //バリデーション:エラー 
         if ($validator->fails()) {
-            return redirect('/teachertop')
+            return redirect('/navitop')
                 ->withInput()
                 ->withErrors($validator);
         }
@@ -92,20 +92,19 @@ class TeachersController extends Controller
         }
 
         //以下に登録処理を記述（Eloquentモデル）
-        $teachers = Teacher::find($request->id);
-        $teachers->name = $request->name;
-        $teachers->email = $request->email;
-        $teachers->photo = $filename;
-        $teachers->save(); 
-        return redirect('/teachertop');
+        $navis = Navi::find($request->id);
+        $navis->name = $request->name;
+        $navis->email = $request->email;
+        $navis->photo = $filename;
+        $navis->save(); 
+        return redirect('/navitop');
     } 
 
 
     //削除処理
-    public function destroy(Teacher $teacher)
+    public function destroy(Navi $navi)
     {
-        $teacher->delete();       //追加
-        return redirect('/teachertop');  //追加
+        $navi->delete();       //追加
+        return redirect('/navitop');  //追加
     }
-
 }

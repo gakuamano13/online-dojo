@@ -3,7 +3,7 @@
     <!-- Bootstrapの定形コード… -->
     <div class="card-body">
         <div class="card-title">
-            Teacher Top
+            Navi Top
         </div>
         
         <!-- バリデーションエラーの表示に使用-->
@@ -11,7 +11,7 @@
         <!-- バリデーションエラーの表示に使用-->
 
         <!-- 登録フォーム -->
-        <form enctype="multipart/form-data" action="{{ url('teachers') }}" method="POST" class="form-horizontal">
+        <form enctype="multipart/form-data" action="{{ url('navis') }}" method="POST" class="form-horizontal">
             {{ csrf_field() }}
 
             <!-- タイトル -->
@@ -46,7 +46,7 @@
     <!-- 既に登録されてるリスト -->
 
          <!-- 現在 -->
-         @if (count($teachers) > 0)
+         @if (count($navis) > 0)
         <div class="card-body">
             <div class="card-body">
                 <table class="table table-striped task-table">
@@ -59,20 +59,20 @@
                     </thead>
                     <!-- テーブル本体 -->
                     <tbody>
-                        @foreach ($teachers as $teacher)
+                        @foreach ($navis as $navi)
                             <tr>
                                 <!-- タイトル -->
                                 <td class="table-text">
-                                    <div>{{ $teacher->name }}</div>
-                                    <div> <img src="upload/{{$teacher->photo}}" width="100"></div>
+                                    <div>{{ $navi->name }}</div>
+                                    <div> <img src="upload/{{$navi->photo}}" width="100"></div>
                                 </td>
                                 <td class="table-text">
-                                    <div>{{ $teacher->email }}</div>
+                                    <div>{{ $navi->email }}</div>
                                 </td>
 
                                 <!-- 更新ボタン -->
                                 <td>
-                                    <form action="{{ url('teachersedit/'.$teacher->id) }}" method="POST">
+                                    <form action="{{ url('navisedit/'.$navi->id) }}" method="POST">
                                     {{ csrf_field() }}
                                         <button type="submit" class="btn btn-primary">
                                         update
@@ -81,7 +81,7 @@
                                 </td>
                                 <!-- 削除ボタン -->
                                 <td>
-                                    <form action="{{ url('teacher/'.$teacher->id) }}" method="POST">
+                                    <form action="{{ url('navi/'.$navi->id) }}" method="POST">
                                         {{ csrf_field() }}
                                         {{ method_field('delete') }}
                                         <button type="submit" class="btn btn-danger">
@@ -97,7 +97,7 @@
         </div>
         <div class="row">
             <div class="col-md-4 offset-md-4">
-            {{ $teachers->links()}}
+            {{ $navis->links()}}
             </div>
         </div>
 

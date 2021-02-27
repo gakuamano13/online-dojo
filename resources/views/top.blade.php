@@ -14,6 +14,8 @@
     </head>
     <body>
         <h1>Top Page</h1>
-        <a href="{{ url('/lessontop') }}">Lesson List</a>
+        <a href="{{ url('/lessontop') }}">Lesson Top</a>
+        <a href="{{ url('/teachertop') }}">Teacher Top</a>
+        <a href="{{ url('/navitop') }}">Navi Top</a>
     </body>
 </html>
