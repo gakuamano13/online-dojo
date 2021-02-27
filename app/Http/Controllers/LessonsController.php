@@ -14,7 +14,7 @@ class LessonsController extends Controller
     public function index()
     {
         $lessons = Lesson::orderBy('created_at', 'desc')->paginate(3);
-        return view('lessons', [
+        return view('lessons/lessons', [
             'lessons' => $lessons
         ]);
     }
@@ -61,7 +61,7 @@ class LessonsController extends Controller
     //更新画面
     public function edit(Lesson $lessons)
     {
-        return view('lessonsedit', ['lesson' => $lessons]);
+        return view('lessons/lessonsedit', ['lesson' => $lessons]);
     }
 
 
