@@ -20,10 +20,8 @@ class CreateNavisTable extends Migration
             $table->integer('flag')->nullable();
             $table->string('login_id',255)->nullable();
             $table->string('pass',255)->nullable();
-            $table->integer('tel')->nullable();
+            $table->text('tel')->nullable();
             $table->string('photo')->nullable();
-            $table->datetime('register_date')->nullable();
-            $table->datetime('change_date')->nullable();
             $table->timestamps();
         });
     }
