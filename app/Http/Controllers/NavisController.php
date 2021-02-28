@@ -13,7 +13,7 @@ class NavisController extends Controller
     public function index()
     {
         $navis = Navi::orderBy('created_at', 'desc')->paginate(3);
-        return view('navis/navis', [
+        return view('master/navis/navis', [
             'navis' => $navis
         ]);
     }
@@ -60,7 +60,7 @@ class NavisController extends Controller
     //更新画面
     public function edit(Navi $navis)
     {
-        return view('navis/navisedit', ['navi' => $navis]);
+        return view('master/navis/navisedit', ['navi' => $navis]);
     }
 
 
