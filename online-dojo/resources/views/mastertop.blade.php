@@ -13,7 +13,7 @@
         </style>
     </head>
     <body>
-        <h1>Master IZUMI Top</h1>
+        <h1>Master IZUMI Top IZUMI</h1>
         <a href="{{ url('/lessontop') }}">Lesson Top</a>
         <a href="{{ url('/teachertop') }}">Teacher Top</a>
         <a href="{{ url('/navitop') }}">Navi Top</a>
