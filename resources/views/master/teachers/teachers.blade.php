@@ -17,17 +17,33 @@
             <!-- タイトル -->
             <div class="form-group">
                 <div class="col-sm-6">
-                名前
+                Name
                     <input type="text" name="name" class="form-control">
                 </div>
                 <div class="col-sm-6">
                 e-mail
                     <input type="text" name="email" class="form-control">
                 </div>
+                <div class="col-sm-6">
+                flag
+                    <input type="text" name="flag" class="form-control">
+                </div>
+                <div class="col-sm-6">
+                Login ID
+                    <input type="text" name="login_id" class="form-control">
+                </div>
+                <div class="col-sm-6">
+                pass
+                    <input type="text" name="pass" class="form-control">
+                </div>
+                <div class="col-sm-6">
+                Tel
+                    <input type="text" name="tel" class="form-control">
+                </div>
                 <!-- file 追加 -->
                 <div class="col-sm-6">
                 <div>
-                    <label>写真</label>
+                    <label>photo</label>
                 </div>
                     <input type="file" name="photo">
                 </div>
@@ -52,8 +68,12 @@
                 <table class="table table-striped task-table">
                     <!-- テーブルヘッダ -->
                     <thead>
-                        <th>名前</th>
+                        <th>Name</th>
                         <th>e-mail</th>
+                        <th>flag</th>
+                        <th>loginID</th>
+                        <th>pass</th>
+                        <th>tel</th>
                         <th>更新</th>
                         <th>削除</th>
                     </thead>
@@ -68,6 +88,18 @@
                                 </td>
                                 <td class="table-text">
                                     <div>{{ $teacher->email }}</div>
+                                </td>
+                                <td class="table-text">
+                                    <div>{{ $teacher->flag }}</div>
+                                </td>
+                                <td class="table-text">
+                                    <div>{{ $teacher->login_id }}</div>
+                                </td>
+                                <td class="table-text">
+                                    <div>{{ $teacher->pass }}</div>
+                                </td>
+                                <td class="table-text">
+                                    <div>{{ $teacher->tel }}</div>
                                 </td>
 
                                 <!-- 更新ボタン -->

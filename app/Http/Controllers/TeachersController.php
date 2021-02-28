@@ -49,6 +49,10 @@ class TeachersController extends Controller
         $teachers = new Teacher;
         $teachers->name = $request->name;
         $teachers->email = $request->email;
+        $teachers->flag = $request->flag;
+        $teachers->login_id = $request->login_id;
+        $teachers->pass = $request->pass;
+        $teachers->tel = $request->tel;
         $teachers->photo = $filename;
         $teachers->save(); 
         return redirect('/teachertop');
@@ -95,6 +99,10 @@ class TeachersController extends Controller
         $teachers = Teacher::find($request->id);
         $teachers->name = $request->name;
         $teachers->email = $request->email;
+        $teachers->flag = $request->flag;
+        $teachers->login_id = $request->login_id;
+        $teachers->pass = $request->pass;
+        $teachers->tel = $request->tel;
         $teachers->photo = $filename;
         $teachers->save(); 
         return redirect('/teachertop');

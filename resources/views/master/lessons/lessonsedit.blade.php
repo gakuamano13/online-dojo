@@ -16,9 +16,54 @@
         <input type="text" id="item_number" name="text" class="form-control" value="{{$lesson->text}}">
         </div>
 
+        <div class="form-group">
+            <label for="item_number">金額</label>
+        <input type="text" id="item_number" name="price" class="form-control" value="{{$lesson->price}}">
+        </div>
+
+        <div class="form-group">
+            <label for="item_number">開催日</label>
+        <input type="datetime-local" id="item_number" name="date" class="form-control" value="{{$lesson->date}}">
+        </div>
+
+        <div class="form-group">
+            <label for="item_number">Teacher ID</label>
+        <input type="text" id="item_number" name="teachers_id" class="form-control" value="{{$lesson->teachers_id}}">
+        </div>
+
+        <div class="form-group">
+            <label for="item_number">Teacher Name</label>
+        <input type="text" id="item_number" name="teachers_name" class="form-control" value="{{$lesson->teachers_name}}">
+        </div>
+
+        <div class="form-group">
+            <label for="item_number">Teacher photo</label>
+        <input type="text" id="item_number" name="teachers_photo" class="form-control" value="{{$lesson->teachers_photo}}">
+        </div>
+
+        <div class="form-group">
+            <label for="item_number">Navi ID</label>
+        <input type="text" id="item_number" name="navis_id" class="form-control" value="{{$lesson->navis_id}}">
+        </div>
+
+        <div class="form-group">
+            <label for="item_number">Navi Name</label>
+        <input type="text" id="item_number" name="navis_name" class="form-control" value="{{$lesson->navis_name}}">
+        </div>
+
+        <div class="form-group">
+            <label for="item_number">Navi photo</label>
+        <input type="text" id="item_number" name="navis_photo" class="form-control" value="{{$lesson->navis_photo}}">
+        </div>
+
+        <div class="form-group">
+            <label for="item_number">Video URL</label>
+        <input type="text" id="item_number" name="video" class="form-control" value="{{$lesson->video}}">
+        </div>
+
         <!-- file 追加 -->
         <div class="col-sm-6">
-            <label>画像</label>
+            <label>Lesson photo</label>
             <input type="file" name="photo">
         </div>
 

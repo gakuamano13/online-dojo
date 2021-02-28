@@ -24,10 +24,46 @@
                 説明
                     <input type="text" name="text" class="form-control">
                 </div>
+                <div class="col-sm-6">
+                金額
+                    <input type="text" name="price" class="form-control">
+                </div>
+                <div class="col-sm-6">
+                開催日
+                    <input type="datetime-local" name="date" class="form-control">
+                </div>
+                <div class="col-sm-6">
+                Teacher ID
+                    <input type="text" name="teachers_id" class="form-control">
+                </div>
+                <div class="col-sm-6">
+                Teacher Name
+                    <input type="text" name="teachers_name" class="form-control">
+                </div>
+                <div class="col-sm-6">
+                Teacher photo
+                    <input type="text" name="teachers_photo" class="form-control">
+                </div>
+                <div class="col-sm-6">
+                Navi ID
+                    <input type="text" name="navis_id" class="form-control">
+                </div>
+                <div class="col-sm-6">
+                Navi Name
+                    <input type="text" name="navis_name" class="form-control">
+                </div>
+                <div class="col-sm-6">
+                Navi photo
+                    <input type="text" name="navis_photo" class="form-control">
+                </div>
+                <div class="col-sm-6">
+                Video URL
+                    <input type="text" name="video" class="form-control">
+                </div>
                 <!-- file 追加 -->
                 <div class="col-sm-6">
                 <div>
-                    <label>写真</label>
+                    <label>Lesson photo</label>
                 </div>
                     <input type="file" name="photo">
                 </div>
@@ -54,6 +90,15 @@
                     <thead>
                         <th>タイトル</th>
                         <th>説明</th>
+                        <th>金額</th>
+                        <th>開催日</th>
+                        <th>教ID</th>
+                        <th>教Name</th>
+                        <th>教photo</th>
+                        <th>導ID</th>
+                        <th>導Name</th>
+                        <th>導photo</th>
+                        <th>VideoURL</th>
                         <th>更新</th>
                         <th>削除</th>
                     </thead>
@@ -68,6 +113,33 @@
                                 </td>
                                 <td class="table-text">
                                     <div>{{ $lesson->text }}</div>
+                                </td>
+                                <td class="table-text">
+                                    <div>{{ $lesson->price }}</div>
+                                </td>
+                                <td class="table-text">
+                                    <div>{{ $lesson->date }}</div>
+                                </td>
+                                <td class="table-text">
+                                    <div>{{ $lesson->teachers_id }}</div>
+                                </td>
+                                <td class="table-text">
+                                    <div>{{ $lesson->teachers_name }}</div>
+                                </td>
+                                <td class="table-text">
+                                    <div>{{ $lesson->teachers_photo }}</div>
+                                </td>
+                                <td class="table-text">
+                                    <div>{{ $lesson->navis_id }}</div>
+                                </td>
+                                <td class="table-text">
+                                    <div>{{ $lesson->navis_name }}</div>
+                                </td>
+                                <td class="table-text">
+                                    <div>{{ $lesson->navis_photo }}</div>
+                                </td>
+                                <td class="table-text">
+                                    <div>{{ $lesson->video }}</div>
                                 </td>
 
                                 <!-- 更新ボタン -->

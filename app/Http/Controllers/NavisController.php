@@ -49,6 +49,10 @@ class NavisController extends Controller
         $navis = new Navi;
         $navis->name = $request->name;
         $navis->email = $request->email;
+        $navis->flag = $request->flag;
+        $navis->login_id = $request->login_id;
+        $navis->pass = $request->pass;
+        $navis->tel = $request->tel;
         $navis->photo = $filename;
         $navis->save(); 
         return redirect('/navitop');
@@ -95,6 +99,10 @@ class NavisController extends Controller
         $navis = Navi::find($request->id);
         $navis->name = $request->name;
         $navis->email = $request->email;
+        $navis->flag = $request->flag;
+        $navis->login_id = $request->login_id;
+        $navis->pass = $request->pass;
+        $navis->tel = $request->tel;
         $navis->photo = $filename;
         $navis->save(); 
         return redirect('/navitop');

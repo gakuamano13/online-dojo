@@ -24,9 +24,9 @@ class CreateLessonsTable extends Migration
             $table->integer('teachers_id')->nullable();
             $table->string('teachers_name',255)->nullable();
             $table->string('teachers_photo')->nullable();
-            $table->integer('navigators_id')->nullable();
-            $table->string('navigators_name',255)->nullable();
-            $table->string('navigators_photo')->nullable();
+            $table->integer('navis_id')->nullable();
+            $table->string('navis_name',255)->nullable();
+            $table->string('navis_photo')->nullable();
             $table->timestamps();
         });
 }
