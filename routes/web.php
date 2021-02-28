@@ -5,7 +5,11 @@ use App\Lesson;
 use Illuminate\Http\Request;
 
 Route::get('/', function () {
-    return view('top');
+    return view('index');
+});
+
+Route::get('/mastertop', function () {
+    return view('mastertop');
 });
 
 

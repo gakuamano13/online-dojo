@@ -13,7 +13,7 @@ class TeachersController extends Controller
     public function index()
     {
         $teachers = Teacher::orderBy('created_at', 'desc')->paginate(3);
-        return view('teachers/teachers', [
+        return view('master/teachers/teachers', [
             'teachers' => $teachers
         ]);
     }
@@ -60,7 +60,7 @@ class TeachersController extends Controller
     //更新画面
     public function edit(Teacher $teachers)
     {
-        return view('teachers/teachersedit', ['teacher' => $teachers]);
+        return view('master/teachers/teachersedit', ['teacher' => $teachers]);
     }
 
 
