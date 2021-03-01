@@ -17,6 +17,6 @@
         <a href="{{ url('/lessontop') }}">Lesson Top</a>
         <a href="{{ url('/teachertop') }}">Teacher Top</a>
         <a href="{{ url('/navitop') }}">Navi Top</a>
-        <iframe allow="camera; microphone; fullscreen; display-capture" src="https://meet.jit.si/kick01" style="height: 800px; width: 100%; border: 0px;"></iframe>
+        <a href="{{ url('/meeting') }}">Meeting Video</a>
     </body>
 </html>

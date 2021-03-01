@@ -11,6 +11,9 @@ Route::get('/', function () {
 Route::get('/mastertop', function () {
     return view('mastertop');
 });
+Route::get('meeting', function () {
+    return view('master/meeting');
+});
 
 
 //表示
