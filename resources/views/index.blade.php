@@ -18,6 +18,7 @@
 <h1>index</h1>
 <h2>Cooooooool!!!</h2>
 
+
 <a href="{{ url('/mastertop') }}">Master Top</a>
     </body>
 </html>

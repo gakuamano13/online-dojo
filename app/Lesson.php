@@ -15,6 +15,8 @@ class Lesson extends Model
         'text',
         'price',
         'date',
+        'url',
+        'pass',
         'photo',
         'video',
         'teachers_id',

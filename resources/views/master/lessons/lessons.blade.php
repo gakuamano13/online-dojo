@@ -32,6 +32,14 @@
                     <input type="datetime-local" name="date" class="form-control">
                 </div>
                 <div class="col-sm-6">
+                Lesson URL
+                    <input type="text" name="url" class="form-control">
+                </div>
+                <div class="col-sm-6">
+                Lesson pass
+                    <input type="text" name="pass" class="form-control">
+                </div>
+                <div class="col-sm-6">
                 Teacher ID
                     <input type="text" name="teachers_id" class="form-control">
                 </div>
@@ -92,6 +100,8 @@
                         <th>説明</th>
                         <th>金額</th>
                         <th>開催日</th>
+                        <th>LessonURL</th>
+                        <th>LessonPass</th>
                         <th>教ID</th>
                         <th>教Name</th>
                         <th>教photo</th>
@@ -121,6 +131,12 @@
                                 </td>
                                 <td class="table-text">
                                     <div>{{ $lesson->date }}</div>
+                                </td>
+                                <td class="table-text">
+                                    <div>{{ $lesson->url }}</div>
+                                </td>
+                                <td class="table-text">
+                                    <div>{{ $lesson->pass }}</div>
                                 </td>
                                 <td class="table-text">
                                     <div>{{ $lesson->teachers_id }}</div>

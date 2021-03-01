@@ -52,6 +52,8 @@ class LessonsController extends Controller
         $lessons->text = $request->text;
         $lessons->price = $request->price;
         $lessons->date = $request->date;
+        $lessons->url = $request->url;
+        $lessons->pass = $request->pass;
         $lessons->video = $request->video;
         $lessons->teachers_id = $request->teachers_id;
         $lessons->teachers_name = $request->teachers_name;
@@ -107,6 +109,8 @@ class LessonsController extends Controller
         $lessons->text = $request->text;
         $lessons->price = $request->price;
         $lessons->date = $request->date;
+        $lessons->url = $request->url;
+        $lessons->pass = $request->pass;
         $lessons->video = $request->video;
         $lessons->teachers_id = $request->teachers_id;
         $lessons->teachers_name = $request->teachers_name;
