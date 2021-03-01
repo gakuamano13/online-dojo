@@ -14,7 +14,6 @@
         <form enctype="multipart/form-data" action="{{ url('lessons') }}" method="POST" class="form-horizontal">
             {{ csrf_field() }}
 
-            <!-- タイトル -->
             <div class="form-group">
                 <div class="col-sm-6">
                 タイトル
@@ -88,6 +87,7 @@
                 <table class="table table-striped task-table">
                     <!-- テーブルヘッダ -->
                     <thead>
+                        <th>ID</th>
                         <th>タイトル</th>
                         <th>説明</th>
                         <th>金額</th>
@@ -106,7 +106,9 @@
                     <tbody>
                         @foreach ($lessons as $lesson)
                             <tr>
-                                <!-- タイトル -->
+                                <td class="table-text">
+                                    <div>{{ $lesson->id }}</div>
+                                </td>
                                 <td class="table-text">
                                     <div>{{ $lesson->title }}</div>
                                     <div> <img src="upload/{{$lesson->photo}}" width="100"></div>
