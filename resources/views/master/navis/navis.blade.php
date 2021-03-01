@@ -14,7 +14,6 @@
         <form enctype="multipart/form-data" action="{{ url('navis') }}" method="POST" class="form-horizontal">
             {{ csrf_field() }}
 
-            <!-- タイトル -->
             <div class="form-group">
                 <div class="col-sm-6">
                 Name
@@ -68,6 +67,7 @@
                 <table class="table table-striped task-table">
                     <!-- テーブルヘッダ -->
                     <thead>
+                        <th>ID</th>
                         <th>Name</th>
                         <th>e-mail</th>
                         <th>flag</th>
@@ -81,7 +81,9 @@
                     <tbody>
                         @foreach ($navis as $navi)
                             <tr>
-                                <!-- タイトル -->
+                                <td class="table-text">
+                                    <div>{{ $navi->id }}</div>
+                                </td>
                                 <td class="table-text">
                                     <div>{{ $navi->name }}</div>
                                     <div> <img src="upload/{{$navi->photo}}" width="100"></div>

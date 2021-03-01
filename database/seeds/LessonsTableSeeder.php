@@ -17,6 +17,8 @@ class LessonsTableSeeder extends Seeder
             'text' => '回し蹴りの蹴り方を説明します',
             'price' => 1000,
             'date' => '2021-03-05 13:00:00',
+            'url' => 'https://meet.jit.si/kick01',
+            'pass' => 'kick01',
             'photo' => 'kick.jpg',
             'video' => 'https://youtu.be/SZ5T0wblWvk',
             'teachers_id' => 1,

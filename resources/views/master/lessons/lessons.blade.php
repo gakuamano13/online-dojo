@@ -14,7 +14,6 @@
         <form enctype="multipart/form-data" action="{{ url('lessons') }}" method="POST" class="form-horizontal">
             {{ csrf_field() }}
 
-            <!-- タイトル -->
             <div class="form-group">
                 <div class="col-sm-6">
                 タイトル
@@ -31,6 +30,14 @@
                 <div class="col-sm-6">
                 開催日
                     <input type="datetime-local" name="date" class="form-control">
+                </div>
+                <div class="col-sm-6">
+                Lesson URL
+                    <input type="text" name="url" class="form-control">
+                </div>
+                <div class="col-sm-6">
+                Lesson pass
+                    <input type="text" name="pass" class="form-control">
                 </div>
                 <div class="col-sm-6">
                 Teacher ID
@@ -88,10 +95,13 @@
                 <table class="table table-striped task-table">
                     <!-- テーブルヘッダ -->
                     <thead>
+                        <th>ID</th>
                         <th>タイトル</th>
                         <th>説明</th>
                         <th>金額</th>
                         <th>開催日</th>
+                        <th>LessonURL</th>
+                        <th>LessonPass</th>
                         <th>教ID</th>
                         <th>教Name</th>
                         <th>教photo</th>
@@ -106,7 +116,9 @@
                     <tbody>
                         @foreach ($lessons as $lesson)
                             <tr>
-                                <!-- タイトル -->
+                                <td class="table-text">
+                                    <div>{{ $lesson->id }}</div>
+                                </td>
                                 <td class="table-text">
                                     <div>{{ $lesson->title }}</div>
                                     <div> <img src="upload/{{$lesson->photo}}" width="100"></div>
@@ -119,6 +131,12 @@
                                 </td>
                                 <td class="table-text">
                                     <div>{{ $lesson->date }}</div>
+                                </td>
+                                <td class="table-text">
+                                    <div>{{ $lesson->url }}</div>
+                                </td>
+                                <td class="table-text">
+                                    <div>{{ $lesson->pass }}</div>
                                 </td>
                                 <td class="table-text">
                                     <div>{{ $lesson->teachers_id }}</div>
