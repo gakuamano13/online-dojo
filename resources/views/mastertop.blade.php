@@ -17,6 +17,11 @@
         <a href="{{ url('/lessontop') }}">Lesson Top</a>
         <a href="{{ url('/teachertop') }}">Teacher Top</a>
         <a href="{{ url('/navitop') }}">Navi Top</a>
-        <a href="{{ url('/meeting') }}">Meeting Video</a>
+        <a href="{{ url('/meeting') }}">Meeting</a>
+        <br>
+        <a href="{{ url('/studenttop') }}">Student Top</a>
+        <a href="{{ url('/recommendtop') }}">Recommend Top</a>
+        <a href="{{ url('/noticetop') }}">Notice Top</a>
+        <a href="{{ url('/helptop') }}">Help Top</a>
     </body>
 </html>
