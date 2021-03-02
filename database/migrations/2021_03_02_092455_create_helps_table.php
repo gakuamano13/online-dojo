@@ -15,7 +15,7 @@ class CreateHelpsTable extends Migration
     {
         Schema::create('helps', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('title',255)->nullable();
+            $table->string('title')->nullable();
             $table->text('text')->nullable();
             $table->integer('flag')->nullable();
             $table->timestamps();
