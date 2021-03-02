@@ -193,4 +193,8 @@
 
     @endif
 
+    <h2>
+    <a href="{{ url('/mastertop') }}">Back to Master</a>
+    </h2>
+
 @endsection
