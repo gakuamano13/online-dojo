@@ -3,7 +3,7 @@
     <!-- Bootstrapの定形コード… -->
     <div class="card-body">
         <div class="card-title">
-            Navi Top
+            Student Top
         </div>
         
         <!-- バリデーションエラーの表示に使用-->
@@ -11,7 +11,7 @@
         <!-- バリデーションエラーの表示に使用-->
 
         <!-- 登録フォーム -->
-        <form enctype="multipart/form-data" action="{{ url('navis') }}" method="POST" class="form-horizontal">
+        <form enctype="multipart/form-data" action="{{ url('students') }}" method="POST" class="form-horizontal">
             {{ csrf_field() }}
 
             <div class="form-group">
@@ -61,7 +61,7 @@
     <!-- 既に登録されてるリスト -->
 
          <!-- 現在 -->
-         @if (count($navis) > 0)
+         @if (count($students) > 0)
         <div class="card-body">
             <div class="card-body">
                 <table class="table table-striped task-table">
@@ -79,34 +79,34 @@
                     </thead>
                     <!-- テーブル本体 -->
                     <tbody>
-                        @foreach ($navis as $navi)
+                        @foreach ($students as $student)
                             <tr>
                                 <td class="table-text">
-                                    <div>{{ $navi->id }}</div>
+                                    <div>{{ $student->id }}</div>
                                 </td>
                                 <td class="table-text">
-                                    <div>{{ $navi->name }}</div>
-                                    <div> <img src="upload/{{$navi->photo}}" width="100"></div>
+                                    <div>{{ $student->name }}</div>
+                                    <div> <img src="upload/{{$student->photo}}" width="100"></div>
                                 </td>
                                 <td class="table-text">
-                                    <div>{{ $navi->email }}</div>
+                                    <div>{{ $student->email }}</div>
                                 </td>
                                 <td class="table-text">
-                                    <div>{{ $navi->flag }}</div>
+                                    <div>{{ $student->flag }}</div>
                                 </td>
                                 <td class="table-text">
-                                    <div>{{ $navi->login_id }}</div>
+                                    <div>{{ $student->login_id }}</div>
                                 </td>
                                 <td class="table-text">
-                                    <div>{{ $navi->pass }}</div>
+                                    <div>{{ $student->pass }}</div>
                                 </td>
                                 <td class="table-text">
-                                    <div>{{ $navi->tel }}</div>
+                                    <div>{{ $student->tel }}</div>
                                 </td>
 
                                 <!-- 更新ボタン -->
                                 <td>
-                                    <form action="{{ url('navisedit/'.$navi->id) }}" method="POST">
+                                    <form action="{{ url('studentsedit/'.$student->id) }}" method="POST">
                                     {{ csrf_field() }}
                                         <button type="submit" class="btn btn-primary">
                                         update
@@ -115,7 +115,7 @@
                                 </td>
                                 <!-- 削除ボタン -->
                                 <td>
-                                    <form action="{{ url('navi/'.$navi->id) }}" method="POST">
+                                    <form action="{{ url('student/'.$student->id) }}" method="POST">
                                         {{ csrf_field() }}
                                         {{ method_field('delete') }}
                                         <button type="submit" class="btn btn-danger">
@@ -131,7 +131,7 @@
         </div>
         <div class="row">
             <div class="col-md-4 offset-md-4">
-            {{ $navis->links()}}
+            {{ $students->links()}}
             </div>
         </div>
 

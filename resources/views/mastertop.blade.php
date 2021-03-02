@@ -14,9 +14,18 @@
     </head>
     <body>
         <h1>Master Top</h1>
+        <h3>
         <a href="{{ url('/lessontop') }}">Lesson Top</a>
+        <br>
         <a href="{{ url('/teachertop') }}">Teacher Top</a>
         <a href="{{ url('/navitop') }}">Navi Top</a>
-        <iframe allow="camera; microphone; fullscreen; display-capture" src="https://meet.jit.si/kick01" style="height: 800px; width: 100%; border: 0px;"></iframe>
+        <a href="{{ url('/studenttop') }}">Student Top</a>
+        <br>
+        <a href="{{ url('/recommendtop') }}">Recommend Top</a>
+        <a href="{{ url('/noticetop') }}">Notice Top</a>
+        <a href="{{ url('/helptop') }}">Help Top</a>
+        <br>
+        <a href="{{ url('/meeting') }}">Meeting</a>
+        </h3>
     </body>
 </html>

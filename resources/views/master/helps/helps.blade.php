@@ -3,7 +3,7 @@
     <!-- Bootstrapの定形コード… -->
     <div class="card-body">
         <div class="card-title">
-            Navi Top
+            Help Top
         </div>
         
         <!-- バリデーションエラーの表示に使用-->
@@ -11,40 +11,21 @@
         <!-- バリデーションエラーの表示に使用-->
 
         <!-- 登録フォーム -->
-        <form enctype="multipart/form-data" action="{{ url('navis') }}" method="POST" class="form-horizontal">
+        <form enctype="multipart/form-data" action="{{ url('helps') }}" method="POST" class="form-horizontal">
             {{ csrf_field() }}
 
             <div class="form-group">
                 <div class="col-sm-6">
-                Name
-                    <input type="text" name="name" class="form-control">
+                title
+                    <input type="text" name="title" class="form-control">
                 </div>
                 <div class="col-sm-6">
-                e-mail
-                    <input type="text" name="email" class="form-control">
+                text
+                    <input type="text" name="text" class="form-control">
                 </div>
                 <div class="col-sm-6">
                 flag
                     <input type="text" name="flag" class="form-control">
-                </div>
-                <div class="col-sm-6">
-                Login ID
-                    <input type="text" name="login_id" class="form-control">
-                </div>
-                <div class="col-sm-6">
-                pass
-                    <input type="text" name="pass" class="form-control">
-                </div>
-                <div class="col-sm-6">
-                Tel
-                    <input type="text" name="tel" class="form-control">
-                </div>
-                <!-- file 追加 -->
-                <div class="col-sm-6">
-                <div>
-                    <label>photo</label>
-                </div>
-                    <input type="file" name="photo">
                 </div>
             </div>
 
@@ -61,52 +42,39 @@
     <!-- 既に登録されてるリスト -->
 
          <!-- 現在 -->
-         @if (count($navis) > 0)
+         @if (count($helps) > 0)
         <div class="card-body">
             <div class="card-body">
                 <table class="table table-striped task-table">
                     <!-- テーブルヘッダ -->
                     <thead>
                         <th>ID</th>
-                        <th>Name</th>
-                        <th>e-mail</th>
+                        <th>title</th>
+                        <th>text</th>
                         <th>flag</th>
-                        <th>loginID</th>
-                        <th>pass</th>
-                        <th>tel</th>
                         <th>更新</th>
                         <th>削除</th>
                     </thead>
                     <!-- テーブル本体 -->
                     <tbody>
-                        @foreach ($navis as $navi)
+                        @foreach ($helps as $help)
                             <tr>
                                 <td class="table-text">
-                                    <div>{{ $navi->id }}</div>
+                                    <div>{{ $help->id }}</div>
                                 </td>
                                 <td class="table-text">
-                                    <div>{{ $navi->name }}</div>
-                                    <div> <img src="upload/{{$navi->photo}}" width="100"></div>
+                                    <div>{{ $help->title }}</div>
                                 </td>
                                 <td class="table-text">
-                                    <div>{{ $navi->email }}</div>
+                                    <div>{{ $help->text }}</div>
                                 </td>
                                 <td class="table-text">
-                                    <div>{{ $navi->flag }}</div>
-                                </td>
-                                <td class="table-text">
-                                    <div>{{ $navi->login_id }}</div>
-                                </td>
-                                <td class="table-text">
-                                    <div>{{ $navi->pass }}</div>
-                                </td>
-                                <td class="table-text">
-                                    <div>{{ $navi->tel }}</div>
+                                    <div>{{ $help->flag }}</div>
                                 </td>
 
                                 <!-- 更新ボタン -->
                                 <td>
-                                    <form action="{{ url('navisedit/'.$navi->id) }}" method="POST">
+                                    <form action="{{ url('helpsedit/'.$help->id) }}" method="POST">
                                     {{ csrf_field() }}
                                         <button type="submit" class="btn btn-primary">
                                         update
@@ -115,7 +83,7 @@
                                 </td>
                                 <!-- 削除ボタン -->
                                 <td>
-                                    <form action="{{ url('navi/'.$navi->id) }}" method="POST">
+                                    <form action="{{ url('help/'.$help->id) }}" method="POST">
                                         {{ csrf_field() }}
                                         {{ method_field('delete') }}
                                         <button type="submit" class="btn btn-danger">
@@ -131,7 +99,7 @@
         </div>
         <div class="row">
             <div class="col-md-4 offset-md-4">
-            {{ $navis->links()}}
+            {{ $helps->links()}}
             </div>
         </div>
 
