@@ -15,6 +15,11 @@ Route::get('meeting', function () {
     return view('master/meeting');
 });
 
+// Route::get('lists', function () {
+//     return view('master/lists');
+// });
+// Route::get('/lists','ListsController@select');
+
 
 //表示
 Route::get('/lessontop', 'LessonsController@index');
