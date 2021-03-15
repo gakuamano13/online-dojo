@@ -2,7 +2,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use App\Lesson;
+use App\Teacher;
 use Validator;
 use Auth;
 
@@ -10,13 +12,41 @@ use Auth;
 class LessonsController extends Controller
 {
 
+    // public function setTeacher() {
+    //     return this.teachers == Teacher::find($this->teachers_id);
+    //     }
+
+    //   $lists = DB::table('lessons')
+    //   ->join('contacts', 'users.id', '=', 'contacts.user_id')
+    //   ->select('users.*', 'contacts.phone', 'orders.price')
+    //   ->get();
+
+        // public function mixlist(){
+        //     $lists = DB::table('teachers')
+        //     -> join('lessons', 'teachers.id', '=', 'lessons.teachers_id')
+        //     -> get();
+        // }
+
+
+
+
+
+
     //表示
     public function index()
     {
         $lessons = Lesson::orderBy('created_at', 'desc')->paginate(3);
+
+        $teachers = DB::table('lessons')
+        ->join('teachers', 'lessons.teachers_id', '=', 'teachers.id')
+        ->get();
+
         return view('master/lessons/lessons', [
-            'lessons' => $lessons
+            'lessons' => $lessons,
+            'teachers' => $teachers
         ]);
+
+        
     }
 
 

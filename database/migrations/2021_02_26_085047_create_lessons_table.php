@@ -15,7 +15,7 @@ class CreateLessonsTable extends Migration
     {
         Schema::create('lessons', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('title',255)->nullable();
+            $table->string('title')->nullable();
             $table->text('text')->nullable();
             $table->integer('price')->nullable();
             $table->datetime('date')->nullable();
@@ -24,10 +24,10 @@ class CreateLessonsTable extends Migration
             $table->string('photo')->nullable();
             $table->string('video')->nullable();
             $table->integer('teachers_id')->nullable();
-            $table->string('teachers_name',255)->nullable();
+            $table->string('teachers_name')->nullable();
             $table->string('teachers_photo')->nullable();
             $table->integer('navis_id')->nullable();
-            $table->string('navis_name',255)->nullable();
+            $table->string('navis_name')->nullable();
             $table->string('navis_photo')->nullable();
             $table->timestamps();
         });

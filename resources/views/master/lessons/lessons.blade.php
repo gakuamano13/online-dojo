@@ -142,7 +142,7 @@
                                     <div>{{ $lesson->teachers_id }}</div>
                                 </td>
                                 <td class="table-text">
-                                    <div>{{ $lesson->teachers_name }}</div>
+                                    <div>{{ $teachers->teachers.id}</div>
                                 </td>
                                 <td class="table-text">
                                     <div>{{ $lesson->teachers_photo }}</div>

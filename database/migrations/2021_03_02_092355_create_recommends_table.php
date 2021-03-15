@@ -15,7 +15,7 @@ class CreateRecommendsTable extends Migration
     {
         Schema::create('recommends', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('title',255)->nullable();
+            $table->string('title')->nullable();
             $table->integer('lessons_id')->nullable();
             $table->text('text')->nullable();
             $table->integer('flag')->nullable();
