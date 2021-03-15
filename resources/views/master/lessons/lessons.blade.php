@@ -113,6 +113,7 @@
                         <th>削除</th>
                     </thead>
                     <!-- テーブル本体 -->
+                    
                     <tbody>
                         @foreach ($lessons as $lesson)
                             <tr>
@@ -142,20 +143,10 @@
                                     <div>{{ $lesson->teachers_id }}</div>
                                 </td>
                                 <td class="table-text">
-                                    <div>{{ $teachers->teachers.id}</div>
+                                    <div>{{ $lesson->name}}</div>
                                 </td>
-                                <td class="table-text">
-                                    <div>{{ $lesson->teachers_photo }}</div>
-                                </td>
-                                <td class="table-text">
-                                    <div>{{ $lesson->navis_id }}</div>
-                                </td>
-                                <td class="table-text">
-                                    <div>{{ $lesson->navis_name }}</div>
-                                </td>
-                                <td class="table-text">
-                                    <div>{{ $lesson->navis_photo }}</div>
-                                </td>
+
+
                                 <td class="table-text">
                                     <div>{{ $lesson->video }}</div>
                                 </td>

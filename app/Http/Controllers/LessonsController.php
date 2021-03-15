@@ -35,17 +35,17 @@ class LessonsController extends Controller
     //表示
     public function index()
     {
-        $lessons = Lesson::orderBy('created_at', 'desc')->paginate(3);
 
-        $teachers = DB::table('lessons')
+        $lessons = DB::table('lessons')
         ->join('teachers', 'lessons.teachers_id', '=', 'teachers.id')
-        ->get();
+        ->orderBy('lessons.created_at', 'desc')
+        ->paginate(3);
 
         return view('master/lessons/lessons', [
             'lessons' => $lessons,
-            'teachers' => $teachers
         ]);
 
+        // dd($lessons);
         
     }
 
