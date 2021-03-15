@@ -22,11 +22,7 @@ class LessonsTableSeeder extends Seeder
             'photo' => 'kick.jpg',
             'video' => 'https://youtu.be/SZ5T0wblWvk',
             'teachers_id' => 1,
-            'teachers_name' => '泉　智', 
-            'teachers_photo' => 'teacher.jpg',
             'navis_id' => 1,
-            'navis_name' => 'izumi satoru',
-            'navis_photo' => 'navi.jpg',
             'created_at' => '2021-02-27 17:31:38',
             'updated_at' => '2021-02-27 17:31:38',
         ]);

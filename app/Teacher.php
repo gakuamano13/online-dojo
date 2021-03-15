@@ -9,14 +9,14 @@ class Teacher extends Model
     protected $table = 'teachers';
 
     protected $fillable = [
-        'id',
-        'name',
-        'email',
-        'flag',
-        'login_id',
-        'pass',
-        'tel',
-        'photo',
+        'teachers_id',
+        'teachers_name',
+        'teachers_email',
+        'teachers_flag',
+        'teachers_login_id',
+        'teachers_pass',
+        'teachers_tel',
+        'teachers_photo',
         'created_at',
         'updated_at',
     ];

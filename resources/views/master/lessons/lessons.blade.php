@@ -44,24 +44,8 @@
                     <input type="text" name="teachers_id" class="form-control">
                 </div>
                 <div class="col-sm-6">
-                Teacher Name
-                    <input type="text" name="teachers_name" class="form-control">
-                </div>
-                <div class="col-sm-6">
-                Teacher photo
-                    <input type="text" name="teachers_photo" class="form-control">
-                </div>
-                <div class="col-sm-6">
                 Navi ID
                     <input type="text" name="navis_id" class="form-control">
-                </div>
-                <div class="col-sm-6">
-                Navi Name
-                    <input type="text" name="navis_name" class="form-control">
-                </div>
-                <div class="col-sm-6">
-                Navi photo
-                    <input type="text" name="navis_photo" class="form-control">
                 </div>
                 <div class="col-sm-6">
                 Video URL
@@ -143,7 +127,7 @@
                                     <div>{{ $lesson->teachers_id }}</div>
                                 </td>
                                 <td class="table-text">
-                                    <div>{{ $lesson->name}}</div>
+                                    <div>{{ $lesson->teachers_name}}</div>
                                 </td>
 
 

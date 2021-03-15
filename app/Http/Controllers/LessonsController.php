@@ -12,32 +12,13 @@ use Auth;
 class LessonsController extends Controller
 {
 
-    // public function setTeacher() {
-    //     return this.teachers == Teacher::find($this->teachers_id);
-    //     }
-
-    //   $lists = DB::table('lessons')
-    //   ->join('contacts', 'users.id', '=', 'contacts.user_id')
-    //   ->select('users.*', 'contacts.phone', 'orders.price')
-    //   ->get();
-
-        // public function mixlist(){
-        //     $lists = DB::table('teachers')
-        //     -> join('lessons', 'teachers.id', '=', 'lessons.teachers_id')
-        //     -> get();
-        // }
-
-
-
-
-
 
     //表示
     public function index()
     {
 
         $lessons = DB::table('lessons')
-        ->join('teachers', 'lessons.teachers_id', '=', 'teachers.id')
+        ->join('teachers', 'lessons.teachers_id', '=', 'teachers.teachers_id')
         ->orderBy('lessons.created_at', 'desc')
         ->paginate(3);
 
@@ -86,11 +67,7 @@ class LessonsController extends Controller
         $lessons->pass = $request->pass;
         $lessons->video = $request->video;
         $lessons->teachers_id = $request->teachers_id;
-        $lessons->teachers_name = $request->teachers_name;
-        $lessons->teachers_photo = $request->teachers_photo;
         $lessons->navis_id = $request->navis_id;
-        $lessons->navis_name = $request->navis_name;
-        $lessons->navis_photo = $request->navis_photo;
         $lessons->photo = $filename;
         $lessons->save(); 
         return redirect('/lessontop');
@@ -143,11 +120,7 @@ class LessonsController extends Controller
         $lessons->pass = $request->pass;
         $lessons->video = $request->video;
         $lessons->teachers_id = $request->teachers_id;
-        $lessons->teachers_name = $request->teachers_name;
-        $lessons->teachers_photo = $request->teachers_photo;
         $lessons->navis_id = $request->navis_id;
-        $lessons->navis_name = $request->navis_name;
-        $lessons->navis_photo = $request->navis_photo;
         $lessons->photo = $filename;
         $lessons->save(); 
         return redirect('/lessontop');

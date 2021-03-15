@@ -17,34 +17,34 @@
             <div class="form-group">
                 <div class="col-sm-6">
                 Name
-                    <input type="text" name="name" class="form-control">
+                    <input type="text" name="teachers_name" class="form-control">
                 </div>
                 <div class="col-sm-6">
                 e-mail
-                    <input type="text" name="email" class="form-control">
+                    <input type="text" name="teachers_email" class="form-control">
                 </div>
                 <div class="col-sm-6">
                 flag
-                    <input type="text" name="flag" class="form-control">
+                    <input type="text" name="teachers_flag" class="form-control">
                 </div>
                 <div class="col-sm-6">
                 Login ID
-                    <input type="text" name="login_id" class="form-control">
+                    <input type="text" name="teachers_login_id" class="form-control">
                 </div>
                 <div class="col-sm-6">
                 pass
-                    <input type="text" name="pass" class="form-control">
+                    <input type="text" name="teachers_pass" class="form-control">
                 </div>
                 <div class="col-sm-6">
                 Tel
-                    <input type="text" name="tel" class="form-control">
+                    <input type="text" name="teachers_tel" class="form-control">
                 </div>
                 <!-- file 追加 -->
                 <div class="col-sm-6">
                 <div>
                     <label>photo</label>
                 </div>
-                    <input type="file" name="photo">
+                    <input type="file" name="teachers_photo">
                 </div>
             </div>
 
@@ -82,31 +82,31 @@
                         @foreach ($teachers as $teacher)
                             <tr>
                                 <td class="table-text">
-                                    <div>{{ $teacher->id }}</div>
+                                    <div>{{ $teacher->teachers_id }}</div>
                                 </td>
                                 <td class="table-text">
-                                    <div>{{ $teacher->name }}</div>
-                                    <div> <img src="upload/{{$teacher->photo}}" width="100"></div>
+                                    <div>{{ $teacher->teachers_name }}</div>
+                                    <div> <img src="upload/{{$teacher->teachers_photo}}" width="100"></div>
                                 </td>
                                 <td class="table-text">
-                                    <div>{{ $teacher->email }}</div>
+                                    <div>{{ $teacher->teachers_email }}</div>
                                 </td>
                                 <td class="table-text">
-                                    <div>{{ $teacher->flag }}</div>
+                                    <div>{{ $teacher->teachers_flag }}</div>
                                 </td>
                                 <td class="table-text">
-                                    <div>{{ $teacher->login_id }}</div>
+                                    <div>{{ $teacher->teachers_login_id }}</div>
                                 </td>
                                 <td class="table-text">
-                                    <div>{{ $teacher->pass }}</div>
+                                    <div>{{ $teacher->teachers_pass }}</div>
                                 </td>
                                 <td class="table-text">
-                                    <div>{{ $teacher->tel }}</div>
+                                    <div>{{ $teacher->teachers_tel }}</div>
                                 </td>
 
                                 <!-- 更新ボタン -->
                                 <td>
-                                    <form action="{{ url('teachersedit/'.$teacher->id) }}" method="POST">
+                                    <form action="{{ url('teachersedit/'.$teacher->teachers_id) }}" method="POST">
                                     {{ csrf_field() }}
                                         <button type="submit" class="btn btn-primary">
                                         update
@@ -115,7 +115,7 @@
                                 </td>
                                 <!-- 削除ボタン -->
                                 <td>
-                                    <form action="{{ url('teacher/'.$teacher->id) }}" method="POST">
+                                    <form action="{{ url('teacher/'.$teacher->teachers_id) }}" method="POST">
                                         {{ csrf_field() }}
                                         {{ method_field('delete') }}
                                         <button type="submit" class="btn btn-danger">

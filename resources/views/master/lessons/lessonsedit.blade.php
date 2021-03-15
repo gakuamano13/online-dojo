@@ -32,28 +32,8 @@
         </div>
 
         <div class="form-group">
-            <label for="item_number">Teacher Name</label>
-        <input type="text" id="item_number" name="teachers_name" class="form-control" value="{{$lesson->teachers_name}}">
-        </div>
-
-        <div class="form-group">
-            <label for="item_number">Teacher photo</label>
-        <input type="text" id="item_number" name="teachers_photo" class="form-control" value="{{$lesson->teachers_photo}}">
-        </div>
-
-        <div class="form-group">
             <label for="item_number">Navi ID</label>
         <input type="text" id="item_number" name="navis_id" class="form-control" value="{{$lesson->navis_id}}">
-        </div>
-
-        <div class="form-group">
-            <label for="item_number">Navi Name</label>
-        <input type="text" id="item_number" name="navis_name" class="form-control" value="{{$lesson->navis_name}}">
-        </div>
-
-        <div class="form-group">
-            <label for="item_number">Navi photo</label>
-        <input type="text" id="item_number" name="navis_photo" class="form-control" value="{{$lesson->navis_photo}}">
         </div>
 
         <div class="form-group">
