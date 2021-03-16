@@ -15,6 +15,7 @@ class Lesson extends Model
         'text',
         'price',
         'date',
+        'week',
         'url',
         'pass',
         'photo',

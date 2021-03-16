@@ -14,14 +14,14 @@ class CreateNavisTable extends Migration
     public function up()
     {
         Schema::create('navis', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->string('name')->nullable();
-            $table->string('email')->unique();
-            $table->integer('flag')->nullable();
-            $table->string('login_id')->nullable();
-            $table->string('pass')->nullable();
-            $table->text('tel')->nullable();
-            $table->string('photo')->nullable();
+            $table->bigIncrements('navis_id');
+            $table->string('navis_name')->nullable();
+            $table->string('navis_email')->unique();
+            $table->integer('navis_flag')->nullable();
+            $table->string('navis_login_id')->nullable();
+            $table->string('navis_pass')->nullable();
+            $table->text('navis_tel')->nullable();
+            $table->string('navis_photo')->nullable();
             $table->timestamps();
         });
     }

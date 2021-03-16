@@ -32,6 +32,10 @@
                     <input type="datetime-local" name="date" class="form-control">
                 </div>
                 <div class="col-sm-6">
+                週
+                    <input type="text" name="week" class="form-control">
+                </div>
+                <div class="col-sm-6">
                 Lesson URL
                     <input type="text" name="url" class="form-control">
                 </div>
@@ -84,6 +88,7 @@
                         <th>説明</th>
                         <th>金額</th>
                         <th>開催日</th>
+                        <th>週</th>
                         <th>LessonURL</th>
                         <th>LessonPass</th>
                         <th>教ID</th>
@@ -118,6 +123,9 @@
                                     <div>{{ $lesson->date }}</div>
                                 </td>
                                 <td class="table-text">
+                                    <div>{{ $lesson->week }}</div>
+                                </td>
+                                <td class="table-text">
                                     <div>{{ $lesson->url }}</div>
                                 </td>
                                 <td class="table-text">
@@ -129,8 +137,18 @@
                                 <td class="table-text">
                                     <div>{{ $lesson->teachers_name}}</div>
                                 </td>
-
-
+                                <td class="table-text">
+                                    <div>{{ $lesson->teachers_photo}}</div>
+                                </td>
+                                <td class="table-text">
+                                    <div>{{ $lesson->navis_id }}</div>
+                                </td>
+                                <td class="table-text">
+                                    <div>{{ $lesson->navis_name}}</div>
+                                </td>
+                                <td class="table-text">
+                                    <div>{{ $lesson->navis_photo}}</div>
+                                </td>
                                 <td class="table-text">
                                     <div>{{ $lesson->video }}</div>
                                 </td>

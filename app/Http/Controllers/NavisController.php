@@ -24,7 +24,7 @@ class NavisController extends Controller
     {
         //バリデーション
         $validator = Validator::make($request->all(), [
-            'email' => 'required|min:3|max:255',
+            'navis_email' => 'required|min:3|max:255',
         ]);
         //バリデーション:エラー 
         if ($validator->fails()) {
@@ -47,13 +47,13 @@ class NavisController extends Controller
 
         //以下に登録処理を記述（Eloquentモデル）
         $navis = new Navi;
-        $navis->name = $request->name;
-        $navis->email = $request->email;
-        $navis->flag = $request->flag;
-        $navis->login_id = $request->login_id;
-        $navis->pass = $request->pass;
-        $navis->tel = $request->tel;
-        $navis->photo = $filename;
+        $navis->navis_name = $request->navis_name;
+        $navis->navis_email = $request->navis_email;
+        $navis->navis_flag = $request->navis_flag;
+        $navis->navis_login_id = $request->navis_login_id;
+        $navis->navis_pass = $request->navis_pass;
+        $navis->navis_tel = $request->navis_tel;
+        $navis->navis_photo = $filename;
         $navis->save(); 
         return redirect('/navitop');
 
@@ -73,8 +73,8 @@ class NavisController extends Controller
     {
         //バリデーション
         $validator = Validator::make($request->all(), [
-            'id' => 'required',
-            'email' => 'required|min:3|max:255',
+            'navis_id' => 'required',
+            'navis_email' => 'required|min:3|max:255',
         ]);
         //バリデーション:エラー 
         if ($validator->fails()) {
@@ -96,14 +96,14 @@ class NavisController extends Controller
         }
 
         //以下に登録処理を記述（Eloquentモデル）
-        $navis = Navi::find($request->id);
-        $navis->name = $request->name;
-        $navis->email = $request->email;
-        $navis->flag = $request->flag;
-        $navis->login_id = $request->login_id;
-        $navis->pass = $request->pass;
-        $navis->tel = $request->tel;
-        $navis->photo = $filename;
+        $navis = Navi::find($request->navis_id);
+        $navis->navis_name = $request->navis_name;
+        $navis->navis_email = $request->navis_email;
+        $navis->navis_flag = $request->navis_flag;
+        $navis->navis_login_id = $request->navis_login_id;
+        $navis->navis_pass = $request->navis_pass;
+        $navis->navis_tel = $request->navis_tel;
+        $navis->navis_photo = $filename;
         $navis->save(); 
         return redirect('/navitop');
     } 

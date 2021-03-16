@@ -18,7 +18,8 @@ class LessonsController extends Controller
     {
 
         $lessons = DB::table('lessons')
-        ->join('teachers', 'lessons.teachers_id', '=', 'teachers.teachers_id')
+        ->leftJoin('teachers', 'lessons.teachers_id', '=', 'teachers.teachers_id')
+        ->leftJoin('navis', 'lessons.navis_id', '=', 'navis.navis_id')
         ->orderBy('lessons.created_at', 'desc')
         ->paginate(3);
 
@@ -36,7 +37,7 @@ class LessonsController extends Controller
     {
         //バリデーション
         $validator = Validator::make($request->all(), [
-            'title' => 'required|min:3|max:255',
+            'title' => 'required|max:255',
         ]);
         //バリデーション:エラー 
         if ($validator->fails()) {
@@ -63,6 +64,7 @@ class LessonsController extends Controller
         $lessons->text = $request->text;
         $lessons->price = $request->price;
         $lessons->date = $request->date;
+        $lessons->week = $request->week;
         $lessons->url = $request->url;
         $lessons->pass = $request->pass;
         $lessons->video = $request->video;
@@ -89,7 +91,7 @@ class LessonsController extends Controller
         //バリデーション
         $validator = Validator::make($request->all(), [
             'id' => 'required',
-            'title' => 'required|min:3|max:255',
+            'title' => 'required|max:255',
         ]);
         //バリデーション:エラー 
         if ($validator->fails()) {
@@ -116,6 +118,7 @@ class LessonsController extends Controller
         $lessons->text = $request->text;
         $lessons->price = $request->price;
         $lessons->date = $request->date;
+        $lessons->week = $request->week;
         $lessons->url = $request->url;
         $lessons->pass = $request->pass;
         $lessons->video = $request->video;

@@ -19,6 +19,7 @@ class CreateLessonsTable extends Migration
             $table->text('text')->nullable();
             $table->integer('price')->nullable();
             $table->datetime('date')->nullable();
+            $table->integer('week')->nullable();
             $table->string('url')->nullable();
             $table->string('pass')->nullable();
             $table->string('photo')->nullable();

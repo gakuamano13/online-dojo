@@ -17,34 +17,34 @@
             <div class="form-group">
                 <div class="col-sm-6">
                 Name
-                    <input type="text" name="name" class="form-control">
+                    <input type="text" name="navis_name" class="form-control">
                 </div>
                 <div class="col-sm-6">
                 e-mail
-                    <input type="text" name="email" class="form-control">
+                    <input type="text" name="navis_email" class="form-control">
                 </div>
                 <div class="col-sm-6">
                 flag
-                    <input type="text" name="flag" class="form-control">
+                    <input type="text" name="navis_flag" class="form-control">
                 </div>
                 <div class="col-sm-6">
                 Login ID
-                    <input type="text" name="login_id" class="form-control">
+                    <input type="text" name="navis_login_id" class="form-control">
                 </div>
                 <div class="col-sm-6">
                 pass
-                    <input type="text" name="pass" class="form-control">
+                    <input type="text" name="navis_pass" class="form-control">
                 </div>
                 <div class="col-sm-6">
                 Tel
-                    <input type="text" name="tel" class="form-control">
+                    <input type="text" name="navis_tel" class="form-control">
                 </div>
                 <!-- file 追加 -->
                 <div class="col-sm-6">
                 <div>
                     <label>photo</label>
                 </div>
-                    <input type="file" name="photo">
+                    <input type="file" name="navis_photo">
                 </div>
             </div>
 
@@ -82,31 +82,31 @@
                         @foreach ($navis as $navi)
                             <tr>
                                 <td class="table-text">
-                                    <div>{{ $navi->id }}</div>
+                                    <div>{{ $navi->navis_id }}</div>
                                 </td>
                                 <td class="table-text">
-                                    <div>{{ $navi->name }}</div>
-                                    <div> <img src="upload/{{$navi->photo}}" width="100"></div>
+                                    <div>{{ $navi->navis_name }}</div>
+                                    <div> <img src="upload/{{$navi->navis_photo}}" width="100"></div>
                                 </td>
                                 <td class="table-text">
-                                    <div>{{ $navi->email }}</div>
+                                    <div>{{ $navi->navis_email }}</div>
                                 </td>
                                 <td class="table-text">
-                                    <div>{{ $navi->flag }}</div>
+                                    <div>{{ $navi->navis_flag }}</div>
                                 </td>
                                 <td class="table-text">
-                                    <div>{{ $navi->login_id }}</div>
+                                    <div>{{ $navi->navis_login_id }}</div>
                                 </td>
                                 <td class="table-text">
-                                    <div>{{ $navi->pass }}</div>
+                                    <div>{{ $navi->navis_pass }}</div>
                                 </td>
                                 <td class="table-text">
-                                    <div>{{ $navi->tel }}</div>
+                                    <div>{{ $navi->navis_tel }}</div>
                                 </td>
 
                                 <!-- 更新ボタン -->
                                 <td>
-                                    <form action="{{ url('navisedit/'.$navi->id) }}" method="POST">
+                                    <form action="{{ url('navisedit/'.$navi->navis_id) }}" method="POST">
                                     {{ csrf_field() }}
                                         <button type="submit" class="btn btn-primary">
                                         update
@@ -115,7 +115,7 @@
                                 </td>
                                 <!-- 削除ボタン -->
                                 <td>
-                                    <form action="{{ url('navi/'.$navi->id) }}" method="POST">
+                                    <form action="{{ url('navi/'.$navi->navis_id) }}" method="POST">
                                         {{ csrf_field() }}
                                         {{ method_field('delete') }}
                                         <button type="submit" class="btn btn-danger">

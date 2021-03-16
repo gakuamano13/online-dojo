@@ -27,6 +27,11 @@
         </div>
 
         <div class="form-group">
+            <label for="item_number">週</label>
+        <input type="text" id="item_number" name="week" class="form-control" value="{{$lesson->week}}">
+        </div>
+
+        <div class="form-group">
             <label for="item_number">Teacher ID</label>
         <input type="text" id="item_number" name="teachers_id" class="form-control" value="{{$lesson->teachers_id}}">
         </div>
