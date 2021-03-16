@@ -16,7 +16,6 @@ class LessonsController extends Controller
     //表示
     public function index()
     {
-
         $lessons = DB::table('lessons')
         ->leftJoin('teachers', 'lessons.teachers_id', '=', 'teachers.teachers_id')
         ->leftJoin('navis', 'lessons.navis_id', '=', 'navis.navis_id')
@@ -26,9 +25,6 @@ class LessonsController extends Controller
         return view('master/lessons/lessons', [
             'lessons' => $lessons,
         ]);
-
-        // dd($lessons);
-        
     }
 
 

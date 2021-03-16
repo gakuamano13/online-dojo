@@ -138,7 +138,7 @@
                                     <div>{{ $lesson->teachers_name}}</div>
                                 </td>
                                 <td class="table-text">
-                                    <div>{{ $lesson->teachers_photo}}</div>
+                                    <div> <img src="upload/{{$lesson->teachers_photo}}" width="100"></div>
                                 </td>
                                 <td class="table-text">
                                     <div>{{ $lesson->navis_id }}</div>
@@ -147,7 +147,7 @@
                                     <div>{{ $lesson->navis_name}}</div>
                                 </td>
                                 <td class="table-text">
-                                    <div>{{ $lesson->navis_photo}}</div>
+                                    <div> <img src="upload/{{$lesson->navis_photo}}" width="100"></div>
                                 </td>
                                 <td class="table-text">
                                     <div>{{ $lesson->video }}</div>
