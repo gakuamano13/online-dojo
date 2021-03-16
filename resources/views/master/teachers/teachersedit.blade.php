@@ -8,38 +8,38 @@
 
         <div class="form-group">
             <label for="item_name">Name</label>
-            <input type="text" id="item_name" name="name" class="form-control" value="{{$teacher->name}}">
+            <input type="text" id="item_name" name="teachers_name" class="form-control" value="{{$teacher->teachers_name}}">
         </div>
 
         <div class="form-group">
             <label for="item_number">e-mail</label>
-        <input type="text" id="item_number" name="email" class="form-control" value="{{$teacher->email}}">
+        <input type="text" id="item_number" name="teachers_email" class="form-control" value="{{$teacher->teachers_email}}">
         </div>
 
         <div class="form-group">
             <label for="item_number">flag</label>
-        <input type="text" id="item_number" name="flag" class="form-control" value="{{$teacher->flag}}">
+        <input type="text" id="item_number" name="teachers_flag" class="form-control" value="{{$teacher->teachers_flag}}">
         </div>
 
         <div class="form-group">
             <label for="item_number">login id</label>
-        <input type="text" id="item_number" name="login_id" class="form-control" value="{{$teacher->login_id}}">
+        <input type="text" id="item_number" name="teachers_login_id" class="form-control" value="{{$teacher->teachers_login_id}}">
         </div>
 
         <div class="form-group">
             <label for="item_number">pass</label>
-        <input type="text" id="item_number" name="pass" class="form-control" value="{{$teacher->pass}}">
+        <input type="text" id="item_number" name="teachers_pass" class="form-control" value="{{$teacher->teachers_pass}}">
         </div>
 
         <div class="form-group">
             <label for="item_number">tel</label>
-        <input type="text" id="item_number" name="tel" class="form-control" value="{{$teacher->tel}}">
+        <input type="text" id="item_number" name="teachers_tel" class="form-control" value="{{$teacher->teachers_tel}}">
         </div>
 
         <!-- file 追加 -->
         <div class="col-sm-6">
             <label>photo</label>
-            <input type="file" name="photo">
+            <input type="file" name="teachers_photo">
         </div>
 
         <!-- Saveボタン/Backボタン -->
@@ -52,7 +52,7 @@
         <!--/ Saveボタン/Backボタン -->
             
             <!-- id値を送信 -->
-            <input type="hidden" name="id" value="{{$teacher->id}}">
+            <input type="hidden" name="teachers_id" value="{{$teacher->teachers_id}}">
             <!--/ id値を送信 -->
             
             <!-- CSRF -->

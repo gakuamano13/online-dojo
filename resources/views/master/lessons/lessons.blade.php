@@ -32,6 +32,10 @@
                     <input type="datetime-local" name="date" class="form-control">
                 </div>
                 <div class="col-sm-6">
+                週
+                    <input type="text" name="week" class="form-control">
+                </div>
+                <div class="col-sm-6">
                 Lesson URL
                     <input type="text" name="url" class="form-control">
                 </div>
@@ -44,24 +48,8 @@
                     <input type="text" name="teachers_id" class="form-control">
                 </div>
                 <div class="col-sm-6">
-                Teacher Name
-                    <input type="text" name="teachers_name" class="form-control">
-                </div>
-                <div class="col-sm-6">
-                Teacher photo
-                    <input type="text" name="teachers_photo" class="form-control">
-                </div>
-                <div class="col-sm-6">
                 Navi ID
                     <input type="text" name="navis_id" class="form-control">
-                </div>
-                <div class="col-sm-6">
-                Navi Name
-                    <input type="text" name="navis_name" class="form-control">
-                </div>
-                <div class="col-sm-6">
-                Navi photo
-                    <input type="text" name="navis_photo" class="form-control">
                 </div>
                 <div class="col-sm-6">
                 Video URL
@@ -100,6 +88,7 @@
                         <th>説明</th>
                         <th>金額</th>
                         <th>開催日</th>
+                        <th>週</th>
                         <th>LessonURL</th>
                         <th>LessonPass</th>
                         <th>教ID</th>
@@ -113,6 +102,7 @@
                         <th>削除</th>
                     </thead>
                     <!-- テーブル本体 -->
+                    
                     <tbody>
                         @foreach ($lessons as $lesson)
                             <tr>
@@ -133,6 +123,9 @@
                                     <div>{{ $lesson->date }}</div>
                                 </td>
                                 <td class="table-text">
+                                    <div>{{ $lesson->week }}</div>
+                                </td>
+                                <td class="table-text">
                                     <div>{{ $lesson->url }}</div>
                                 </td>
                                 <td class="table-text">
@@ -142,19 +135,19 @@
                                     <div>{{ $lesson->teachers_id }}</div>
                                 </td>
                                 <td class="table-text">
-                                    <div>{{ $teachers->teachers.id}</div>
+                                    <div>{{ $lesson->teachers_name}}</div>
                                 </td>
                                 <td class="table-text">
-                                    <div>{{ $lesson->teachers_photo }}</div>
+                                    <div> <img src="upload/{{$lesson->teachers_photo}}" width="100"></div>
                                 </td>
                                 <td class="table-text">
                                     <div>{{ $lesson->navis_id }}</div>
                                 </td>
                                 <td class="table-text">
-                                    <div>{{ $lesson->navis_name }}</div>
+                                    <div>{{ $lesson->navis_name}}</div>
                                 </td>
                                 <td class="table-text">
-                                    <div>{{ $lesson->navis_photo }}</div>
+                                    <div> <img src="upload/{{$lesson->navis_photo}}" width="100"></div>
                                 </td>
                                 <td class="table-text">
                                     <div>{{ $lesson->video }}</div>

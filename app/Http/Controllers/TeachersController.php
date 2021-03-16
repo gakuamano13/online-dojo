@@ -24,7 +24,7 @@ class TeachersController extends Controller
     {
         //バリデーション
         $validator = Validator::make($request->all(), [
-            'email' => 'required|min:3|max:255',
+            'teachers_email' => 'required|min:3|max:255',
         ]);
         //バリデーション:エラー 
         if ($validator->fails()) {
@@ -47,13 +47,13 @@ class TeachersController extends Controller
 
         //以下に登録処理を記述（Eloquentモデル）
         $teachers = new Teacher;
-        $teachers->name = $request->name;
-        $teachers->email = $request->email;
-        $teachers->flag = $request->flag;
-        $teachers->login_id = $request->login_id;
-        $teachers->pass = $request->pass;
-        $teachers->tel = $request->tel;
-        $teachers->photo = $filename;
+        $teachers->teachers_name = $request->teachers_name;
+        $teachers->teachers_email = $request->teachers_email;
+        $teachers->teachers_flag = $request->teachers_flag;
+        $teachers->teachers_login_id = $request->teachers_login_id;
+        $teachers->teachers_pass = $request->teachers_pass;
+        $teachers->teachers_tel = $request->teachers_tel;
+        $teachers->teachers_photo = $filename;
         $teachers->save(); 
         return redirect('/teachertop');
 
@@ -73,8 +73,8 @@ class TeachersController extends Controller
     {
         //バリデーション
         $validator = Validator::make($request->all(), [
-            'id' => 'required',
-            'email' => 'required|min:3|max:255',
+            'teachers_id' => 'required',
+            'teachers_email' => 'required|min:3|max:255',
         ]);
         //バリデーション:エラー 
         if ($validator->fails()) {
@@ -96,14 +96,14 @@ class TeachersController extends Controller
         }
 
         //以下に登録処理を記述（Eloquentモデル）
-        $teachers = Teacher::find($request->id);
-        $teachers->name = $request->name;
-        $teachers->email = $request->email;
-        $teachers->flag = $request->flag;
-        $teachers->login_id = $request->login_id;
-        $teachers->pass = $request->pass;
-        $teachers->tel = $request->tel;
-        $teachers->photo = $filename;
+        $teachers = Teacher::find($request->teachers_id);
+        $teachers->teachers_name = $request->teachers_name;
+        $teachers->teachers_email = $request->teachers_email;
+        $teachers->teachers_flag = $request->teachers_flag;
+        $teachers->teachers_login_id = $request->teachers_login_id;
+        $teachers->teachers_pass = $request->teachers_pass;
+        $teachers->teachers_tel = $request->teachers_tel;
+        $teachers->teachers_photo = $filename;
         $teachers->save(); 
         return redirect('/teachertop');
     } 
