@@ -14,7 +14,7 @@ class CreateNavisTable extends Migration
     public function up()
     {
         Schema::create('navis', function (Blueprint $table) {
-            $table->bigIncrements('navis_id');
+            $table->bigIncrements('id');
             $table->string('navis_name')->nullable();
             $table->string('navis_email')->unique();
             $table->integer('navis_flag')->nullable();

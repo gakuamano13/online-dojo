@@ -17,8 +17,8 @@ class LessonsController extends Controller
     public function index()
     {
         $lessons = DB::table('lessons')
-        ->leftJoin('teachers', 'lessons.teachers_id', '=', 'teachers.teachers_id')
-        ->leftJoin('navis', 'lessons.navis_id', '=', 'navis.navis_id')
+        ->leftJoin('teachers', 'lessons.teachers_id', '=', 'teachers.id')
+        ->leftJoin('navis', 'lessons.navis_id', '=', 'navis.id')
         ->orderBy('lessons.created_at', 'desc')
         ->paginate(3);
 
@@ -33,7 +33,7 @@ class LessonsController extends Controller
     {
         //バリデーション
         $validator = Validator::make($request->all(), [
-            'title' => 'required|max:255',
+            'lessons_title' => 'required|max:255',
         ]);
         //バリデーション:エラー 
         if ($validator->fails()) {
@@ -43,7 +43,7 @@ class LessonsController extends Controller
         }
 
         //file 取得
-        $file = $request->file('photo');
+        $file = $request->file('lessons_photo');
         //file が空かチェック
         if( !empty($file) ){
         //ファイル名を取得
@@ -56,17 +56,17 @@ class LessonsController extends Controller
 
         //以下に登録処理を記述（Eloquentモデル）
         $lessons = new Lesson;
-        $lessons->title = $request->title;
-        $lessons->text = $request->text;
-        $lessons->price = $request->price;
-        $lessons->date = $request->date;
-        $lessons->week = $request->week;
-        $lessons->url = $request->url;
-        $lessons->pass = $request->pass;
-        $lessons->video = $request->video;
+        $lessons->lessons_title = $request->lessons_title;
+        $lessons->lessons_text = $request->lessons_text;
+        $lessons->lessons_price = $request->lessons_price;
+        $lessons->lessons_date = $request->lessons_date;
+        $lessons->lessons_week = $request->lessons_week;
+        $lessons->lessons_url = $request->lessons_url;
+        $lessons->lessons_pass = $request->lessons_pass;
+        $lessons->lessons_video = $request->lessons_video;
         $lessons->teachers_id = $request->teachers_id;
         $lessons->navis_id = $request->navis_id;
-        $lessons->photo = $filename;
+        $lessons->lessons_photo = $filename;
         $lessons->save(); 
         return redirect('/lessontop');
 
@@ -87,7 +87,7 @@ class LessonsController extends Controller
         //バリデーション
         $validator = Validator::make($request->all(), [
             'id' => 'required',
-            'title' => 'required|max:255',
+            'lessons_title' => 'required|max:255',
         ]);
         //バリデーション:エラー 
         if ($validator->fails()) {
@@ -97,7 +97,7 @@ class LessonsController extends Controller
         }
 
         //file 取得
-        $file = $request->file('photo');
+        $file = $request->file('lessons_photo');
         //file が空かチェック
         if( !empty($file) ){
         //ファイル名を取得
@@ -110,17 +110,17 @@ class LessonsController extends Controller
 
         //以下に登録処理を記述（Eloquentモデル）
         $lessons = Lesson::find($request->id);
-        $lessons->title = $request->title;
-        $lessons->text = $request->text;
-        $lessons->price = $request->price;
-        $lessons->date = $request->date;
-        $lessons->week = $request->week;
-        $lessons->url = $request->url;
-        $lessons->pass = $request->pass;
-        $lessons->video = $request->video;
+        $lessons->lessons_title = $request->lessons_title;
+        $lessons->lessons_text = $request->lessons_text;
+        $lessons->lessons_price = $request->lessons_price;
+        $lessons->lessons_date = $request->lessons_date;
+        $lessons->lessons_week = $request->lessons_week;
+        $lessons->lessons_url = $request->lessons_url;
+        $lessons->lessons_pass = $request->lessons_pass;
+        $lessons->lessons_video = $request->lessons_video;
         $lessons->teachers_id = $request->teachers_id;
         $lessons->navis_id = $request->navis_id;
-        $lessons->photo = $filename;
+        $lessons->lessons_photo = $filename;
         $lessons->save(); 
         return redirect('/lessontop');
     } 

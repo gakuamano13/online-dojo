@@ -52,7 +52,7 @@
         <!--/ Saveボタン/Backボタン -->
             
             <!-- id値を送信 -->
-            <input type="hidden" name="teachers_id" value="{{$teacher->teachers_id}}">
+            <input type="hidden" name="id" value="{{$teacher->id}}">
             <!--/ id値を送信 -->
             
             <!-- CSRF -->

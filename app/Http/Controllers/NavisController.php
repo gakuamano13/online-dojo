@@ -24,7 +24,7 @@ class NavisController extends Controller
     {
         //バリデーション
         $validator = Validator::make($request->all(), [
-            'navis_email' => 'required|min:3|max:255',
+            'navis_email' => 'required|max:255',
         ]);
         //バリデーション:エラー 
         if ($validator->fails()) {
@@ -34,7 +34,7 @@ class NavisController extends Controller
         }
 
         //file 取得
-        $file = $request->file('photo');
+        $file = $request->file('navis_photo');
         //file が空かチェック
         if( !empty($file) ){
         //ファイル名を取得
@@ -73,8 +73,8 @@ class NavisController extends Controller
     {
         //バリデーション
         $validator = Validator::make($request->all(), [
-            'navis_id' => 'required',
-            'navis_email' => 'required|min:3|max:255',
+            'id' => 'required',
+            'navis_email' => 'required|max:255',
         ]);
         //バリデーション:エラー 
         if ($validator->fails()) {
@@ -84,7 +84,7 @@ class NavisController extends Controller
         }
 
         //file 取得
-        $file = $request->file('photo');
+        $file = $request->file('navis_photo');
         //file が空かチェック
         if( !empty($file) ){
         //ファイル名を取得
@@ -96,7 +96,7 @@ class NavisController extends Controller
         }
 
         //以下に登録処理を記述（Eloquentモデル）
-        $navis = Navi::find($request->navis_id);
+        $navis = Navi::find($request->id);
         $navis->navis_name = $request->navis_name;
         $navis->navis_email = $request->navis_email;
         $navis->navis_flag = $request->navis_flag;

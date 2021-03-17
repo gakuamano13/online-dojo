@@ -8,27 +8,27 @@
 
         <div class="form-group">
             <label for="item_name">タイトル</label>
-            <input type="text" id="item_name" name="title" class="form-control" value="{{$lesson->title}}">
+            <input type="text" id="item_name" name="lessons_title" class="form-control" value="{{$lesson->lessons_title}}">
         </div>
 
         <div class="form-group">
             <label for="item_number">説明</label>
-        <input type="text" id="item_number" name="text" class="form-control" value="{{$lesson->text}}">
+        <input type="text" id="item_number" name="lessons_text" class="form-control" value="{{$lesson->lessons_text}}">
         </div>
 
         <div class="form-group">
             <label for="item_number">金額</label>
-        <input type="text" id="item_number" name="price" class="form-control" value="{{$lesson->price}}">
+        <input type="text" id="item_number" name="lessons_price" class="form-control" value="{{$lesson->lessons_price}}">
         </div>
 
         <div class="form-group">
             <label for="item_number">開催日</label>
-        <input type="datetime-local" id="item_number" name="date" class="form-control" value="{{$lesson->date}}">
+        <input type="datetime-local" id="item_number" name="lessons_date" class="form-control" value="{{$lesson->lessons_date}}">
         </div>
 
         <div class="form-group">
             <label for="item_number">週</label>
-        <input type="text" id="item_number" name="week" class="form-control" value="{{$lesson->week}}">
+        <input type="text" id="item_number" name="lessons_week" class="form-control" value="{{$lesson->lessons_week}}">
         </div>
 
         <div class="form-group">
@@ -43,13 +43,13 @@
 
         <div class="form-group">
             <label for="item_number">Video URL</label>
-        <input type="text" id="item_number" name="video" class="form-control" value="{{$lesson->video}}">
+        <input type="text" id="item_number" name="lessons_video" class="form-control" value="{{$lesson->lessons_video}}">
         </div>
 
         <!-- file 追加 -->
         <div class="col-sm-6">
             <label>Lesson photo</label>
-            <input type="file" name="photo">
+            <input type="file" name="lessons_photo">
         </div>
 
         <!-- Saveボタン/Backボタン -->

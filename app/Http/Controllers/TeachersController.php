@@ -24,7 +24,7 @@ class TeachersController extends Controller
     {
         //バリデーション
         $validator = Validator::make($request->all(), [
-            'teachers_email' => 'required|min:3|max:255',
+            'teachers_email' => 'required|max:255',
         ]);
         //バリデーション:エラー 
         if ($validator->fails()) {
@@ -34,7 +34,7 @@ class TeachersController extends Controller
         }
 
         //file 取得
-        $file = $request->file('photo');
+        $file = $request->file('teachers_photo');
         //file が空かチェック
         if( !empty($file) ){
         //ファイル名を取得
@@ -73,8 +73,8 @@ class TeachersController extends Controller
     {
         //バリデーション
         $validator = Validator::make($request->all(), [
-            'teachers_id' => 'required',
-            'teachers_email' => 'required|min:3|max:255',
+            'id' => 'required',
+            'teachers_email' => 'required|max:255',
         ]);
         //バリデーション:エラー 
         if ($validator->fails()) {
@@ -84,7 +84,7 @@ class TeachersController extends Controller
         }
 
         //file 取得
-        $file = $request->file('photo');
+        $file = $request->file('teachers_photo');
         //file が空かチェック
         if( !empty($file) ){
         //ファイル名を取得
@@ -96,7 +96,7 @@ class TeachersController extends Controller
         }
 
         //以下に登録処理を記述（Eloquentモデル）
-        $teachers = Teacher::find($request->teachers_id);
+        $teachers = Teacher::find($request->id);
         $teachers->teachers_name = $request->teachers_name;
         $teachers->teachers_email = $request->teachers_email;
         $teachers->teachers_flag = $request->teachers_flag;

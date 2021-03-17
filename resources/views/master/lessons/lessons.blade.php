@@ -17,31 +17,31 @@
             <div class="form-group">
                 <div class="col-sm-6">
                 タイトル
-                    <input type="text" name="title" class="form-control">
+                    <input type="text" name="lessons_title" class="form-control">
                 </div>
                 <div class="col-sm-6">
                 説明
-                    <input type="text" name="text" class="form-control">
+                    <input type="text" name="lessons_text" class="form-control">
                 </div>
                 <div class="col-sm-6">
                 金額
-                    <input type="text" name="price" class="form-control">
+                    <input type="text" name="lessons_price" class="form-control">
                 </div>
                 <div class="col-sm-6">
                 開催日
-                    <input type="datetime-local" name="date" class="form-control">
+                    <input type="datetime-local" name="lessons_date" class="form-control">
                 </div>
                 <div class="col-sm-6">
                 週
-                    <input type="text" name="week" class="form-control">
+                    <input type="text" name="lessons_week" class="form-control">
                 </div>
                 <div class="col-sm-6">
                 Lesson URL
-                    <input type="text" name="url" class="form-control">
+                    <input type="text" name="lessons_url" class="form-control">
                 </div>
                 <div class="col-sm-6">
                 Lesson pass
-                    <input type="text" name="pass" class="form-control">
+                    <input type="text" name="lessons_pass" class="form-control">
                 </div>
                 <div class="col-sm-6">
                 Teacher ID
@@ -53,14 +53,14 @@
                 </div>
                 <div class="col-sm-6">
                 Video URL
-                    <input type="text" name="video" class="form-control">
+                    <input type="text" name="lessons_video" class="form-control">
                 </div>
                 <!-- file 追加 -->
                 <div class="col-sm-6">
                 <div>
                     <label>Lesson photo</label>
                 </div>
-                    <input type="file" name="photo">
+                    <input type="file" name="lessons_photo">
                 </div>
             </div>
 
@@ -110,26 +110,26 @@
                                     <div>{{ $lesson->id }}</div>
                                 </td>
                                 <td class="table-text">
-                                    <div>{{ $lesson->title }}</div>
-                                    <div> <img src="upload/{{$lesson->photo}}" width="100"></div>
+                                    <div>{{ $lesson->lessons_title }}</div>
+                                    <div> <img src="upload/{{$lesson->lessons_photo}}" width="100"></div>
                                 </td>
                                 <td class="table-text">
-                                    <div>{{ $lesson->text }}</div>
+                                    <div>{{ $lesson->lessons_text }}</div>
                                 </td>
                                 <td class="table-text">
-                                    <div>{{ $lesson->price }}</div>
+                                    <div>{{ $lesson->lessons_price }}</div>
                                 </td>
                                 <td class="table-text">
-                                    <div>{{ $lesson->date }}</div>
+                                    <div>{{ $lesson->lessons_date }}</div>
                                 </td>
                                 <td class="table-text">
-                                    <div>{{ $lesson->week }}</div>
+                                    <div>{{ $lesson->lessons_week }}</div>
                                 </td>
                                 <td class="table-text">
-                                    <div>{{ $lesson->url }}</div>
+                                    <div>{{ $lesson->lessons_url }}</div>
                                 </td>
                                 <td class="table-text">
-                                    <div>{{ $lesson->pass }}</div>
+                                    <div>{{ $lesson->lessons_pass }}</div>
                                 </td>
                                 <td class="table-text">
                                     <div>{{ $lesson->teachers_id }}</div>
@@ -150,7 +150,7 @@
                                     <div> <img src="upload/{{$lesson->navis_photo}}" width="100"></div>
                                 </td>
                                 <td class="table-text">
-                                    <div>{{ $lesson->video }}</div>
+                                    <div>{{ $lesson->lessons_video }}</div>
                                 </td>
 
                                 <!-- 更新ボタン -->

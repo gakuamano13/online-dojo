@@ -9,7 +9,7 @@ class Navi extends Model
     protected $table = 'navis';
 
     protected $fillable = [
-        'navis_id',
+        'id',
         'navis_name',
         'navis_email',
         'navis_flag',
