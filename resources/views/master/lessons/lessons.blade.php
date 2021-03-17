@@ -91,12 +91,8 @@
                         <th>週</th>
                         <th>LessonURL</th>
                         <th>LessonPass</th>
-                        <th>教ID</th>
-                        <th>教Name</th>
-                        <th>教photo</th>
-                        <th>導ID</th>
-                        <th>導Name</th>
-                        <th>導photo</th>
+                        <th>TeacherID</th>
+                        <th>NaviID</th>
                         <th>VideoURL</th>
                         <th>更新</th>
                         <th>削除</th>
@@ -135,19 +131,7 @@
                                     <div>{{ $lesson->teachers_id }}</div>
                                 </td>
                                 <td class="table-text">
-                                    <div>{{ $lesson->teachers_name}}</div>
-                                </td>
-                                <td class="table-text">
-                                    <div> <img src="upload/{{$lesson->teachers_photo}}" width="100"></div>
-                                </td>
-                                <td class="table-text">
                                     <div>{{ $lesson->navis_id }}</div>
-                                </td>
-                                <td class="table-text">
-                                    <div>{{ $lesson->navis_name}}</div>
-                                </td>
-                                <td class="table-text">
-                                    <div> <img src="upload/{{$lesson->navis_photo}}" width="100"></div>
                                 </td>
                                 <td class="table-text">
                                     <div>{{ $lesson->lessons_video }}</div>

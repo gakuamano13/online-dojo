@@ -15,6 +15,8 @@
     <body>
         <h1>Master Top</h1>
         <h3>
+        <a href="{{ url('/lists') }}">List All</a>
+        <br>
         <a href="{{ url('/lessontop') }}">Lesson Top</a>
         <br>
         <a href="{{ url('/teachertop') }}">Teacher Top</a>

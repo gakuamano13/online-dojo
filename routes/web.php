@@ -18,7 +18,7 @@ Route::get('meeting', function () {
 // Route::get('lists', function () {
 //     return view('master/lists');
 // });
-// Route::get('/lists','ListsController@select');
+Route::get('/lists','ListsController@index');
 
 
 //表示
