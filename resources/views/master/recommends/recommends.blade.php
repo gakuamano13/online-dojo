@@ -17,19 +17,19 @@
             <div class="form-group">
                 <div class="col-sm-6">
                 title
-                    <input type="text" name="title" class="form-control">
+                    <input type="text" name="recommends_title" class="form-control">
                 </div>
                 <div class="col-sm-6">
                 lessons_id
-                    <input type="text" name="lessons_id" class="form-control">
+                    <input type="text" name="recommends_lessons_id" class="form-control">
                 </div>
                 <div class="col-sm-6">
                 text
-                    <input type="text" name="text" class="form-control">
+                    <input type="text" name="recommends_text" class="form-control">
                 </div>
                 <div class="col-sm-6">
                 flag
-                    <input type="text" name="flag" class="form-control">
+                    <input type="text" name="recommends_flag" class="form-control">
                 </div>
             </div>
 
@@ -68,16 +68,16 @@
                                     <div>{{ $recommend->id }}</div>
                                 </td>
                                 <td class="table-text">
-                                    <div>{{ $recommend->title }}</div>
+                                    <div>{{ $recommend->recommends_title }}</div>
                                 </td>
                                 <td class="table-text">
-                                    <div>{{ $recommend->lessons_id }}</div>
+                                    <div>{{ $recommend->recommends_lessons_id }}</div>
                                 </td>
                                 <td class="table-text">
-                                    <div>{{ $recommend->text }}</div>
+                                    <div>{{ $recommend->recommends_text }}</div>
                                 </td>
                                 <td class="table-text">
-                                    <div>{{ $recommend->flag }}</div>
+                                    <div>{{ $recommend->recommends_flag }}</div>
                                 </td>
 
                                 <!-- 更新ボタン -->

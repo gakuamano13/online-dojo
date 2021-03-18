@@ -20,7 +20,7 @@
                     <input type="text" name="lessons_title" class="form-control">
                 </div>
                 <div class="col-sm-6">
-                説明
+                Description
                     <input type="text" name="lessons_text" class="form-control">
                 </div>
                 <div class="col-sm-6">
@@ -85,7 +85,7 @@
                     <thead>
                         <th>ID</th>
                         <th>タイトル</th>
-                        <th>説明</th>
+                        <th>Description</th>
                         <th>金額</th>
                         <th>開催日</th>
                         <th>週</th>

@@ -2,6 +2,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+// use Illuminate\Support\Facades\DB;
+// use App\Teacher;
 use App\Lesson;
 use Validator;
 use Auth;
@@ -10,7 +12,7 @@ use Auth;
 class LessonsController extends Controller
 {
 
-    //表示
+    // //表示
     public function index()
     {
         $lessons = Lesson::orderBy('created_at', 'desc')->paginate(3);

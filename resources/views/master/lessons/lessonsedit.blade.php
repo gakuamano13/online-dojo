@@ -12,7 +12,7 @@
         </div>
 
         <div class="form-group">
-            <label for="item_number">説明</label>
+            <label for="item_number">Description</label>
         <input type="text" id="item_number" name="lessons_text" class="form-control" value="{{$lesson->lessons_text}}">
         </div>
 

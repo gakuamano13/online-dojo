@@ -15,13 +15,13 @@ class CreateStudentsTable extends Migration
     {
         Schema::create('students', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('name')->nullable();
-            $table->string('email')->unique();
-            $table->integer('flag')->nullable();
-            $table->string('login_id')->nullable();
-            $table->string('pass')->nullable();
-            $table->text('tel')->nullable();
-            $table->string('photo')->nullable();
+            $table->string('students_name')->nullable();
+            $table->string('students_email')->unique();
+            $table->integer('students_flag')->nullable();
+            $table->string('students_login_id')->nullable();
+            $table->string('students_pass')->nullable();
+            $table->text('students_tel')->nullable();
+            $table->string('students_photo')->nullable();
             $table->timestamps();
         });
     }

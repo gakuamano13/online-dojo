@@ -21,7 +21,7 @@
                     <thead>
                         <th>LessonID</th>
                         <th>タイトル</th>
-                        <th>説明</th>
+                        <th>Description</th>
                         <th>金額</th>
                         <th>開催日</th>
                         <th>週</th>

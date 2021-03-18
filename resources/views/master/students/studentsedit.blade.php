@@ -8,38 +8,38 @@
 
         <div class="form-group">
             <label for="item_name">Name</label>
-            <input type="text" id="item_name" name="name" class="form-control" value="{{$student->name}}">
+            <input type="text" id="item_name" name="students_name" class="form-control" value="{{$student->students_name}}">
         </div>
 
         <div class="form-group">
             <label for="item_number">e-mail</label>
-        <input type="text" id="item_number" name="email" class="form-control" value="{{$student->email}}">
+        <input type="text" id="item_number" name="students_email" class="form-control" value="{{$student->students_email}}">
         </div>
 
         <div class="form-group">
             <label for="item_number">flag</label>
-        <input type="text" id="item_number" name="flag" class="form-control" value="{{$student->flag}}">
+        <input type="text" id="item_number" name="students_flag" class="form-control" value="{{$student->students_flag}}">
         </div>
 
         <div class="form-group">
             <label for="item_number">login id</label>
-        <input type="text" id="item_number" name="login_id" class="form-control" value="{{$student->login_id}}">
+        <input type="text" id="item_number" name="students_login_id" class="form-control" value="{{$student->students_login_id}}">
         </div>
 
         <div class="form-group">
             <label for="item_number">pass</label>
-        <input type="text" id="item_number" name="pass" class="form-control" value="{{$student->pass}}">
+        <input type="text" id="item_number" name="students_pass" class="form-control" value="{{$student->students_pass}}">
         </div>
 
         <div class="form-group">
             <label for="item_number">tel</label>
-        <input type="text" id="item_number" name="tel" class="form-control" value="{{$student->tel}}">
+        <input type="text" id="item_number" name="students_tel" class="form-control" value="{{$student->students_tel}}">
         </div>
 
         <!-- file 追加 -->
         <div class="col-sm-6">
             <label>photo</label>
-            <input type="file" name="photo">
+            <input type="file" name="students_photo">
         </div>
 
         <!-- Saveボタン/Backボタン -->

@@ -11,15 +11,13 @@ Route::get('/', function () {
 Route::get('/mastertop', function () {
     return view('mastertop');
 });
+
 Route::get('meeting', function () {
     return view('master/meeting');
 });
 
-// Route::get('lists', function () {
-//     return view('master/lists');
-// });
-Route::get('/lists','ListsController@index');
 
+Route::get('/lists','ListsController@index');
 
 //表示
 Route::get('/lessontop', 'LessonsController@index');

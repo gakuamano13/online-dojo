@@ -24,7 +24,7 @@ class StudentsController extends Controller
         {
             //バリデーション
             $validator = Validator::make($request->all(), [
-                'email' => 'required|min:3|max:255',
+                'students_email' => 'required|min:3|max:255',
             ]);
             //バリデーション:エラー 
             if ($validator->fails()) {
@@ -34,7 +34,7 @@ class StudentsController extends Controller
             }
     
             //file 取得
-            $file = $request->file('photo');
+            $file = $request->file('students_photo');
             //file が空かチェック
             if( !empty($file) ){
             //ファイル名を取得
@@ -47,13 +47,13 @@ class StudentsController extends Controller
     
             //以下に登録処理を記述（Eloquentモデル）
             $students = new Student;
-            $students->name = $request->name;
-            $students->email = $request->email;
-            $students->flag = $request->flag;
-            $students->login_id = $request->login_id;
-            $students->pass = $request->pass;
-            $students->tel = $request->tel;
-            $students->photo = $filename;
+            $students->students_name = $request->students_name;
+            $students->students_email = $request->students_email;
+            $students->students_flag = $request->students_flag;
+            $students->students_login_id = $request->students_login_id;
+            $students->students_pass = $request->students_pass;
+            $students->students_tel = $request->students_tel;
+            $students->students_photo = $filename;
             $students->save(); 
             return redirect('/studenttop');
     
@@ -74,7 +74,7 @@ class StudentsController extends Controller
             //バリデーション
             $validator = Validator::make($request->all(), [
                 'id' => 'required',
-                'email' => 'required|min:3|max:255',
+                'students_email' => 'required|min:3|max:255',
             ]);
             //バリデーション:エラー 
             if ($validator->fails()) {
@@ -84,7 +84,7 @@ class StudentsController extends Controller
             }
     
             //file 取得
-            $file = $request->file('photo');
+            $file = $request->file('students_photo');
             //file が空かチェック
             if( !empty($file) ){
             //ファイル名を取得
@@ -97,13 +97,13 @@ class StudentsController extends Controller
     
             //以下に登録処理を記述（Eloquentモデル）
             $students = Student::find($request->id);
-            $students->name = $request->name;
-            $students->email = $request->email;
-            $students->flag = $request->flag;
-            $students->login_id = $request->login_id;
-            $students->pass = $request->pass;
-            $students->tel = $request->tel;
-            $students->photo = $filename;
+            $students->students_name = $request->students_name;
+            $students->students_email = $request->students_email;
+            $students->students_flag = $request->students_flag;
+            $students->students_login_id = $request->students_login_id;
+            $students->students_pass = $request->students_pass;
+            $students->students_tel = $request->students_tel;
+            $students->students_photo = $filename;
             $students->save(); 
             return redirect('/studenttop');
         } 

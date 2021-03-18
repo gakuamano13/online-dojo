@@ -24,7 +24,7 @@ class NoticesController extends Controller
                 {
                     //バリデーション
                     $validator = Validator::make($request->all(), [
-                        'title' => 'required|max:255',
+                        'notices_title' => 'required|max:255',
                     ]);
                     //バリデーション:エラー 
                     if ($validator->fails()) {
@@ -35,9 +35,9 @@ class NoticesController extends Controller
                     
                     //以下に登録処理を記述（Eloquentモデル）
                     $notices = new Notice;
-                    $notices->title = $request->title;
-                    $notices->text = $request->text;
-                    $notices->flag = $request->flag;
+                    $notices->notices_title = $request->notices_title;
+                    $notices->notices_text = $request->notices_text;
+                    $notices->notices_flag = $request->notices_flag;
                     $notices->save(); 
                     return redirect('/noticetop');
             
@@ -58,7 +58,7 @@ class NoticesController extends Controller
                     //バリデーション
                     $validator = Validator::make($request->all(), [
                         'id' => 'required',
-                        'title' => 'required|max:255',
+                        'notices_title' => 'required|max:255',
                     ]);
                     //バリデーション:エラー 
                     if ($validator->fails()) {
@@ -69,9 +69,9 @@ class NoticesController extends Controller
                     
                     //以下に登録処理を記述（Eloquentモデル）
                     $notices = Notice::find($request->id);
-                    $notices->title = $request->title;
-                    $notices->text = $request->text;
-                    $notices->flag = $request->flag;
+                    $notices->notices_title = $request->notices_title;
+                    $notices->notices_text = $request->notices_text;
+                    $notices->notices_flag = $request->notices_flag;
                     $notices->save(); 
                     return redirect('/noticetop');
                 } 

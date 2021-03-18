@@ -10,13 +10,13 @@ class Student extends Model
 
     protected $fillable = [
         'id',
-        'name',
-        'email',
-        'flag',
-        'login_id',
-        'pass',
-        'tel',
-        'photo',
+        'students_name',
+        'students_email',
+        'students_flag',
+        'students_login_id',
+        'students_pass',
+        'students_tel',
+        'students_photo',
         'created_at',
         'updated_at',
     ];

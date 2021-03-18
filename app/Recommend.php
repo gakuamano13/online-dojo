@@ -10,10 +10,10 @@ class Recommend extends Model
 
     protected $fillable = [
         'id',
-        'lessons_id',
-        'title',
-        'text',
-        'flag',
+        'recommends_lessons_id',
+        'recommends_title',
+        'recommends_text',
+        'recommends_flag',
         'created_at',
         'updated_at',
     ];

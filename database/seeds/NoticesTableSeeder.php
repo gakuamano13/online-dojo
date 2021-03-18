@@ -13,9 +13,9 @@ class NoticesTableSeeder extends Seeder
     {
         DB::table('notices')->insert([
             'id' => 1,
-            'title' => '新規オープン',
-            'text' => '空手のオンライン道場が出来ました',
-            'flag' => 1,
+            'notices_title' => '新規オープン',
+            'notices_text' => '空手のオンライン道場が出来ました',
+            'notices_flag' => 1,
             'created_at' => '2021-02-27 17:31:38',
             'updated_at' => '2021-02-27 17:31:38',
         ]);

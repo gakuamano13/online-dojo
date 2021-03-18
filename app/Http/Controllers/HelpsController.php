@@ -24,7 +24,7 @@ class HelpsController extends Controller
                     {
                         //バリデーション
                         $validator = Validator::make($request->all(), [
-                            'title' => 'required|max:255',
+                            'helps_title' => 'required|max:255',
                         ]);
                         //バリデーション:エラー 
                         if ($validator->fails()) {
@@ -35,9 +35,9 @@ class HelpsController extends Controller
                         
                         //以下に登録処理を記述（Eloquentモデル）
                         $helps = new Help;
-                        $helps->title = $request->title;
-                        $helps->text = $request->text;
-                        $helps->flag = $request->flag;
+                        $helps->helps_title = $request->helps_title;
+                        $helps->helps_text = $request->helps_text;
+                        $helps->helps_flag = $request->helps_flag;
                         $helps->save(); 
                         return redirect('/helptop');
                 
@@ -58,7 +58,7 @@ class HelpsController extends Controller
                         //バリデーション
                         $validator = Validator::make($request->all(), [
                             'id' => 'required',
-                            'title' => 'required|max:255',
+                            'helps_title' => 'required|max:255',
                         ]);
                         //バリデーション:エラー 
                         if ($validator->fails()) {
@@ -69,9 +69,9 @@ class HelpsController extends Controller
                         
                         //以下に登録処理を記述（Eloquentモデル）
                         $helps = Help::find($request->id);
-                        $helps->title = $request->title;
-                        $helps->text = $request->text;
-                        $helps->flag = $request->flag;
+                        $helps->helps_title = $request->helps_title;
+                        $helps->helps_text = $request->helps_text;
+                        $helps->helps_flag = $request->helps_flag;
                         $helps->save(); 
                         return redirect('/helptop');
                     } 
