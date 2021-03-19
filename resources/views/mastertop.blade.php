@@ -14,20 +14,34 @@
     </head>
     <body>
         <h1>Master Top</h1>
-        <h3>
-        <a href="{{ url('/lists') }}">List All</a>
-        <br>
-        <a href="{{ url('/lessontop') }}">Lesson Top</a>
-        <br>
-        <a href="{{ url('/teachertop') }}">Teacher Top</a>
-        <a href="{{ url('/navitop') }}">Navi Top</a>
-        <a href="{{ url('/studenttop') }}">Student Top</a>
-        <br>
-        <a href="{{ url('/recommendtop') }}">Recommend Top</a>
-        <a href="{{ url('/noticetop') }}">Notice Top</a>
-        <a href="{{ url('/helptop') }}">Help Top</a>
-        <br>
-        <a href="{{ url('/meeting') }}">Meeting</a>
-        </h3>
+        <h2>
+            <a href="{{ url('/lists') }}">　List All</a>
+            <br>
+            <br>
+            <a href="{{ url('/lessontop') }}">　Lesson Top</a>
+            <br>
+            <a href="{{ url('/coursetop') }}">　Course Top</a>
+            <br>
+            <br>
+            <a href="{{ url('/teachertop') }}">　Teacher Top</a>
+            <br>
+            <a href="{{ url('/navitop') }}">　Navi Top</a>
+            <br>
+            <a href="{{ url('/studenttop') }}">　Student Top</a>
+            <br>
+            <br>
+            <a href="{{ url('/bookingtop') }}">　Booking Top</a>
+            <br>
+            <a href="{{ url('/liketop') }}">　Like Top</a>
+            <br>
+            <a href="{{ url('/recommendtop') }}">　Recommend Top</a>
+            <br>
+            <a href="{{ url('/noticetop') }}">　Notice Top</a>
+            <br>
+            <a href="{{ url('/helptop') }}">　Help Top</a>
+            <br>
+            <br>
+            <a href="{{ url('/meeting') }}">　Meeting</a>
+        </h2>
     </body>
 </html>
