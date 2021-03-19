@@ -12,7 +12,7 @@ use Auth;
 class LessonsController extends Controller
 {
 
-    // //表示
+    //表示
     public function index()
     {
         $lessons = Lesson::orderBy('created_at', 'desc')->paginate(3);
@@ -21,7 +21,6 @@ class LessonsController extends Controller
         ]);
     }
 
-    //表示
     // public function index()
     // {
     //     $lessons = DB::table('lessons')
