@@ -11,15 +11,13 @@ Route::get('/', function () {
 Route::get('/mastertop', function () {
     return view('mastertop');
 });
+
 Route::get('meeting', function () {
     return view('master/meeting');
 });
 
-// Route::get('lists', function () {
-//     return view('master/lists');
-// });
-// Route::get('/lists','ListsController@select');
 
+Route::get('/lists','ListsController@index');
 
 //表示
 Route::get('/lessontop', 'LessonsController@index');
@@ -31,6 +29,18 @@ Route::post('/lessons/update', 'LessonsController@update');
 Route::post('/lessons', 'LessonsController@store');
 //削除
 Route::delete('/lesson/{lesson}','LessonsController@destroy');
+
+
+//表示
+Route::get('/coursetop', 'CoursesController@index');
+//更新画面
+Route::post('/coursesedit/{courses}','CoursesController@edit' );
+//更新処理
+Route::post('/courses/update', 'CoursesController@update');
+//登録
+Route::post('/courses', 'CoursesController@store');
+//削除
+Route::delete('/course/{course}','CoursesController@destroy');
 
 
 //表示
@@ -103,6 +113,31 @@ Route::post('/helps/update', 'HelpsController@update');
 Route::post('/helps', 'HelpsController@store');
 //削除
 Route::delete('/help/{help}','HelpsController@destroy');
+
+
+//表示
+Route::get('/bookingtop', 'BookingsController@index');
+//更新画面
+Route::post('/bookingsedit/{bookings}','BookingsController@edit' );
+//更新処理
+Route::post('/bookings/update', 'BookingsController@update');
+//登録
+Route::post('/bookings', 'BookingsController@store');
+//削除
+Route::delete('/booking/{booking}','BookingsController@destroy');
+
+
+//表示
+Route::get('/liketop', 'LikesController@index');
+//更新画面
+Route::post('/likesedit/{likes}','LikesController@edit' );
+//更新処理
+Route::post('/likes/update', 'LikesController@update');
+//登録
+Route::post('/likes', 'LikesController@store');
+//削除
+Route::delete('/like/{like}','LikesController@destroy');
+
 
 
 Auth::routes();

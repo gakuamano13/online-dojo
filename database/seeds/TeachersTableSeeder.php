@@ -13,7 +13,7 @@ class TeachersTableSeeder extends Seeder
     {
         DB::table('teachers')->insert([
             [
-            'teachers_id' => 1,
+            'id' => 1,
             'teachers_name' => '泉　智',
             'teachers_email' => 'izumi@teacher.jp',
             'teachers_flag' => 1,
@@ -24,7 +24,7 @@ class TeachersTableSeeder extends Seeder
             'created_at' => '2021-02-27 17:31:38',
             'updated_at' => '2021-02-27 17:31:38',
             ],[
-            'teachers_id' => 2,
+            'id' => 2,
             'teachers_name' => '天野　岳',
             'teachers_email' => 'amano@teacher.jp',
             'teachers_flag' => 1,

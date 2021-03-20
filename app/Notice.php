@@ -10,9 +10,9 @@ class Notice extends Model
 
     protected $fillable = [
         'id',
-        'title',
-        'text',
-        'flag',
+        'notices_title',
+        'notices_text',
+        'notices_flag',
         'created_at',
         'updated_at',
     ];

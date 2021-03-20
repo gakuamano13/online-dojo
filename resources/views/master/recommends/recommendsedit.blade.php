@@ -8,22 +8,22 @@
 
         <div class="form-group">
             <label for="item_name">title</label>
-            <input type="text" id="item_name" name="title" class="form-control" value="{{$recommend->title}}">
+            <input type="text" id="item_name" name="recommends_title" class="form-control" value="{{$recommend->recommends_title}}">
         </div>
 
         <div class="form-group">
             <label for="item_number">lessons_id</label>
-        <input type="text" id="item_number" name="lessons_id" class="form-control" value="{{$recommend->lessons_id}}">
+        <input type="text" id="item_number" name="recommends_lessons_id" class="form-control" value="{{$recommend->recommends_lessons_id}}">
         </div>
 
         <div class="form-group">
             <label for="item_number">text</label>
-        <input type="text" id="item_number" name="text" class="form-control" value="{{$recommend->text}}">
+        <input type="text" id="item_number" name="recommends_text" class="form-control" value="{{$recommend->recommends_text}}">
         </div>
 
         <div class="form-group">
             <label for="item_number">flag</label>
-        <input type="text" id="item_number" name="flag" class="form-control" value="{{$recommend->flag}}">
+        <input type="text" id="item_number" name="recommends_flag" class="form-control" value="{{$recommend->recommends_flag}}">
         </div>
 
         <!-- Saveボタン/Backボタン -->

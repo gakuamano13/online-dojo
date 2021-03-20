@@ -82,7 +82,7 @@
                         @foreach ($navis as $navi)
                             <tr>
                                 <td class="table-text">
-                                    <div>{{ $navi->navis_id }}</div>
+                                    <div>{{ $navi->id }}</div>
                                 </td>
                                 <td class="table-text">
                                     <div>{{ $navi->navis_name }}</div>
@@ -106,7 +106,7 @@
 
                                 <!-- 更新ボタン -->
                                 <td>
-                                    <form action="{{ url('navisedit/'.$navi->navis_id) }}" method="POST">
+                                    <form action="{{ url('navisedit/'.$navi->id) }}" method="POST">
                                     {{ csrf_field() }}
                                         <button type="submit" class="btn btn-primary">
                                         update
@@ -115,7 +115,7 @@
                                 </td>
                                 <!-- 削除ボタン -->
                                 <td>
-                                    <form action="{{ url('navi/'.$navi->navis_id) }}" method="POST">
+                                    <form action="{{ url('navi/'.$navi->id) }}" method="POST">
                                         {{ csrf_field() }}
                                         {{ method_field('delete') }}
                                         <button type="submit" class="btn btn-danger">

@@ -24,7 +24,7 @@ class RecommendsController extends Controller
             {
                 //バリデーション
                 $validator = Validator::make($request->all(), [
-                    'title' => 'required|max:255',
+                    'recommends_title' => 'required|max:255',
                 ]);
                 //バリデーション:エラー 
                 if ($validator->fails()) {
@@ -35,10 +35,10 @@ class RecommendsController extends Controller
                 
                 //以下に登録処理を記述（Eloquentモデル）
                 $recommends = new Recommend;
-                $recommends->title = $request->title;
-                $recommends->lessons_id = $request->lessons_id;
-                $recommends->text = $request->text;
-                $recommends->flag = $request->flag;
+                $recommends->recommends_title = $request->recommends_title;
+                $recommends->recommends_lessons_id = $request->recommends_lessons_id;
+                $recommends->recommends_text = $request->recommends_text;
+                $recommends->recommends_flag = $request->recommends_flag;
                 $recommends->save(); 
                 return redirect('/recommendtop');
         
@@ -59,7 +59,7 @@ class RecommendsController extends Controller
                 //バリデーション
                 $validator = Validator::make($request->all(), [
                     'id' => 'required',
-                    'title' => 'required|max:255',
+                    'recommends_title' => 'required|max:255',
                 ]);
                 //バリデーション:エラー 
                 if ($validator->fails()) {
@@ -70,10 +70,10 @@ class RecommendsController extends Controller
                 
                 //以下に登録処理を記述（Eloquentモデル）
                 $recommends = Recommend::find($request->id);
-                $recommends->title = $request->title;
-                $recommends->lessons_id = $request->lessons_id;
-                $recommends->text = $request->text;
-                $recommends->flag = $request->flag;
+                $recommends->recommends_title = $request->recommends_title;
+                $recommends->recommends_lessons_id = $request->recommends_lessons_id;
+                $recommends->recommends_text = $request->recommends_text;
+                $recommends->recommends_flag = $request->recommends_flag;
                 $recommends->save(); 
                 return redirect('/recommendtop');
             } 

@@ -82,7 +82,7 @@
                         @foreach ($teachers as $teacher)
                             <tr>
                                 <td class="table-text">
-                                    <div>{{ $teacher->teachers_id }}</div>
+                                    <div>{{ $teacher->id }}</div>
                                 </td>
                                 <td class="table-text">
                                     <div>{{ $teacher->teachers_name }}</div>
@@ -106,7 +106,7 @@
 
                                 <!-- 更新ボタン -->
                                 <td>
-                                    <form action="{{ url('teachersedit/'.$teacher->teachers_id) }}" method="POST">
+                                    <form action="{{ url('teachersedit/'.$teacher->id) }}" method="POST">
                                     {{ csrf_field() }}
                                         <button type="submit" class="btn btn-primary">
                                         update
@@ -115,7 +115,7 @@
                                 </td>
                                 <!-- 削除ボタン -->
                                 <td>
-                                    <form action="{{ url('teacher/'.$teacher->teachers_id) }}" method="POST">
+                                    <form action="{{ url('teacher/'.$teacher->id) }}" method="POST">
                                         {{ csrf_field() }}
                                         {{ method_field('delete') }}
                                         <button type="submit" class="btn btn-danger">

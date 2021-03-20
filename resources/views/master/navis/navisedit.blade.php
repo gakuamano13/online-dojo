@@ -52,7 +52,7 @@
         <!--/ Saveボタン/Backボタン -->
             
             <!-- id値を送信 -->
-            <input type="hidden" name="navis_id" value="{{$navi->navis_id}}">
+            <input type="hidden" name="id" value="{{$navi->id}}">
             <!--/ id値を送信 -->
             
             <!-- CSRF -->

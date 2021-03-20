@@ -10,9 +10,9 @@ class Help extends Model
 
     protected $fillable = [
         'id',
-        'title',
-        'text',
-        'flag',
+        'helps_title',
+        'helps_text',
+        'helps_flag',
         'created_at',
         'updated_at',
     ];

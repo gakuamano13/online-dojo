@@ -8,17 +8,17 @@
 
         <div class="form-group">
             <label for="item_name">title</label>
-            <input type="text" id="item_name" name="title" class="form-control" value="{{$notice->title}}">
+            <input type="text" id="item_name" name="notices_title" class="form-control" value="{{$notice->notices_title}}">
         </div>
 
         <div class="form-group">
             <label for="item_number">text</label>
-        <input type="text" id="item_number" name="text" class="form-control" value="{{$notice->text}}">
+        <input type="text" id="item_number" name="notices_text" class="form-control" value="{{$notice->notices_text}}">
         </div>
 
         <div class="form-group">
             <label for="item_number">flag</label>
-        <input type="text" id="item_number" name="flag" class="form-control" value="{{$notice->flag}}">
+        <input type="text" id="item_number" name="notices_flag" class="form-control" value="{{$notice->notices_flag}}">
         </div>
 
         <!-- Saveボタン/Backボタン -->

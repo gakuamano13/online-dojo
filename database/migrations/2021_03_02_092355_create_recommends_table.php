@@ -15,10 +15,10 @@ class CreateRecommendsTable extends Migration
     {
         Schema::create('recommends', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('title')->nullable();
-            $table->integer('lessons_id')->nullable();
-            $table->text('text')->nullable();
-            $table->integer('flag')->nullable();
+            $table->string('recommends_title')->nullable();
+            $table->integer('recommends_lessons_id')->nullable();
+            $table->text('recommends_text')->nullable();
+            $table->integer('recommends_flag')->nullable();
             $table->timestamps();
         });
     }

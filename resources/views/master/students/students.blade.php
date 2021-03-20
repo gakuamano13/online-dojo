@@ -17,34 +17,34 @@
             <div class="form-group">
                 <div class="col-sm-6">
                 Name
-                    <input type="text" name="name" class="form-control">
+                    <input type="text" name="students_name" class="form-control">
                 </div>
                 <div class="col-sm-6">
                 e-mail
-                    <input type="text" name="email" class="form-control">
+                    <input type="text" name="students_email" class="form-control">
                 </div>
                 <div class="col-sm-6">
                 flag
-                    <input type="text" name="flag" class="form-control">
+                    <input type="text" name="students_flag" class="form-control">
                 </div>
                 <div class="col-sm-6">
                 Login ID
-                    <input type="text" name="login_id" class="form-control">
+                    <input type="text" name="students_login_id" class="form-control">
                 </div>
                 <div class="col-sm-6">
                 pass
-                    <input type="text" name="pass" class="form-control">
+                    <input type="text" name="students_pass" class="form-control">
                 </div>
                 <div class="col-sm-6">
                 Tel
-                    <input type="text" name="tel" class="form-control">
+                    <input type="text" name="students_tel" class="form-control">
                 </div>
                 <!-- file 追加 -->
                 <div class="col-sm-6">
                 <div>
                     <label>photo</label>
                 </div>
-                    <input type="file" name="photo">
+                    <input type="file" name="students_photo">
                 </div>
             </div>
 
@@ -85,23 +85,23 @@
                                     <div>{{ $student->id }}</div>
                                 </td>
                                 <td class="table-text">
-                                    <div>{{ $student->name }}</div>
-                                    <div> <img src="upload/{{$student->photo}}" width="100"></div>
+                                    <div>{{ $student->students_name }}</div>
+                                    <div> <img src="upload/{{$student->students_photo}}" width="100"></div>
                                 </td>
                                 <td class="table-text">
-                                    <div>{{ $student->email }}</div>
+                                    <div>{{ $student->students_email }}</div>
                                 </td>
                                 <td class="table-text">
-                                    <div>{{ $student->flag }}</div>
+                                    <div>{{ $student->students_flag }}</div>
                                 </td>
                                 <td class="table-text">
-                                    <div>{{ $student->login_id }}</div>
+                                    <div>{{ $student->students_login_id }}</div>
                                 </td>
                                 <td class="table-text">
-                                    <div>{{ $student->pass }}</div>
+                                    <div>{{ $student->students_pass }}</div>
                                 </td>
                                 <td class="table-text">
-                                    <div>{{ $student->tel }}</div>
+                                    <div>{{ $student->students_tel }}</div>
                                 </td>
 
                                 <!-- 更新ボタン -->

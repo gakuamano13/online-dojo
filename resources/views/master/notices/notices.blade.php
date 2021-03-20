@@ -17,15 +17,15 @@
             <div class="form-group">
                 <div class="col-sm-6">
                 title
-                    <input type="text" name="title" class="form-control">
+                    <input type="text" name="notices_title" class="form-control">
                 </div>
                 <div class="col-sm-6">
                 text
-                    <input type="text" name="text" class="form-control">
+                    <input type="text" name="notices_text" class="form-control">
                 </div>
                 <div class="col-sm-6">
                 flag
-                    <input type="text" name="flag" class="form-control">
+                    <input type="text" name="notices_flag" class="form-control">
                 </div>
             </div>
 
@@ -63,13 +63,13 @@
                                     <div>{{ $notice->id }}</div>
                                 </td>
                                 <td class="table-text">
-                                    <div>{{ $notice->title }}</div>
+                                    <div>{{ $notice->notices_title }}</div>
                                 </td>
                                 <td class="table-text">
-                                    <div>{{ $notice->text }}</div>
+                                    <div>{{ $notice->notices_text }}</div>
                                 </td>
                                 <td class="table-text">
-                                    <div>{{ $notice->flag }}</div>
+                                    <div>{{ $notice->notices_flag }}</div>
                                 </td>
 
                                 <!-- 更新ボタン -->
