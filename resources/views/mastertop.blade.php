@@ -14,7 +14,7 @@
     </head>
     <body>
         <h1>Master Top</h1>
-        <h2>
+        <h3>
             <a href="{{ url('/lists') }}">　List All</a>
             <br>
             <br>
@@ -42,6 +42,6 @@
             <br>
             <br>
             <a href="{{ url('/meeting') }}">　Meeting</a>
-        </h2>
+        </h3>
     </body>
 </html>
