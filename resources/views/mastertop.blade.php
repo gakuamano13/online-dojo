@@ -34,6 +34,7 @@
             <br>
             <a href="{{ url('/liketop') }}">　Like Top</a>
             <br>
+            <br>
             <a href="{{ url('/recommendtop') }}">　Recommend Top</a>
             <br>
             <a href="{{ url('/noticetop') }}">　Notice Top</a>
