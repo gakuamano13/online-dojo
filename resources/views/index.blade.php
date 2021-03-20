@@ -1,24 +1,8 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+@extends('layouts.app')
 
-        <title>Laravel</title>
-
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;600&display=swap" rel="stylesheet">
-
-        <!-- Styles -->
-        <style>
-
-        </style>
-    </head>
-    <body>
+@section('content')
 <h1>index</h1>
-<h2>Cooooooool!!!</h2>
-
-
 <a href="{{ url('/mastertop') }}">Master Top</a>
-    </body>
-</html>
+@endsection
+
+
