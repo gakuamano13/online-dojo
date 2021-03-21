@@ -53,10 +53,13 @@
 @endsection
 
 @section('content')
+
     <div class="container">
         <div class="top__title text-center">
             All Lessons
         </div>
+
+        @if ( Auth::check() )
         <div class="row d-flex flex-row justify-content-around">
 
             @foreach ($lessons as $lesson)
@@ -70,9 +73,12 @@
                         <p class="card-text">{{ $lesson->lessons_text }}</p>
                         <a href="{{ route('lesson.show', $lesson->id) }}" class="btn btn-primary">レッスン詳細</a>
                     </div>
-            </div>
+                </div>
             @endforeach
+
         </div>
+        @endif
+
     </div>
 @endsection
 
