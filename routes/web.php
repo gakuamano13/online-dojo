@@ -4,9 +4,19 @@
 use App\Lesson;
 use Illuminate\Http\Request;
 
-Route::get('/', function () {
-    return view('index');
-});
+// user側の処理↓    //
+
+Route::name('lesson.')
+    ->group(function () {
+        Route::get('/', 'User\TopPageController@index')->name('index');
+        Route::get('/lesson/{id}', 'User\TopPageController@show')->name('show');
+    });
+
+
+// user側の処理↑    //
+
+// master側の処理 ↓ //
+
 
 Route::get('/mastertop', function () {
     return view('mastertop');

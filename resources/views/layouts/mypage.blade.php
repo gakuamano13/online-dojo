@@ -72,20 +72,9 @@
             </div>
         </nav>
 
-        <header class="py-4">
-            @yield('header')
-        </header>
-
         <main class="py-4">
             @yield('content')
         </main>
-
-        <header class="py-4">
-            @yield('footer')
-        </header>
-
     </div>
-
-
 </body>
 </html>
