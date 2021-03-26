@@ -13,8 +13,13 @@ class TopPageController extends Controller
         return view('lesson.index')->with('lessons', Lesson::get());
     }
 
-    public function show($id)
+    public function show()
     {
-        return view('lesson.show')->with('lesson', Lesson::find($id));
+        return view('lesson.show')->with('lessons', Lesson::get());
+    }
+
+    public function detail($id)
+    {
+        return view('lesson.detail')->with('lesson', Lesson::find($id));
     }
 }

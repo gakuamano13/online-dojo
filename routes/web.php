@@ -9,7 +9,19 @@ use Illuminate\Http\Request;
 Route::name('lesson.')
     ->group(function () {
         Route::get('/', 'User\TopPageController@index')->name('index');
-        Route::get('/lesson/{id}', 'User\TopPageController@show')->name('show');
+        Route::get('/lesson', 'User\TopPageController@show')->name('show');
+        Route::get('/lesson/{id}', 'User\TopPageController@detail')->name('detail');
+        Route::get('/session', 'User\SessionController@index')->name('session');
+    });
+
+Route::name('user.')
+    ->group(function () {
+        Route::get('/mypage', 'User\MyPageController@index')->name('mypage');
+    });
+
+
+Route::get('/mastertop', function () {
+        return view('mastertop');
     });
 
 
