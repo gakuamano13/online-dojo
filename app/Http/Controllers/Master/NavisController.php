@@ -1,9 +1,10 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Master;
 
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Navi;
+use App\Models\Navi;
 use Validator;
 use Auth;
 
@@ -26,7 +27,7 @@ class NavisController extends Controller
         $validator = Validator::make($request->all(), [
             'navis_email' => 'required|max:255',
         ]);
-        //バリデーション:エラー 
+        //バリデーション:エラー
         if ($validator->fails()) {
             return redirect('/navitop')
                 ->withInput()
@@ -54,11 +55,11 @@ class NavisController extends Controller
         $navis->navis_pass = $request->navis_pass;
         $navis->navis_tel = $request->navis_tel;
         $navis->navis_photo = $filename;
-        $navis->save(); 
+        $navis->save();
         return redirect('/navitop');
 
 
-    } 
+    }
 
 
     //更新画面
@@ -76,7 +77,7 @@ class NavisController extends Controller
             'id' => 'required',
             'navis_email' => 'required|max:255',
         ]);
-        //バリデーション:エラー 
+        //バリデーション:エラー
         if ($validator->fails()) {
             return redirect('/navitop')
                 ->withInput()
@@ -104,9 +105,9 @@ class NavisController extends Controller
         $navis->navis_pass = $request->navis_pass;
         $navis->navis_tel = $request->navis_tel;
         $navis->navis_photo = $filename;
-        $navis->save(); 
+        $navis->save();
         return redirect('/navitop');
-    } 
+    }
 
 
     //削除処理

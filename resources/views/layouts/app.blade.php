@@ -11,13 +11,15 @@
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/login.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/about.css') }}" rel="stylesheet">
 
     <script src="{{ asset('js/app.js') }}" defer></script>
 </head>
 
 <body>
 
-    <div id="app">
+    <div>
         @yield('header')
         @yield('content')
         @yield('footer')

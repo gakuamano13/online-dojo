@@ -1,9 +1,10 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Master;
 
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Notice;
+use App\Models\Notice;
 use Validator;
 use Auth;
 
@@ -17,8 +18,8 @@ class NoticesController extends Controller
                         'notices' => $notices
                     ]);
                 }
-            
-            
+
+
                 //登録
                 public function store(Request $request)
                 {
@@ -26,32 +27,32 @@ class NoticesController extends Controller
                     $validator = Validator::make($request->all(), [
                         'notices_title' => 'required|max:255',
                     ]);
-                    //バリデーション:エラー 
+                    //バリデーション:エラー
                     if ($validator->fails()) {
                         return redirect('/noticetop')
                             ->withInput()
                             ->withErrors($validator);
                     }
-                    
+
                     //以下に登録処理を記述（Eloquentモデル）
                     $notices = new Notice;
                     $notices->notices_title = $request->notices_title;
                     $notices->notices_text = $request->notices_text;
                     $notices->notices_flag = $request->notices_flag;
-                    $notices->save(); 
+                    $notices->save();
                     return redirect('/noticetop');
-            
-            
-                } 
-            
-            
+
+
+                }
+
+
                 //更新画面
                 public function edit(Notice $notices)
                 {
                     return view('master/notices/noticesedit', ['notice' => $notices]);
                 }
-            
-            
+
+
                 //更新処理
                 public function update(Request $request)
                 {
@@ -60,23 +61,23 @@ class NoticesController extends Controller
                         'id' => 'required',
                         'notices_title' => 'required|max:255',
                     ]);
-                    //バリデーション:エラー 
+                    //バリデーション:エラー
                     if ($validator->fails()) {
                         return redirect('/noticetop')
                             ->withInput()
                             ->withErrors($validator);
                     }
-                    
+
                     //以下に登録処理を記述（Eloquentモデル）
                     $notices = Notice::find($request->id);
                     $notices->notices_title = $request->notices_title;
                     $notices->notices_text = $request->notices_text;
                     $notices->notices_flag = $request->notices_flag;
-                    $notices->save(); 
+                    $notices->save();
                     return redirect('/noticetop');
-                } 
-            
-            
+                }
+
+
                 //削除処理
                 public function destroy(Notice $notice)
                 {

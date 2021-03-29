@@ -1,9 +1,10 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Master;
 
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Booking;
+use App\Models\Booking;
 use Validator;
 use Auth;
 
@@ -26,13 +27,13 @@ class BookingsController extends Controller
         $validator = Validator::make($request->all(), [
             'bookings_students_id' => 'required',
         ]);
-        //バリデーション:エラー 
+        //バリデーション:エラー
         if ($validator->fails()) {
             return redirect('/bookingtop')
                 ->withInput()
                 ->withErrors($validator);
         }
-        
+
         //以下に登録処理を記述（Eloquentモデル）
         $bookings = new Booking;
         $bookings->bookings_students_id = $request->bookings_students_id;
@@ -40,11 +41,11 @@ class BookingsController extends Controller
         $bookings->bookings_lessons_id = $request->bookings_lessons_id;
         $bookings->bookings_courses_id = $request->bookings_courses_id;
         $bookings->bookings_flag = $request->bookings_flag;
-        $bookings->save(); 
+        $bookings->save();
         return redirect('/bookingtop');
 
 
-    } 
+    }
 
 
     //更新画面
@@ -62,13 +63,13 @@ class BookingsController extends Controller
             'id' => 'required',
             'bookings_students_id' => 'required',
         ]);
-        //バリデーション:エラー 
+        //バリデーション:エラー
         if ($validator->fails()) {
             return redirect('/bookingtop')
                 ->withInput()
                 ->withErrors($validator);
         }
-        
+
         //以下に登録処理を記述（Eloquentモデル）
         $bookings = Booking::find($request->id);
         $bookings->bookings_students_id = $request->bookings_students_id;
@@ -76,9 +77,9 @@ class BookingsController extends Controller
         $bookings->bookings_lessons_id = $request->bookings_lessons_id;
         $bookings->bookings_courses_id = $request->bookings_courses_id;
         $bookings->bookings_flag = $request->bookings_flag;
-        $bookings->save(); 
+        $bookings->save();
         return redirect('/bookingtop');
-    } 
+    }
 
 
     //削除処理

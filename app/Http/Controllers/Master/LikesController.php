@@ -1,9 +1,10 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Master;
 
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Like;
+use App\Models\Like;
 use Validator;
 use Auth;
 
@@ -26,13 +27,13 @@ class LikesController extends Controller
         $validator = Validator::make($request->all(), [
             'likes_students_id' => 'required',
         ]);
-        //バリデーション:エラー 
+        //バリデーション:エラー
         if ($validator->fails()) {
             return redirect('/liketop')
                 ->withInput()
                 ->withErrors($validator);
         }
-        
+
         //以下に登録処理を記述（Eloquentモデル）
         $likes = new Like;
         $likes->likes_students_id = $request->likes_students_id;
@@ -41,11 +42,11 @@ class LikesController extends Controller
         $likes->likes_lessons_id = $request->likes_lessons_id;
         $likes->likes_courses_id = $request->likes_courses_id;
         $likes->likes_flag = $request->likes_flag;
-        $likes->save(); 
+        $likes->save();
         return redirect('/liketop');
 
 
-    } 
+    }
 
 
     //更新画面
@@ -63,13 +64,13 @@ class LikesController extends Controller
             'id' => 'required',
             'likes_students_id' => 'required',
         ]);
-        //バリデーション:エラー 
+        //バリデーション:エラー
         if ($validator->fails()) {
             return redirect('/liketop')
                 ->withInput()
                 ->withErrors($validator);
         }
-        
+
         //以下に登録処理を記述（Eloquentモデル）
         $likes = Like::find($request->id);
         $likes->likes_students_id = $request->likes_students_id;
@@ -78,9 +79,9 @@ class LikesController extends Controller
         $likes->likes_lessons_id = $request->likes_lessons_id;
         $likes->likes_courses_id = $request->likes_courses_id;
         $likes->likes_flag = $request->likes_flag;
-        $likes->save(); 
+        $likes->save();
         return redirect('/liketop');
-    } 
+    }
 
 
     //削除処理

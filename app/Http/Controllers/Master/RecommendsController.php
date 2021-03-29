@@ -1,9 +1,10 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Master;
 
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Recommend;
+use App\Models\Recommend;
 use Validator;
 use Auth;
 
@@ -17,8 +18,8 @@ class RecommendsController extends Controller
                     'recommends' => $recommends
                 ]);
             }
-        
-        
+
+
             //登録
             public function store(Request $request)
             {
@@ -26,33 +27,33 @@ class RecommendsController extends Controller
                 $validator = Validator::make($request->all(), [
                     'recommends_title' => 'required|max:255',
                 ]);
-                //バリデーション:エラー 
+                //バリデーション:エラー
                 if ($validator->fails()) {
                     return redirect('/recommendtop')
                         ->withInput()
                         ->withErrors($validator);
                 }
-                
+
                 //以下に登録処理を記述（Eloquentモデル）
                 $recommends = new Recommend;
                 $recommends->recommends_title = $request->recommends_title;
                 $recommends->recommends_lessons_id = $request->recommends_lessons_id;
                 $recommends->recommends_text = $request->recommends_text;
                 $recommends->recommends_flag = $request->recommends_flag;
-                $recommends->save(); 
+                $recommends->save();
                 return redirect('/recommendtop');
-        
-        
-            } 
-        
-        
+
+
+            }
+
+
             //更新画面
             public function edit(Recommend $recommends)
             {
                 return view('master/recommends/recommendsedit', ['recommend' => $recommends]);
             }
-        
-        
+
+
             //更新処理
             public function update(Request $request)
             {
@@ -61,24 +62,24 @@ class RecommendsController extends Controller
                     'id' => 'required',
                     'recommends_title' => 'required|max:255',
                 ]);
-                //バリデーション:エラー 
+                //バリデーション:エラー
                 if ($validator->fails()) {
                     return redirect('/recommendtop')
                         ->withInput()
                         ->withErrors($validator);
                 }
-                
+
                 //以下に登録処理を記述（Eloquentモデル）
                 $recommends = Recommend::find($request->id);
                 $recommends->recommends_title = $request->recommends_title;
                 $recommends->recommends_lessons_id = $request->recommends_lessons_id;
                 $recommends->recommends_text = $request->recommends_text;
                 $recommends->recommends_flag = $request->recommends_flag;
-                $recommends->save(); 
+                $recommends->save();
                 return redirect('/recommendtop');
-            } 
-        
-        
+            }
+
+
             //削除処理
             public function destroy(Recommend $recommend)
             {

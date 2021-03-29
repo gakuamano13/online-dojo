@@ -1,9 +1,10 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Master;
 
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Student;
+use App\Models\Student;
 use Validator;
 use Auth;
 
@@ -17,8 +18,8 @@ class StudentsController extends Controller
                 'students' => $students
             ]);
         }
-    
-    
+
+
         //登録
         public function store(Request $request)
         {
@@ -26,13 +27,13 @@ class StudentsController extends Controller
             $validator = Validator::make($request->all(), [
                 'students_email' => 'required|min:3|max:255',
             ]);
-            //バリデーション:エラー 
+            //バリデーション:エラー
             if ($validator->fails()) {
                 return redirect('/studenttop')
                     ->withInput()
                     ->withErrors($validator);
             }
-    
+
             //file 取得
             $file = $request->file('students_photo');
             //file が空かチェック
@@ -44,7 +45,7 @@ class StudentsController extends Controller
             }else{
             $filename = "";
             }
-    
+
             //以下に登録処理を記述（Eloquentモデル）
             $students = new Student;
             $students->students_name = $request->students_name;
@@ -54,20 +55,20 @@ class StudentsController extends Controller
             $students->students_pass = $request->students_pass;
             $students->students_tel = $request->students_tel;
             $students->students_photo = $filename;
-            $students->save(); 
+            $students->save();
             return redirect('/studenttop');
-    
-    
-        } 
-    
-    
+
+
+        }
+
+
         //更新画面
         public function edit(Student $students)
         {
             return view('master/students/studentsedit', ['student' => $students]);
         }
-    
-    
+
+
         //更新処理
         public function update(Request $request)
         {
@@ -76,13 +77,13 @@ class StudentsController extends Controller
                 'id' => 'required',
                 'students_email' => 'required|min:3|max:255',
             ]);
-            //バリデーション:エラー 
+            //バリデーション:エラー
             if ($validator->fails()) {
                 return redirect('/studenttop')
                     ->withInput()
                     ->withErrors($validator);
             }
-    
+
             //file 取得
             $file = $request->file('students_photo');
             //file が空かチェック
@@ -94,7 +95,7 @@ class StudentsController extends Controller
             }else{
             $filename = "";
             }
-    
+
             //以下に登録処理を記述（Eloquentモデル）
             $students = Student::find($request->id);
             $students->students_name = $request->students_name;
@@ -104,11 +105,11 @@ class StudentsController extends Controller
             $students->students_pass = $request->students_pass;
             $students->students_tel = $request->students_tel;
             $students->students_photo = $filename;
-            $students->save(); 
+            $students->save();
             return redirect('/studenttop');
-        } 
-    
-    
+        }
+
+
         //削除処理
         public function destroy(Student $student)
         {

@@ -1,9 +1,10 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Master;
 
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Teacher;
+use App\Models\Teacher;
 use Validator;
 use Auth;
 
@@ -26,7 +27,7 @@ class TeachersController extends Controller
         $validator = Validator::make($request->all(), [
             'teachers_email' => 'required|max:255',
         ]);
-        //バリデーション:エラー 
+        //バリデーション:エラー
         if ($validator->fails()) {
             return redirect('/teachertop')
                 ->withInput()
@@ -54,11 +55,11 @@ class TeachersController extends Controller
         $teachers->teachers_pass = $request->teachers_pass;
         $teachers->teachers_tel = $request->teachers_tel;
         $teachers->teachers_photo = $filename;
-        $teachers->save(); 
+        $teachers->save();
         return redirect('/teachertop');
 
 
-    } 
+    }
 
 
     //更新画面
@@ -76,7 +77,7 @@ class TeachersController extends Controller
             'id' => 'required',
             'teachers_email' => 'required|max:255',
         ]);
-        //バリデーション:エラー 
+        //バリデーション:エラー
         if ($validator->fails()) {
             return redirect('/teachertop')
                 ->withInput()
@@ -104,9 +105,9 @@ class TeachersController extends Controller
         $teachers->teachers_pass = $request->teachers_pass;
         $teachers->teachers_tel = $request->teachers_tel;
         $teachers->teachers_photo = $filename;
-        $teachers->save(); 
+        $teachers->save();
         return redirect('/teachertop');
-    } 
+    }
 
 
     //削除処理

@@ -1,7 +1,8 @@
 @extends('layouts.app')
 
 @section('header')
-<header class="mt-4 pb-5">
+
+<header class="my-3">
     <nav class="navbar navbar-expand-md navbar-light bg-light">
         <div class="container">
             <li class="navbar-brand nav-link">
@@ -22,14 +23,14 @@
                 <!-- Right Side Of Navbar -->
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="#">About</a>
+                        <a class="nav-link" href="{{ url('/about') }}">About</a>
                     </li>
-                    <li class="nav-item">
+                    {{-- <li class="nav-item">
                         <a class="nav-link" href="#">Features</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Schedule</a>
-                    </li>
+                    </li> --}}
                     <!-- Authentication Links -->
                     @guest
                     <li class="nav-item">
@@ -75,7 +76,7 @@
 <main>
 
     <div class="mb-2 text-center bg-image" style="background-image: url('{{ asset('img/top-image.jpg') }}');
-    height: 500px; background-position:center; background-repeat: no-repeat;">
+    height: 400px; background-position:center; background-repeat: no-repeat;">
         <div class="mask">
             <div class="d-flex justify-content-center align-items-center h-100">
                 <div class="text-white pt-2">
@@ -86,7 +87,7 @@
         </div>
     </div>
 
-    <div class="container py-5">
+    <div class="container pt-5">
 
         <div class="text-center pb-4">
             @guest
@@ -105,7 +106,7 @@
 @endsection
 
 @section('footer')
-<footer class="mt-5 py-4">
+<footer class="mt-3 py-4">
     <div class="footer-top">
         <div class="container">
             <div class="row">

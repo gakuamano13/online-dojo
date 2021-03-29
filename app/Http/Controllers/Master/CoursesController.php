@@ -1,9 +1,10 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Master;
 
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Course;
+use App\Models\Course;
 use Validator;
 use Auth;
 
@@ -26,13 +27,13 @@ class CoursesController extends Controller
         $validator = Validator::make($request->all(), [
             'courses_date' => 'required',
         ]);
-        //バリデーション:エラー 
+        //バリデーション:エラー
         if ($validator->fails()) {
             return redirect('/coursetop')
                 ->withInput()
                 ->withErrors($validator);
         }
-        
+
         //以下に登録処理を記述（Eloquentモデル）
         $courses = new Course;
         $courses->courses_date = $request->courses_date;
@@ -40,11 +41,11 @@ class CoursesController extends Controller
         $courses->courses_week = $request->courses_week;
         $courses->courses_lessons_id = $request->courses_lessons_id;
         $courses->courses_flag = $request->courses_flag;
-        $courses->save(); 
+        $courses->save();
         return redirect('/coursetop');
 
 
-    } 
+    }
 
 
     //更新画面
@@ -62,13 +63,13 @@ class CoursesController extends Controller
             'id' => 'required',
             'courses_date' => 'required',
         ]);
-        //バリデーション:エラー 
+        //バリデーション:エラー
         if ($validator->fails()) {
             return redirect('/coursetop')
                 ->withInput()
                 ->withErrors($validator);
         }
-        
+
         //以下に登録処理を記述（Eloquentモデル）
         $courses = Course::find($request->id);
         $courses->courses_date = $request->courses_date;
@@ -76,9 +77,9 @@ class CoursesController extends Controller
         $courses->courses_week = $request->courses_week;
         $courses->courses_lessons_id = $request->courses_lessons_id;
         $courses->courses_flag = $request->courses_flag;
-        $courses->save(); 
+        $courses->save();
         return redirect('/coursetop');
-    } 
+    }
 
 
     //削除処理
