@@ -101,7 +101,7 @@
     @endif
 
     <h2>
-    <a href="{{ url('/mastertop') }}">Back to Master</a>
+    <a href="{{ url('/master') }}">Back to Master</a>
     </h2>
 
 @endsection

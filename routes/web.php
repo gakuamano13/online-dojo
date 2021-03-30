@@ -29,8 +29,12 @@ Route::get('/mastertop', function () {
 
 Route::get('/master','Master\MasterController@index');
 
-Route::get('meeting', function () {
-    return view('master/meeting');
+Route::get('meeting01_navi', function () {
+    return view('master/meeting01_navi');
+});
+
+Route::get('meeting01_student', function () {
+    return view('master/meeting01_student');
 });
 
 
