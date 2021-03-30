@@ -14,7 +14,7 @@
 <div>youtubu配信画面</div>
 <div>マイク：OFF、カメラ：OFF、↑画面：音量最弱</div>
 <iframe allow="camera:off; microphone:off; autoplay" src="https://meet.jit.si/online_dojo_room01" style="height: 400px; width: 600px; border: 0px;"></iframe>
-
+    <br>
     <h2>
     <a href="{{ url('/master') }}">Back to Master</a>
     </h2>
