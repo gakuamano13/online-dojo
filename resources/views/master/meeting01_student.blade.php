@@ -7,8 +7,11 @@
     <title>Meeting</title>
 </head>
 <body>
-<h1>Meeting</h1>
+<iframe allow="camera; microphone; fullscreen; display-capture; autoplay" src="https://meet.jit.si/online_dojo_room01" style="height:700px; width:100%; border: 0px;"></iframe>
 
-<iframe allow="camera; microphone; fullscreen; display-capture" src="https://meet.jit.si/kick01" style="height: 500px; width: 800px; border: 0px;"></iframe>
+    <h2>
+    <a href="{{ url('/master') }}">Back to Master</a>
+    </h2>
+
 </body>
 </html>

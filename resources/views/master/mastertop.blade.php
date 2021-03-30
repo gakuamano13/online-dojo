@@ -42,7 +42,9 @@
             <a href="{{ url('/helptop') }}">　Help Top</a>
             <br>
             <br>
-            <a href="{{ url('/meeting') }}">　Meeting</a>
+            <a href="{{ url('/meeting01_navi') }}">　Meeting01_Navi</a>
+            <br>
+            <a href="{{ url('/meeting01_student') }}">　Meeting01_Student</a>
         </h3>
     </body>
 </html>
