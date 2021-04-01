@@ -78,7 +78,7 @@
         <div class="col-lg-6 col-md-8 col-sm-10">
             <div class="card p-4 d-flex flex-column">
                 <div class="bg-image hover-overlay ripple text-center" data-mdb-ripple-color="light">
-                    <img src="{{ asset('img/' . $lesson->lessons_photo) }}" class="img-fluid img-thumbnail"
+                    <img src="{{ asset('upload/' . $lesson->lessons_photo) }}" class="img-fluid img-thumbnail"
                         style="height:300px; width:300px;" />
                 </div>
                 <div class="card-body my-3">

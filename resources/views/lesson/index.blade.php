@@ -3,24 +3,16 @@
 @section('header')
 
 <header class="my-3">
+
     <nav class="navbar navbar-expand-md navbar-light bg-light">
         <div class="container">
-            <li class="navbar-brand nav-link">
-                <a class="navbar-brand nav-item" href="{{ url('/') }}">{{ config('app.name') }}</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse"
-                    data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                    aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-            </li>
+            <div>
+                <a class="navbar-brand nav-item logo-font" href="{{ url('/') }}">
+                    JOIN HANDS
+                </a>
+            </div>
 
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <!-- Left Side Of Navbar -->
-                <ul class="navbar-nav mr-auto">
-
-                </ul>
-
-                <!-- Right Side Of Navbar -->
+            <div>
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
                         <a class="nav-link" href="{{ url('/about') }}">About</a>
@@ -56,15 +48,25 @@
                         document.getElementById('logout-form').submit();">
                                 {{ __('Logout') }}
                             </a>
-
-
-                            <form id="logout-form" action="{{ route('logout') }}" method="POST"
-                                style="display: none;">
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                 @csrf
                             </form>
                         </div>
                     </li>
                     @endguest
+                    @if (Auth::check() && auth()->user()->role == 'administrator')
+                    <li class="nav-item dropdown">
+                        <a class="nav-link" href="{{ url('/master') }}"><i class="fas fa-user-shield"></i></a>
+                    </li>
+                    @elseif(Auth::check() && auth()->user()->role == 'navigator')
+                    <li class="nav-item dropdown">
+                        <a class="nav-link" href="{{ url('/master') }}"><i class="fas fa-user-shield"></i></a>
+                    </li>
+                    @elseif(Auth::check() && auth()->user()->role == 'user')
+                    <li class="nav-item dropdown">
+                        <a class="nav-link" href="{{ url('/master') }}"><i class="far fa-user"></i></a>
+                    </li>
+                    @endif
                 </ul>
             </div>
         </div>
@@ -75,13 +77,13 @@
 @section('content')
 <main>
 
-    <div class="mb-2 text-center bg-image" style="background-image: url('{{ asset('img/top-image.jpg') }}');
-    height: 400px; background-position:center; background-repeat: no-repeat;">
+    <div class="mb-2 text-center bg-image" style="background-image: url('{{ asset('img/test002.jpg')}}');
+    height: 400px; width:100%; margin: 0 auto; background-position:center; background-repeat: no-repeat; background-size: 100% auto;">
         <div class="mask">
             <div class="d-flex justify-content-center align-items-center h-100">
-                <div class="text-white pt-2">
-                    <h1 class="my-5 pt-5 display-1">オンライン道場</h1>
-                    <h2 class="mb-2 pt-3 pb-5">力だけではない真の強さを求めて</h2>
+                <div class="text-white pt-2 logo-font">
+                    <h1 class="my-3 pt-5 display-1">JOIN HANDS</h1>
+                    <h2 class="mb-2 pt-3 pb-5 display-4">- Live your own life -</h2>
                 </div>
             </div>
         </div>
@@ -89,12 +91,16 @@
 
     <div class="container pt-5">
 
-        <div class="text-center pb-4">
+        <div class="d-flex flex-row justify-content-center text-center pb-4">
             @guest
-            <a class="btn btn-lg mt-1 mb-5 btn-outline-secondary" href="{{ route('login') }}">ログインする</a><br>
+            <div class="mr-5">
+                <a class="btn btn-lg btn-outline-secondary" href="{{ route('login') }}">ログインする</a>
+            </div>
             @if (Route::has('register'))
-            <a class="btn btn-lg my-3 btn-outline-secondary" role="button"
+            <div class="ml-5">
+                <a class="btn btn-lg btn-outline-secondary" role="button"
                 href="{{ route('register') }}">新規会員登録（無料）してレッスンを体験する</a>
+            </div>
             @endif
             @else
             <a class="btn btn-lg mt-3 btn-outline-secondary display-1" href="{{ route('lesson.show') }}">レッスン一覧</a>
@@ -113,8 +119,8 @@
                 <div class="col-md-4 col-lg-4 footer-about wow fadeInUp animated text-center"
                     style="visibility: visible; animation-name: fadeInUp;">
                     <h3 class="pb-3">ABOUT</h3>
-                    <img class="logo-footer mb-4" src="{{ asset('img/logo.png') }}" alt="ONLINE DOJO"
-                        data-at2x="assets/img/logo.png" style="width:100px;height:100px;">
+                    <img class="logo-footer mb-4" src="{{ asset('img/logo.jpg') }}" alt="ONLINE DOJO"
+                        data-at2x="assets/img/logo.png" style="width:150px;height:100px;">
                 </div>
                 <div class="col-md-4 col-lg-4 footer-contact wow fadeInDown animated"
                     style="visibility: visible; animation-name: fadeInDown;">

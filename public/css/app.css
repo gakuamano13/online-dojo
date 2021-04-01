@@ -17086,3 +17086,6 @@ readers do not read off random characters that represent icons */
   font-weight: 400;
 }
 
+.logo-font {
+    font-family: 'Londrina Shadow', cursive;
+}

@@ -53,9 +53,9 @@
                             </div>
                         </div>
                         <div class="form-group row mt-3">
-                            <div class="col-md-10 text-center">
-                                <button type="submit"
-                                    class="btn btn-primary btn-block btn-login text-uppercase font-weight-bold mb-2">
+                            <div class="col-md-10 text-center button-container">
+                                <button id="button" type="submit"
+                                    class="btn btn-primary btn-block btn-login text-uppercase font-weight-bold mb-2 button">
                                     {{ __('ログイン') }}
                                 </button>
 

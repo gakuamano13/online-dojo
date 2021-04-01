@@ -85,7 +85,7 @@
             <div class="col">
                 <div class="card p-4 d-flex flex-row">
                     <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
-                        <img src="{{ asset('img/' . $lesson->lessons_photo) }}" class="img-fluid img-thumbnail"
+                        <img src="{{ asset('upload/' . $lesson->lessons_photo) }}" class="img-fluid img-thumbnail"
                             style="height:200px; width:250px;" />
                     </div>
                     <div class="card-body">

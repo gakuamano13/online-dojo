@@ -1,11 +1,12 @@
 @extends('layouts.app')
+
 @section('content')
     <!-- Bootstrapの定形コード… -->
     <div class="card-body">
         <div class="card-title">
             Teacher Top
         </div>
-        
+
         <!-- バリデーションエラーの表示に使用-->
         @include('common.errors')
         <!-- バリデーションエラーの表示に使用-->

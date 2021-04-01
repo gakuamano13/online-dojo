@@ -5,12 +5,28 @@ namespace App\Http\Controllers\User;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Lesson;
+use Illuminate\Support\Facades\DB;
 
 class TopPageController extends Controller
 {
     public function index()
     {
-        return view('lesson.index')->with('lessons', Lesson::get());
+        // dd($users);
+
+        if(auth()->check() && auth()->user()->role == 'user')
+        {
+            $users = DB::table('users')->first();
+            return view('lesson.index', ['users' => $users])->with('lessons', Lesson::get());
+        }
+        else
+        {
+            return view('lesson.index');
+        }
+
+        // return response()->json([
+        //     'users' => $users
+        // ]);
+
     }
 
     public function show()
