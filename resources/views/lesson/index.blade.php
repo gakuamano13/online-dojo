@@ -6,7 +6,7 @@
         <nav class="navbar navbar-expand-md navbar-light d-flex flex-column">
             <div class="container" style="max-width:1000px;">
                 <div class="d-flex flex-row">
-                    <div class="mr-3 d-flex align-items-center">
+                    <div class="mr-3 pr-2 d-flex align-items-center">
                         <img src="{{ asset('img/handshake.png')}}" alt="">
                     </div>
                     <div>
@@ -79,16 +79,20 @@
                     @endguest
                     @if (Auth::check() && auth()->user()->role == 'administrator')
                     <li class="nav-item dropdown">
-                        <a class="nav-link" href="{{ url('/master') }}"><img src="{{ asset('img/admin.png')}}"
-                                alt="logo" style="width:20px;"></a>
+                        <a class="nav-link" href="{{ url('/master') }}">
+                            <img src="{{ asset('img/admin.png')}}"
+                                alt="logo" style="width:20px;">
+                        </a>
                     </li>
                     @elseif(Auth::check() && auth()->user()->role == 'navigator')
                     <li class="nav-item dropdown">
-                        <a class="nav-link" href="{{ url('/master') }}"><i class="fas fa-user-shield"></i></a>
+                        <a class="nav-link" href="{{ url('/master') }}"><img src="{{ asset('img/admin.png')}}"
+                            alt="logo" style="width:20px;"></i></a>
                     </li>
                     @elseif(Auth::check() && auth()->user()->role == 'user')
                     <li class="nav-item dropdown">
-                        <a class="nav-link" href="{{ url('/mypage') }}"><i class="far fa-user"></i></a>
+                        <a class="nav-link" href="{{ url('/mypage') }}"><img src="{{ asset('img/user.png')}}"
+                            alt="logo" style="width:20px;"></a>
                     </li>
                     @endif
                 </ul>
