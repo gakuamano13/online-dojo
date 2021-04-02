@@ -73,56 +73,39 @@
 
 @section('content')
 
+<div class="top__title text-center" style="margin-top:50px; margin-bottom:100px;">
+    <h2>レッスン詳細</h2>
+</div>
+
 <div class="container">
     <div class="row mb-5 d-flex justify-content-center">
-        <div class="col-lg-6 col-md-8 col-sm-10">
-            <div class="card p-4 d-flex flex-column">
-                <div class="bg-image hover-overlay ripple text-center" data-mdb-ripple-color="light">
-                    <img src="{{ asset('upload/' . $lesson->lessons_photo) }}" class="img-fluid img-thumbnail"
-                        style="height:300px; width:300px;" />
+        <div class="col-lg-8 col-md-8 col-sm-10 card p-4 d-flex flex-row">
+            <div class="bg-image hover-overlay ripple col-6" data-mdb-ripple-color="light">
+                <img src="{{ asset('upload/' . $lesson->lessons_photo) }}" class="img-fluid img-thumbnail"
+                    style="height:200px; width:250px;" />
+            </div>
+            <div class="card-body pt-5 col-6">
+                <div>
+                    <h3 class="card-title">{{ $lesson->lessons_title }}</h3>
                 </div>
-                <div class="card-body my-3">
-                    <h1 class="card-title">{{ $lesson->lessons_title }}</h1>
-                    <h2 class="card-text">{{ $lesson->lessons_text }}</h2>
+                <div>
+                    <h4 class="card-text">{{ $lesson->lessons_text }}</h4>
                 </div>
-                <div class="text-center">
+                <div class="">
                     <form method="POST" action="/">
                         @csrf
                         <input type="hidden" name="id" value="{{ $lesson->id }}" />
                         <div class="product__btn-add-cart">
-                            <a class="btn btn-lg my-3 btn-outline-secondary" role="button"
+                            <a class="btn btn-lg my-3 btn-outline-primary" role="button"
                                 href="{{ route('lesson.session', $lesson->id) }}">レッスンを開始する
                             </a>
                         </div>
                     </form>
                 </div>
             </div>
-
-
         </div>
     </div>
 </div>
-
-{{-- <div class="container">
-    <div class="product">
-        <img src="{{ asset('img/' . $lesson->lessons_photo) }}" class="product-img"/>
-<div class="product__content-header text-center">
-    <div class="product__name">
-        {{ $lesson->lessons_title }}
-    </div>
-    <div class="product__price">
-        {{ $lesson->lessons_text }}
-    </div>
-</div>
-<div>
-    <form method="POST" action="/">
-        @csrf
-        <input type="hidden" name="id" value="{{ $lesson->id }}" />
-        <div class="product__btn-add-cart">
-            <button type="submit" class="btn btn-outline-secondary">レッスンを予約する</button>
-        </div>
-    </form>
-</div>
-</div>
-</div> --}}
 @endsection
+
+

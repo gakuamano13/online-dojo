@@ -11,7 +11,8 @@
                     </div>
                     <div>
                         <a class="navbar-brand nav-item dashboard-logo-font" href="{{ url('/') }}">
-                            JOIN HANDS
+                            {{-- JOIN HANDS --}}
+                            <img src="{{ asset('img/logo.jpg')}}" alt="logo" style="width:150px;">
                         </a>
                     </div>
                 </div>
@@ -19,15 +20,19 @@
                     <ul class="list-group list-group-flush d-flex flex-row">
                         <li class="list-group-item bg-light border-0">
                             <a href="#">
-                                <i class="fab fa-instagram" style="font-size:20px; color:black;"></i>
+                                <img src="{{ asset('img/instagram.png')}}" alt="logo" style="width:20px;">
                             </a>
                         </li>
                         <li class="list-group-item bg-light border-0">
                             <a href="#">
-                                <i class="fab fa-facebook-f" style="font-size:20px; color:black;"></i>
+                                <img src="{{ asset('img/facebook.png')}}" alt="logo" style="width:20px;">
                             </a>
                         </li>
-
+                        <li class="list-group-item bg-light border-0">
+                            <a href="#">
+                                <img src="{{ asset('img/twitter.png')}}" alt="logo" style="width:20px;">
+                            </a>
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -52,7 +57,7 @@
                     </li>
                     @endif
                     @else
-                    <li class="nav-item dropdown">
+                    <li class="nav-item dropdown pl-3">
                         <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
                             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                             {{ Auth::user()->name }} さん <span class="caret"></span>
@@ -74,7 +79,8 @@
                     @endguest
                     @if (Auth::check() && auth()->user()->role == 'administrator')
                     <li class="nav-item dropdown">
-                        <a class="nav-link" href="{{ url('/master') }}"><i class="fas fa-user-shield"></i></a>
+                        <a class="nav-link" href="{{ url('/master') }}"><img src="{{ asset('img/admin.png')}}"
+                                alt="logo" style="width:20px;"></a>
                     </li>
                     @elseif(Auth::check() && auth()->user()->role == 'navigator')
                     <li class="nav-item dropdown">
@@ -96,38 +102,38 @@
 @section('content')
 <main>
 
-    <div class="mb-2 text-center bg-image container"
-        style="background-image: url('{{ asset('img/test003.jpg')}}'); width:1200px; margin: 0 auto; background-position:center; background-repeat: no-repeat; background-size:cover;
+    <div class="mb-2 text-center bg-image container" style="background-image: url('{{ asset('img/test003.jpg')}}'); width:1200px; margin: 0 auto; background-position:center; background-repeat: no-repeat; background-size:cover;
 
         opacity:0.8;">
         <div class="mask">
             <div class="d-flex flex-column">
                 <div class="text-white logo-font" style="height: 100px;">
-                    <h1 class="my-5 display-4 top-message" id="top_message">JOIN HANDS</h1>
+                    <h1 class="my-5 display-4 text-dark top-message id="top_message">JOIN HANDS</h1>
                 </div>
                 <div class="pt-5 d-flex justify-content-center" style="height: 300px;">
                     <div class="d-flex flex-column justify-content-center text-center pb-4" style=" padding-left:400px;"">
                         @guest
-                        <div class="my-5">
-                            <a class="btn btn-lg btn-outline-dark" href="{{ route('login') }}">ログインする</a>
-                        </div>
-                        @if (Route::has('register'))
-                        <div class="my-3">
-                            <a class="btn btn-lg btn-outline-dark" role="button"
-                                href="{{ route('register') }}">新規登録（無料）</a>
-                        </div>
-                        @endif
-                        @else
-                        <a class="btn btn-lg mt-5 btn-outline-secondary" href="{{ route('lesson.show') }}">レッスン一覧</a>
-                        @endguest
+                        <div class=" my-5">
+                        <a class="btn btn-lg btn-outline-dark" href="{{ route('login') }}">ログインする</a>
                     </div>
+                    @if (Route::has('register'))
+                    <div class="my-3">
+                        <a class="btn btn-lg btn-outline-dark" role="button" href="{{ route('register') }}">新規登録（無料）</a>
+                    </div>
+                    @endif
+                    @else
+                    <div class="ml-5">
+                        <a class="btn btn-lg mt-5 btn-outline-dark" href="{{ route('lesson.show') }}">レッスン一覧</a>
+                    </div>
+                    @endguest
+                </div>
 
-                </div>
-                <div style="height: 150px; padding-top:30px;">
-                    <h2 class="mb-2 pt-5 pb-5 display-5 top-message">- Live your own life -</h2>
-                </div>
+            </div>
+            <div style="height: 150px; padding-top:30px;">
+                <h2 class="mb-2 pt-5 pb-5 display-5 top-message">- Live your own life -</h2>
             </div>
         </div>
+    </div>
 
     </div>
 
@@ -143,9 +149,6 @@
                 <div class="col-md-4 col-lg-4 footer-about wow fadeInUp animated text-center"
                     style="visibility: visible; animation-name: fadeInUp;">
                     <ul class="navbar-nav d-flecx flex-row">
-                        <li class="nav-item">
-                            <a class="nav-link text-secondary" href="{{ url('/about') }}">SNS</a>
-                        </li>
                         <li class="nav-item pl-3">
                             <a class="nav-link text-secondary" href="{{ url('/about') }}">CONTACT</a>
                         </li>
@@ -155,7 +158,8 @@
                     <a href="#"><img src="{{ asset('/img/up.png') }}" alt=""></a>
                 </div>
                 <div class="col-md-4 col-lg-4 bg-light ">
-                    <small class="text-center text-secondary"  style="font-size:12px; padding-left:60px;"> © 2020 Copyright : JOIN HANDS All rights reserved.</small>
+                    <small class="text-center text-secondary" style="font-size:12px; padding-left:60px;"> © 2020
+                        Copyright : JOIN HANDS All rights reserved.</small>
                 </div>
             </div>
         </div>

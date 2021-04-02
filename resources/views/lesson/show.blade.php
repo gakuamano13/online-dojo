@@ -8,8 +8,8 @@
             <li class="navbar-brand nav-link">
                 <a class="navbar-brand nav-item" href="{{ url('/') }}">{{ config('app.name') }}</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse"
-                    data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                    aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
+                    data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                    aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
                 </button>
             </li>
@@ -58,8 +58,7 @@
                             </a>
 
 
-                            <form id="logout-form" action="{{ route('logout') }}" method="POST"
-                                style="display: none;">
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                 @csrf
                             </form>
                         </div>
@@ -79,20 +78,25 @@
         <h2>レッスン一覧</h2>
     </div>
 
-    <div class="container d-flex flex-row">
+    <div class="container d-flex flex-wrap">
         @foreach ($lessons as $lesson)
-        <div class="15  mb-5">
-            <div class="col">
-                <div class="card p-4 d-flex flex-row">
-                    <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
-                        <img src="{{ asset('upload/' . $lesson->lessons_photo) }}" class="img-fluid img-thumbnail"
-                            style="height:200px; width:250px;" />
+        <div class="col-4">
+            <div class="card p-3 d-flex flex-column">
+                <div class="bg-image hover-overlay ripple text-center py-3" data-mdb-ripple-color="light">
+                    <img src="{{ asset('upload/' . $lesson->lessons_photo) }}" class="img-fluid img-thumbnail"
+                        style="height:200px; width:250px;" />
+                </div>
+                <div class="card-body d-flex flex-column">
+                    <div>
+                        <h5 class="card-title">{{ $lesson->lessons_title }}</h5>
                     </div>
-                    <div class="card-body">
-                        <h1 class="card-title">{{ $lesson->lessons_title }}</h1>
-                        <h2 class="card-text">{{ $lesson->lessons_text }}</h2>
-                        <a href="{{ route('lesson.detail', $lesson->id) }}" class="btn btn-primary">レッスン詳細</a>
+                    <div>
+                        <h6 class="card-text">{{ $lesson->lessons_text }}</h6>
                     </div>
+                    <div class="mt-4 text-center">
+                        <a href="{{ route('lesson.detail', $lesson->id) }}" class="btn btn-lg btn-outline-primary ">レッスン詳細</a>
+                    </div>
+
                 </div>
             </div>
         </div>

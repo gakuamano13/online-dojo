@@ -1,7 +1,6 @@
 <?php
-
 use Illuminate\Database\Seeder;
-
+use Illuminate\Support\Facades\DB;
 class LessonsTableSeeder extends Seeder
 {
     /**
@@ -42,8 +41,22 @@ class LessonsTableSeeder extends Seeder
             'navis_id' => 1,
             'created_at' => '2021-02-27 17:31:38',
             'updated_at' => '2021-02-27 17:31:38',
+            ],[
+                'id' => 3,
+                'lessons_title' => '空手AdvanceLesson',
+                'lessons_text' => '空手上級者向けのレッスンです',
+                'lessons_price' => 0,
+                'lessons_date' => '2021-03-05 13:00:00',
+                'lessons_week' => 7,
+                'lessons_url' => 'non',
+                'lessons_pass' => 'non',
+                'lessons_photo' => 'Snapshot_11.png',
+                'lessons_video' => 'https://youtu.be/jxqLpfzrxL4',
+                'teachers_id' => 1,
+                'navis_id' => 1,
+                'created_at' => '2021-02-27 17:31:38',
+                'updated_at' => '2021-02-27 17:31:38',
             ]
         ]);
-
     }
 }
