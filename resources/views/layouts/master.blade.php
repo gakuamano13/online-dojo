@@ -29,9 +29,9 @@
 <body>
     <div class="wrapper ">
         <div class="sidebar" data-color="white" data-active-color="danger">
-            <div class="logo">
-                <a href="{{ url('/') }}" class="simple-text logo-normal">
-                    <img src="{{ asset('img/logo.jpg') }}" alt="">
+            <div class="logo text-center">
+                <a class="navbar-brand nav-item text-dark" href="{{ url('/') }}">
+                    JOIN HANDS
                 </a>
             </div>
             <div class="sidebar-wrapper">

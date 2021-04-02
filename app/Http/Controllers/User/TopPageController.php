@@ -31,7 +31,15 @@ class TopPageController extends Controller
 
     public function show()
     {
-        return view('lesson.show')->with('lessons', Lesson::get());
+        if(auth()->check())
+        {
+            return view('lesson.show')->with('lessons', Lesson::get());
+        }
+        else
+        {
+            return view('lesson.index');
+        }
+
     }
 
     public function detail($id)

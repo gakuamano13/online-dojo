@@ -10,15 +10,13 @@
 <div class="container-fluid">
     <div class="video-container">
         <div class="lesson-title text-center">
-            <h3>本日の授業内容</h3>
             <h2>{{ $lesson->lessons_title }}</h2>
-            <h4>〜時より開始</h4>
         </div>
         <div class="video-box">
-            <iframe allow="camera; microphone; fullscreen; display-capture"
-                    src="https://meet.jit.si/kick01">
+            <iframe allow="camera; microphone; fullscreen; display-capture; autoplay"
+                src="https://meet.jit.si/JOIN_HANDS_room01"
+                style="height:700px; width:100%; border: 0px;">
             </iframe>
         </div>
     </div>
-</div>
-@endsection
+    @endsection

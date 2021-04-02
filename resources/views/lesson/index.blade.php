@@ -1,36 +1,54 @@
 @extends('layouts.app')
 
 @section('header')
+<div class="header-container">
+    <header class="py-3">
+        <nav class="navbar navbar-expand-md navbar-light d-flex flex-column">
+            <div class="container" style="max-width:1000px;">
+                <div class="d-flex flex-row">
+                    <div class="mr-3 d-flex align-items-center">
+                        <img src="{{ asset('img/handshake.png')}}" alt="">
+                    </div>
+                    <div>
+                        <a class="navbar-brand nav-item dashboard-logo-font" href="{{ url('/') }}">
+                            JOIN HANDS
+                        </a>
+                    </div>
+                </div>
+                <div class="d-flex flex-row">
+                    <ul class="list-group list-group-flush d-flex flex-row">
+                        <li class="list-group-item bg-light border-0">
+                            <a href="#">
+                                <i class="fab fa-instagram" style="font-size:20px; color:black;"></i>
+                            </a>
+                        </li>
+                        <li class="list-group-item bg-light border-0">
+                            <a href="#">
+                                <i class="fab fa-facebook-f" style="font-size:20px; color:black;"></i>
+                            </a>
+                        </li>
 
-<header class="my-3">
-
-    <nav class="navbar navbar-expand-md navbar-light bg-light">
-        <div class="container">
-            <div>
-                <a class="navbar-brand nav-item logo-font" href="{{ url('/') }}">
-                    JOIN HANDS
-                </a>
+                    </ul>
+                </div>
             </div>
-
-            <div>
+            <div class="container" style="padding-top:20px; max-width:1000px;">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ url('/about') }}">About</a>
+                        <a class="nav-link" href="{{ url('/about') }}">ABOUT</a>
                     </li>
-                    {{-- <li class="nav-item">
-                        <a class="nav-link" href="#">Features</a>
+                    <li class="nav-item pl-3">
+                        <a class="nav-link" href="{{ url('/about') }}">FEATURE</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Schedule</a>
-                    </li> --}}
-                    <!-- Authentication Links -->
+                    <li class="nav-item pl-3">
+                        <a class="nav-link" href="{{ url('/about') }}">TEACHER</a>
+                    </li>
                     @guest
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                    <li class="nav-item pl-3">
+                        <a class="nav-link" href="{{ route('login') }}">{{ __('LOGIN') }}</a>
                     </li>
                     @if (Route::has('register'))
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                    <li class="nav-item pl-3">
+                        <a class="nav-link" href="{{ route('register') }}">{{ __('REGISTER') }}</a>
                     </li>
                     @endif
                     @else
@@ -69,45 +87,51 @@
                     @endif
                 </ul>
             </div>
-        </div>
-    </nav>
+</div>
+</nav>
 </header>
+</div>
 @endsection
 
 @section('content')
 <main>
 
-    <div class="mb-2 text-center bg-image" style="background-image: url('{{ asset('img/test002.jpg')}}');
-    height: 400px; width:100%; margin: 0 auto; background-position:center; background-repeat: no-repeat; background-size: 100% auto;">
+    <div class="mb-2 text-center bg-image container"
+        style="background-image: url('{{ asset('img/test003.jpg')}}'); width:1200px; margin: 0 auto; background-position:center; background-repeat: no-repeat; background-size:cover;
+
+        opacity:0.8;">
         <div class="mask">
-            <div class="d-flex justify-content-center align-items-center h-100">
-                <div class="text-white pt-2 logo-font">
-                    <h1 class="my-3 pt-5 display-1">JOIN HANDS</h1>
-                    <h2 class="mb-2 pt-3 pb-5 display-4">- Live your own life -</h2>
+            <div class="d-flex flex-column">
+                <div class="text-white logo-font" style="height: 100px;">
+                    <h1 class="my-5 display-4 top-message" id="top_message">JOIN HANDS</h1>
+                </div>
+                <div class="pt-5 d-flex justify-content-center" style="height: 300px;">
+                    <div class="d-flex flex-column justify-content-center text-center pb-4" style=" padding-left:400px;"">
+                        @guest
+                        <div class="my-5">
+                            <a class="btn btn-lg btn-outline-dark" href="{{ route('login') }}">ログインする</a>
+                        </div>
+                        @if (Route::has('register'))
+                        <div class="my-3">
+                            <a class="btn btn-lg btn-outline-dark" role="button"
+                                href="{{ route('register') }}">新規登録（無料）</a>
+                        </div>
+                        @endif
+                        @else
+                        <a class="btn btn-lg mt-5 btn-outline-secondary" href="{{ route('lesson.show') }}">レッスン一覧</a>
+                        @endguest
+                    </div>
+
+                </div>
+                <div style="height: 150px; padding-top:30px;">
+                    <h2 class="mb-2 pt-5 pb-5 display-5 top-message">- Live your own life -</h2>
                 </div>
             </div>
         </div>
-    </div>
-
-    <div class="container pt-5">
-
-        <div class="d-flex flex-row justify-content-center text-center pb-4">
-            @guest
-            <div class="mr-5">
-                <a class="btn btn-lg btn-outline-secondary" href="{{ route('login') }}">ログインする</a>
-            </div>
-            @if (Route::has('register'))
-            <div class="ml-5">
-                <a class="btn btn-lg btn-outline-secondary" role="button"
-                href="{{ route('register') }}">新規会員登録（無料）してレッスンを体験する</a>
-            </div>
-            @endif
-            @else
-            <a class="btn btn-lg mt-3 btn-outline-secondary display-1" href="{{ route('lesson.show') }}">レッスン一覧</a>
-            @endguest
-        </div>
 
     </div>
+
+
 </main>
 @endsection
 
@@ -115,48 +139,30 @@
 <footer class="mt-3 py-4">
     <div class="footer-top">
         <div class="container">
-            <div class="row">
+            <div class="row d-flex flex-row justify-content-between">
                 <div class="col-md-4 col-lg-4 footer-about wow fadeInUp animated text-center"
                     style="visibility: visible; animation-name: fadeInUp;">
-                    <h3 class="pb-3">ABOUT</h3>
-                    <img class="logo-footer mb-4" src="{{ asset('img/logo.jpg') }}" alt="ONLINE DOJO"
-                        data-at2x="assets/img/logo.png" style="width:150px;height:100px;">
-                </div>
-                <div class="col-md-4 col-lg-4 footer-contact wow fadeInDown animated"
-                    style="visibility: visible; animation-name: fadeInDown;">
-                    <h3 class="pb-3 text-center">CONTACT</h3>
-                    <ul class="list-group list-group-flush pl-5">
-                        <li class="list-group-item bg-light border-0 ">
-                            <p><i class="fas fa-map-marker-alt pr-3"></i> 神奈川県横浜市金沢区白帆5-2</p>
+                    <ul class="navbar-nav d-flecx flex-row">
+                        <li class="nav-item">
+                            <a class="nav-link text-secondary" href="{{ url('/about') }}">SNS</a>
                         </li>
-                        <li class="list-group-item bg-light border-0">
-                            <p><i class="fas fa-phone pr-3"></i> 090-1234-5678</p>
-                        </li>
-                        <li class="list-group-item bg-light border-0">
-                            <p><i class="fas fa-envelope pr-3 "></i>online_dojo@gmail.com</p>
+                        <li class="nav-item pl-3">
+                            <a class="nav-link text-secondary" href="{{ url('/about') }}">CONTACT</a>
                         </li>
                     </ul>
-
                 </div>
-                <div class="col-md-4 col-lg-3 footer-social wow fadeInUp animated text-center"
-                    style="visibility: visible; animation-name: fadeInUp;">
-                    <h3 class="pb-3 ">FOLLOW US</h3>
-                    <ul class="list-group list-group-flush ">
-                        <li class="list-group-item bg-light border-0"><a href="#"><i class="fab fa-facebook"
-                                    style="font-size:40px"></i></a></li>
-                        <li class="list-group-item bg-light border-0"><a href="#"><i class="fab fa-twitter"
-                                    style="font-size:40px"></i></a></li>
-                        <li class="list-group-item bg-light border-0"><a href="#"><i class="fab fa-instagram"
-                                    style="font-size:40px"></i></a></li>
-                    </ul>
+                <div class="col-md-4 col-lg-4 d-flex flex-row text-center d-flex flex-row justify-content-center">
+                    <a href="#"><img src="{{ asset('/img/up.png') }}" alt=""></a>
+                </div>
+                <div class="col-md-4 col-lg-4 bg-light ">
+                    <small class="text-center text-secondary"  style="font-size:12px; padding-left:60px;"> © 2020 Copyright : JOIN HANDS All rights reserved.</small>
                 </div>
             </div>
         </div>
+
     </div>
 
-    <div class="bg-light text-center p-3">
-        <small> © 2020 Copyright : IZUMI DOJO All rights reserved.</small>
-    </div>
+
 
 </footer>
 @endsection

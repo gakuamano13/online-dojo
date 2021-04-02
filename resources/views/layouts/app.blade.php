@@ -12,11 +12,13 @@
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Londrina+Shadow&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Comic+Neue&family=Sedgwick+Ave&display=swap" rel="stylesheet">
 
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/login.css') }}" rel="stylesheet">
     <link href="{{ asset('css/about.css') }}" rel="stylesheet">
     <link href="{{ asset('css/login/button.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/main/header.css') }}" rel="stylesheet">
 
     <link rel="shortcut icon" href="{{ asset('/img/favicon.ico') }}">
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
@@ -26,6 +28,10 @@
 
 
     <script src="{{ asset('js/app.js') }}" defer></script>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    <script type="text/javascript" src="{{ asset('js/Arctext/jquery.arctext.js') }}"></script>
+
 
 </head>
 
@@ -37,6 +43,11 @@
         @yield('footer')
     </div>
 
+    <script>
+        $('#top_message').arctext({
+            radius: 900, rotate: true
+        });
+    </script>
 
 </body>
 
