@@ -1,3 +1,5 @@
+<link href="{{ asset('css/main/button.css') }}" rel="stylesheet">
+
 @extends('layouts.app')
 
 @section('header')
@@ -7,8 +9,8 @@
             <li class="navbar-brand nav-link">
                 <a class="navbar-brand nav-item" href="{{ url('/') }}">{{ config('app.name') }}</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse"
-                    data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                    aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
+                    data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                    aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
                 </button>
             </li>
@@ -57,8 +59,7 @@
                             </a>
 
 
-                            <form id="logout-form" action="{{ route('logout') }}" method="POST"
-                                style="display: none;">
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                 @csrf
                             </form>
                         </div>
@@ -72,5 +73,42 @@
 @endsection
 
 @section('content')
+<div class="m-5">
+    <section class="trial-block" id="ContactUs">
+        <div class="">
+            <div class="section-title text-center d-flex flex-column">
+                {{-- <div>
+                    <span class="badge badge-info">Get Started</span>
+                </div> --}}
+                <div class="mt-3">
+                   <button class="sns-button type3">SNS Link</button>
+                </div>
+
+            </div>
+            <div class="social-overlap process-scetion mt100">
+                <div class="container">
+                    <div class="d-flex justify-content-center">
+                        <div class="social-bar">
+                            <div class="social-icons iconpad text-center">
+                                <a href="#" target="_blank" class="slider-nav-item">
+                                    <img src="{{ asset('img/facebook02.png')}}" alt="logo"
+                                        style="width:20px; padding-top:15px;">
+                                </a>
+                                <a href="#" target="_blank" class="slider-nav-item">
+                                    <img src="{{ asset('img/twitter02.png')}}" alt="logo"
+                                        style="width:20px; padding-top:15px;">
+                                </a>
+                                <a href="#" target="_blank" class="slider-nav-item">
+                                    <img src="{{ asset('img/instagram02.png')}}" alt="logo"
+                                        style="width:20px; padding-top:15px;">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
 
 @endsection

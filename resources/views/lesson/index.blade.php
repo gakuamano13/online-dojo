@@ -2,7 +2,7 @@
 
 @section('header')
 <div class="header-container">
-    <header class="py-3">
+    <header>
         <nav class="navbar navbar-expand-md navbar-light d-flex flex-column">
             <div class="container" style="max-width:1000px;">
                 <div class="d-flex flex-row">
@@ -37,7 +37,7 @@
                 </div>
             </div>
             <div class="container" style="padding-top:20px; max-width:1000px;">
-                <ul class="navbar-nav ml-auto">
+                <ul class="navbar-nav ml-auto" style="font-size:12px;">
                     <li class="nav-item">
                         <a class="nav-link" href="{{ url('/about') }}">ABOUT</a>
                     </li>
@@ -58,7 +58,7 @@
                     @endif
                     @else
                     <li class="nav-item dropdown pl-3">
-                        <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
+                        <a id="navbarDropdown" class="nav-link dropdown-toggle font-weight-light" href="#" role="button"
                             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                             {{ Auth::user()->name }} さん <span class="caret"></span>
                         </a>
@@ -88,13 +88,13 @@
                     </li>
                     @elseif(Auth::check() && auth()->user()->role == 'user')
                     <li class="nav-item dropdown">
-                        <a class="nav-link" href="{{ url('/master') }}"><i class="far fa-user"></i></a>
+                        <a class="nav-link" href="{{ url('/mypage') }}"><i class="far fa-user"></i></a>
                     </li>
                     @endif
                 </ul>
             </div>
-</div>
-</nav>
+        </div>
+    </nav>
 </header>
 </div>
 @endsection
@@ -108,7 +108,7 @@
         <div class="mask">
             <div class="d-flex flex-column">
                 <div class="text-white logo-font" style="height: 100px;">
-                    <h1 class="my-5 display-4 text-dark top-message id="top_message">JOIN HANDS</h1>
+                    <h1 class="my-5 display-4 text-dark top-message id=" top_message">JOIN HANDS</h1>
                 </div>
                 <div class="pt-5 d-flex justify-content-center" style="height: 300px;">
                     <div class="d-flex flex-column justify-content-center text-center pb-4" style=" padding-left:400px;"">
@@ -130,7 +130,7 @@
 
             </div>
             <div style="height: 150px; padding-top:30px;">
-                <h2 class="mb-2 pt-5 pb-5 display-5 top-message">- Live your own life -</h2>
+                <button class="my-2 top-message catchy-button" data-hover="自分らしく生きていこう"><div>- Live your own life -</div></button>
             </div>
         </div>
     </div>
@@ -158,7 +158,7 @@
                     <a href="#"><img src="{{ asset('/img/up.png') }}" alt=""></a>
                 </div>
                 <div class="col-md-4 col-lg-4 bg-light ">
-                    <small class="text-center text-secondary" style="font-size:12px; padding-left:60px;"> © 2020
+                    <small class="text-center text-secondary" style="font-size:12px; padding-left:60px;"> © 2021
                         Copyright : JOIN HANDS All rights reserved.</small>
                 </div>
             </div>
