@@ -102,7 +102,7 @@
                     @elseif(Auth::check() && auth()->user()->role == 'navigator')
                     <li>
                         <a href="{{ url('/meeting01_navi') }}">
-                            <span class="material-icons-outlined-outlined">play_lesson</span>
+                            <span class="material-icons-outlined">play_lesson</span>
                             Lesson Room
                         </a>
                     </li>
