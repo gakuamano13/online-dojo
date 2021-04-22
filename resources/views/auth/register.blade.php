@@ -3,7 +3,7 @@
 <div class="login-container">
     @section('content')
 
-    <div class="container-fluid w-50 bg-white login-page">
+    <div class="container-fluid w-50 bg-white login-page register-page">
         <div class="text-center pb-1">
             <h2>- サインイン -</h2>
         </div>
@@ -14,11 +14,11 @@
             <div class="row no-gutter d-flex flex-row justify-content-center">
 
                 @csrf
-                <div class="col-md-7 col-lg-7 login-img">
+                <div class="col-md-7 col-lg-7 login-img register-image">
                     <img src="{{ asset('img/login.jpg') }}" alt="">
                 </div>
 
-                <div class="col-md-5 col-lg-5 d-flex align-items-center mt-5">
+                <div class="col-md-5 col-lg-5 d-flex align-items-center mt-5 register-form-section">
                     <div class="col-md-12 col-lg-12 d-flex flex-column justify-content-center">
                         <div class="form-group row">
 
@@ -75,7 +75,7 @@
                     </div>
                 </div>
             </div>
-            <div class="text-center">
+            <div class="text-center register-button-section">
                 <button type="submit" class="btn btn-primary btn-login btn-block col-6 text-uppercase font-weight-bold mb-2 mx-auto">
                     {{ __('登録する') }}
                 </button>

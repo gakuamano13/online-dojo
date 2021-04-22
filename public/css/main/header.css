@@ -1,4 +1,153 @@
 .header-container {
-    height:180px;
-    margin-top:30px;
+    height: 180px;
+    margin-top: 30px;
+}
+
+.lesson-list-link a {
+    width:200px;
+    font-size: 30px;
+}
+
+.top-container {
+    height:100px;
+}
+.bottom-container {
+    height:30px;
+}
+
+.nav-links {
+    flex-direction: row;
+}
+
+
+@media screen and (min-width: 300px) and (max-width: 590px) {
+    .hand-logo {
+        margin-right: 5px !important;
+        padding-right: 0px !important;
+    }
+    .navigation-bar {
+        display: flex;
+        flex-direction: row !important;
+    }
+    .header_logo img {
+        width: 100px !important;
+    }
+    .list-group {
+        display: none !important;
+    }
+    .nav-links {
+        display: flex;
+        justify-content: flex-end !important;
+        flex-direction: row !important;
+        margin: 0px !important;
+    }
+    .nav-link-page {
+        display: none;
+    }
+
+    .header-container {
+        margin-top: 30px;
+    }
+
+    .top-container {
+        height: 50px;
+    }
+    .bottom-container {
+        padding-top: 0px !important;
+        padding-right: 30px !important;
+        height: 50px;
+        display: flex !important;
+        justify-content: flex-end !important;
+    }
+    .navbar {
+        flex-wrap: nowrap;
+    }
+    .nav-item {
+        padding-left: 5px !important;
+        font-size: 12px;
+    }
+    .header-container {
+        height: 100px;
+        margin-top: 30px;
+    }
+    .bg-image {
+        width: 90% !important;
+        height: 300px;
+        background-position:inherit !important;
+        background-size: auto !important;
+        background-image: url('../../img/test005.jpg') !important;
+    }
+    .logo-font {
+        font-size: 24px;
+        height: 30px !important;
+    }
+    .top-message {
+        margin: 30px auto 20px !important;
+        font-size: 32px;
+    }
+    .login-register-section {
+        padding-top: 10px !important;
+        height: 150px !important;
+    }
+    .login-section {
+        flex-direction: column !important;
+        padding: 0px !important
+    }
+    .catchy-button {
+        padding: 0px !important;
+    }
+    .catchy-button p {
+        font-size: 14px !important;
+        margin-top:20px;
+    }
+    .login-button {
+        margin-top: 130px !important;
+        margin-bottom: 20px !important;
+    }
+    .register-button {
+        margin-top: 0px !important;
+    }
+    .copy-right {
+        padding-left: 0px !important;
+        text-align:end;
+    }
+    .contact-link {
+        display:none !important;
+    }
+
+    .lesson-list-link a {
+        margin-left:0px !important;
+        margin-top:100px !important;
+        margin-right:60px !important;
+        width:150px !important;
+        font-size: 16px !important;
+    }
+    .copy-right-wrapper {
+        text-align: center !important;
+    }
+}
+
+@media screen and (min-width: 591px) and (max-width: 780px) {
+    .copy-right-wrapper {
+        display: flex;
+        justify-content: flex-end;
+    }
+    .copy-right {
+        padding-left: 0px !important;
+        text-align:end;
+    }
+    .lesson-list-link a {
+        width:180px !important;
+        font-size: 28px !important;
+    }
+    .login-section {
+        padding-left:200px !important;
+    }
+    .contact-link {
+        display:none !important;
+    }
+    .copy-right-wrapper {
+        justify-content: center;
+    }
+
 }

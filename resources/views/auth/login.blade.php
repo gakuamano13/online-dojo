@@ -3,7 +3,7 @@
 @section('content')
 <div class="login-container">
 
-    <div class="container-fluid w-50 bg-white login-page">
+    <div class="container-fluid w-75 bg-white login-page">
         <div class="text-center py-1">
             <h2>- ログイン -</h2>
         </div>
@@ -12,12 +12,12 @@
         </div>
         <div class="row no-gutter d-flex flex-row justify-content-center">
 
-            <div class="col-md-6 col-lg-6 login-img">
-                <img src="{{ asset('img/login.jpg') }}" alt="">
+            <div class="col-md-6 col-lg-6 login-img "style="max-width:500px;">
+                <img src="{{ asset('img/login.jpg') }}" ">
             </div>
 
-            <div class="col-md-6 col-lg-6 d-flex align-items-center mt-5">
-                <div class="col-md-12 col-lg-12 d-flex flex-column justify-content-center mt-3">
+            <div class="col-md-6 col-lg-6 d-flex align-items-center login-section-form">
+                <div class="col-md-12 col-lg-12 d-flex flex-column justify-content-center">
 
 
                     <form method="POST" action="{{ route('login') }}">
@@ -62,7 +62,7 @@
                                 {{-- @if (Route::has('password.request'))
                             <a class="btn btn-link" href="{{ route('password.request') }}">
                                 {{ __('パスワードを忘れた') }}< /a> @endif --}} </div> </div> </form> </div> </div> </div> <div
-                                    class="text-center pt-2">
+                                    class="text-center pt-2 create-account">
                                     <a class="nav-link" href="{{ route('register') }}">アカウント作成はこちらから</a>
                             </div>
                         </div>

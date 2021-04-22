@@ -18,6 +18,10 @@
 
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/login.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/register.css') }}">
+
+    <link href="{{ asset('css/lesson.show.css') }}" rel="stylesheet">
+
     <link href="{{ asset('css/about.css') }}" rel="stylesheet">
     <link href="{{ asset('css/login/button.css') }}" rel="stylesheet">
     <link href="{{ asset('css/main/header.css') }}" rel="stylesheet">

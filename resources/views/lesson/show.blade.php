@@ -5,14 +5,20 @@
 <header class="my-3">
     <nav class="navbar navbar-expand-md navbar-light bg-light">
         <div class="container">
-            <li class="navbar-brand nav-link">
-                <a class="navbar-brand nav-item" href="{{ url('/') }}">{{ config('app.name') }}</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse"
-                    data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                    aria-label="{{ __('Toggle navigation') }}">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-            </li>
+            <div class="navbar-brand nav-link d-flex flex-row justify-content-between w-100">
+                <div class=>
+                    <a class="navbar-brand nav-item" href="{{ url('/') }}">{{ config('app.name') }}
+                    </a>
+                </div>
+                <div>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse"
+                        data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                </div>
+
+            </div>
 
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <!-- Left Side Of Navbar -->
@@ -80,21 +86,22 @@
 
     <div class="container d-flex flex-wrap">
         @foreach ($lessons as $lesson)
-        <div class="col-4">
+        <div class="col-lg-4 col-md-6 col-xs-12 mb-4">
             <div class="card p-3 d-flex flex-column">
-                <div class="bg-image hover-overlay ripple text-center py-3" data-mdb-ripple-color="light">
+                <div class=" hover-overlay ripple text-center py-3" data-mdb-ripple-color="light">
                     <img src="{{ asset('upload/' . $lesson->lessons_photo) }}" class="img-fluid img-thumbnail"
                         style="height:200px; width:250px;" />
                 </div>
                 <div class="card-body d-flex flex-column">
                     <div>
-                        <h5 class="card-title">{{ $lesson->lessons_title }}</h5>
+                        <h5 class="card-title text-center">{{ $lesson->lessons_title }}</h5>
                     </div>
                     <div>
-                        <h6 class="card-text">{{ $lesson->lessons_text }}</h6>
+                        <h6 class="card-text text-center">{{ $lesson->lessons_text }}</h6>
                     </div>
                     <div class="mt-4 text-center">
-                        <a href="{{ route('lesson.detail', $lesson->id) }}" class="btn btn-lg btn-outline-primary ">レッスン詳細</a>
+                        <a href="{{ route('lesson.detail', $lesson->id) }}"
+                            class="btn btn-lg btn-outline-primary ">レッスン詳細</a>
                     </div>
 
                 </div>

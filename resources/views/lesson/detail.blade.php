@@ -5,14 +5,20 @@
 <header class="my-3">
     <nav class="navbar navbar-expand-md navbar-light bg-light">
         <div class="container">
-            <li class="navbar-brand nav-link">
-                <a class="navbar-brand nav-item" href="{{ url('/') }}">{{ config('app.name') }}</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse"
-                    data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                    aria-label="{{ __('Toggle navigation') }}">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-            </li>
+            <div class="navbar-brand nav-link d-flex flex-row justify-content-between w-100">
+                <div class=>
+                    <a class="navbar-brand nav-item" href="{{ url('/') }}">{{ config('app.name') }}
+                    </a>
+                </div>
+                <div>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse"
+                        data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                </div>
+
+            </div>
 
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <!-- Left Side Of Navbar -->
@@ -22,7 +28,7 @@
 
                 <!-- Right Side Of Navbar -->
                 <ul class="navbar-nav ml-auto">
-                    {{--  <li class="nav-item">
+                    {{-- <li class="nav-item">
                         <a class="nav-link" href="#">About</a>
                     </li>
                     <li class="nav-item">
@@ -34,7 +40,7 @@
                     <!-- Authentication Links -->
                     @guest
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                        <a class="nav-link logo-font" href="{{ route('login') }}">{{ __('Login') }}</a>
                     </li>
                     @if (Route::has('register'))
                     <li class="nav-item">
@@ -79,7 +85,7 @@
 
 <div class="container">
     <div class="row mb-5 d-flex justify-content-center">
-        <div class="col-lg-8 col-md-8 col-sm-10 card p-4 d-flex flex-row">
+        <div class="col-lg-8 col-md-8 col-sm-10 card p-4 d-flex flex-row lesson-detail-section">
             <div class="bg-image hover-overlay ripple col-6" data-mdb-ripple-color="light">
                 <img src="{{ asset('upload/' . $lesson->lessons_photo) }}" class="img-fluid img-thumbnail"
                     style="height:200px; width:250px;" />

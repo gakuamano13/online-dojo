@@ -1,0 +1,45 @@
+.register-image {
+    max-width:450px;
+}
+
+@media screen and (min-width: 300px) and (max-width: 580px) {
+    .register-button-section {
+        margin-top: 30px;
+    }
+    .register-form-section {
+        margin-top:10px !important;
+    }
+}
+
+@media screen and (min-width: 581px) and (max-width: 860px) {
+    .login-img img {
+        padding-left: 0px !important;
+    }
+    .login-heading {
+        margin:5px !important;
+    }
+    .register-button-section {
+        margin-top: 30px;
+    }
+    .register-form-section {
+        margin-top:10px !important;
+    }
+}
+
+@media screen and (min-width: 861px) and (max-width: 1280px) {
+    .register-page {
+        width:75% !important;
+    }
+    .login-img img {
+        padding-left: 0px !important;
+    }
+    .login-heading {
+        margin:5px !important;
+    }
+    .register-button-section {
+        margin-top: 30px;
+    }
+    .register-form-section {
+        margin-top:10px !important;
+    }
+}

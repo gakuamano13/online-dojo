@@ -1,0 +1,9 @@
+@media screen and (min-width: 300px) and (max-width: 860px) {
+    .top__title {
+        margin-top: 20px !important;
+        margin-bottom: 40px !important;
+    }
+    .lesson-detail-section {
+        flex-direction: column !important;
+    }
+}

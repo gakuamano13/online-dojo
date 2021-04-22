@@ -3,14 +3,14 @@
 @section('header')
 <div class="header-container">
     <header>
-        <nav class="navbar navbar-expand-md navbar-light d-flex flex-column">
-            <div class="container" style="max-width:1000px;">
+        <nav class="navbar navbar-expand-md navbar-light d-flex flex-column navigation-bar">
+            <div class="container top-container" style="max-width:1000px;">
                 <div class="d-flex flex-row">
-                    <div class="mr-3 pr-2 d-flex align-items-center">
-                        <img src="{{ asset('img/handshake.png')}}" alt="">
+                    <div class="mr-3 pr-2 d-flex align-items-center hand-logo">
+                        <img src="{{ asset('img/handshake.png')}}" alt="JOIN HANDS">
                     </div>
-                    <div>
-                        <a class="navbar-brand nav-item dashboard-logo-font" href="{{ url('/') }}">
+                    <div class="header_logo">
+                        <a class="navbar-brand nav-item dashboard-logo-font " href="{{ url('/') }}">
                             {{-- JOIN HANDS --}}
                             <img src="{{ asset('img/logo.jpg')}}" alt="logo" style="width:150px;">
                         </a>
@@ -36,15 +36,15 @@
                     </ul>
                 </div>
             </div>
-            <div class="container" style="padding-top:20px; max-width:1000px;">
-                <ul class="navbar-nav ml-auto" style="font-size:12px;">
-                    <li class="nav-item">
+            <div class="container bottom-container" style="padding-top:20px; max-width:1000px;">
+                <ul class="navbar-nav ml-auto nav-links" style="font-size:12px;">
+                    <li class="nav-item nav-link-page">
                         <a class="nav-link" href="{{ url('/about') }}">ABOUT</a>
                     </li>
-                    <li class="nav-item pl-3">
+                    <li class="nav-item pl-3  nav-link-page">
                         <a class="nav-link" href="{{ url('/about') }}">FEATURE</a>
                     </li>
-                    <li class="nav-item pl-3">
+                    <li class="nav-item pl-3  nav-link-page">
                         <a class="nav-link" href="{{ url('/about') }}">TEACHER</a>
                     </li>
                     @guest
@@ -80,25 +80,24 @@
                     @if (Auth::check() && auth()->user()->role == 'administrator')
                     <li class="nav-item dropdown">
                         <a class="nav-link" href="{{ url('/master') }}">
-                            <img src="{{ asset('img/admin.png')}}"
-                                alt="logo" style="width:20px;">
+                            <img src="{{ asset('img/admin.png')}}" alt="logo" style="width:20px;">
                         </a>
                     </li>
                     @elseif(Auth::check() && auth()->user()->role == 'navigator')
                     <li class="nav-item dropdown">
                         <a class="nav-link" href="{{ url('/master') }}"><img src="{{ asset('img/admin.png')}}"
-                            alt="logo" style="width:20px;"></i></a>
+                                alt="logo" style="width:20px;"></i></a>
                     </li>
                     @elseif(Auth::check() && auth()->user()->role == 'user')
                     <li class="nav-item dropdown">
-                        <a class="nav-link" href="{{ url('/mypage') }}"><img src="{{ asset('img/user.png')}}"
-                            alt="logo" style="width:20px;"></a>
+                        <a class="nav-link" href="{{ url('/mypage') }}"><img src="{{ asset('img/user.png')}}" alt="logo"
+                                style="width:20px;"></a>
                     </li>
                     @endif
                 </ul>
             </div>
-        </div>
-    </nav>
+</div>
+</nav>
 </header>
 </div>
 @endsection
@@ -114,30 +113,33 @@
                 <div class="text-white logo-font" style="height: 100px;">
                     <h1 class="my-5 display-4 text-dark top-message id=" top_message">JOIN HANDS</h1>
                 </div>
-                <div class="pt-5 d-flex justify-content-center" style="height: 300px;">
-                    <div class="d-flex flex-column justify-content-center text-center pb-4" style=" padding-left:400px;"">
+                <div class="pt-5 d-flex justify-content-center login-register-section" style="height: 300px;">
+                    <div class="d-flex flex-column justify-content-center text-center pb-4 login-section"
+                        style="padding-left:400px;">
                         @guest
-                        <div class=" my-5">
-                        <a class="btn btn-lg btn-outline-dark" href="{{ route('login') }}">ログインする</a>
+                        <div class="my-5 login-button">
+                            <a class="btn btn-lg btn-outline-dark" href="{{ route('login') }}">ログインする</a>
+                        </div>
+                        @if (Route::has('register'))
+                        <div class="my-3 register-button">
+                            <a class="btn btn-lg btn-outline-dark" role="button"
+                                href="{{ route('register') }}">新規登録（無料）</a>
+                        </div>
+                        @endif
+                        @else
+                        <div class="ml-5 lesson-list-link">
+                            <a class="btn btn-lg mt-5 btn-outline-dark" href="{{ route('lesson.show') }}">レッスン<br>一覧</a>
+                        </div>
+                        @endguest
                     </div>
-                    @if (Route::has('register'))
-                    <div class="my-3">
-                        <a class="btn btn-lg btn-outline-dark" role="button" href="{{ route('register') }}">新規登録（無料）</a>
-                    </div>
-                    @endif
-                    @else
-                    <div class="ml-5">
-                        <a class="btn btn-lg mt-5 btn-outline-dark" href="{{ route('lesson.show') }}">レッスン一覧</a>
-                    </div>
-                    @endguest
-                </div>
 
-            </div>
-            <div style="height: 150px; padding-top:30px;">
-                <button class="my-2 top-message catchy-button" data-hover="自分らしく生きていこう"><div>- Live your own life -</div></button>
+                </div>
+                <div style="height: 150px; padding-top:30px;">
+                    <div class="my-2 top-message catchy-button"> <p>
+                        - Live your own life - </p> </div>
+                </div>
             </div>
         </div>
-    </div>
 
     </div>
 
@@ -152,21 +154,21 @@
             <div class="row d-flex flex-row justify-content-between">
                 <div class="col-md-4 col-lg-4 footer-about wow fadeInUp animated text-center"
                     style="visibility: visible; animation-name: fadeInUp;">
-                    <ul class="navbar-nav d-flecx flex-row">
+                    <ul class="navbar-nav d-flex flex-row contact-link">
                         <li class="nav-item pl-3">
                             <a class="nav-link text-secondary" href="{{ url('/about') }}">CONTACT</a>
                         </li>
                     </ul>
                 </div>
-                <div class="col-md-4 col-lg-4 d-flex flex-row text-center d-flex flex-row justify-content-center">
+                {{-- <div class="col-md-1 col-lg-4 d-flex flex-row text-center d-flex flex-row justify-content-center">
                     <a href="#"><img src="{{ asset('/img/up.png') }}" alt=""></a>
-                </div>
-                <div class="col-md-4 col-lg-4 bg-light ">
-                    <small class="text-center text-secondary" style="font-size:12px; padding-left:60px;"> © 2021
-                        Copyright : JOIN HANDS All rights reserved.</small>
-                </div>
+            </div> --}}
+            <div class="col-md-8 col-lg-8 col-xs-12 bg-light text-right copy-right-wrapper">
+                <small class=" text-secondary copy-right" style="font-size:12px; padding-left:60px;"> © 2021
+                    Copyright : JOIN HANDS All rights reserved.</small>
             </div>
         </div>
+    </div>
 
     </div>
 
